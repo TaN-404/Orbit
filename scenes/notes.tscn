@@ -1,10 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjvtvcq0t0jx4"]
 
-[ext_resource type="Script" path="res://scripts/notes_app.gd" id="1_pht7r"]
+[ext_resource type="Script" path="res://scripts/sticky_notes.gd" id="1_pht7r"]
 
 [node name="Notes" type="Window"]
 initial_position = 1
-size = Vector2i(1920, 1080)
+size = Vector2i(400, 400)
+script = ExtResource("1_pht7r")
 
 [node name="Notes-app" type="Control" parent="."]
 layout_mode = 3
@@ -13,7 +14,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pht7r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Notes-app"]
 layout_mode = 1
@@ -23,20 +23,60 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuBar" type="MenuBar" parent="Notes-app/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Notes-app/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Notes-app/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="TabContainer" type="TabContainer" parent="Notes-app/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-current_tab = 0
-
-[node name="Untitled" type="TextEdit" parent="Notes-app/VBoxContainer/TabContainer"]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="StatusBar" type="HBoxContainer" parent="Notes-app/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(315, 32)
 layout_mode = 2
 
-[node name="StatusLabel" type="Label" parent="Notes-app/VBoxContainer/StatusBar"]
+[node name="MarginContainer" type="MarginContainer" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+
+[node name="Label" type="Label" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Panel/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"
+
+[node name="Move" type="Button" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Notes-app/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="Notes-app/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(390, 358)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="text" type="TextEdit" parent="Notes-app/VBoxContainer/PanelContainer/Panel"]
+custom_minimum_size = Vector2(390, 358)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="button_down" from="Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Move" to="." method="_on_move_button_down"]
+[connection signal="button_up" from="Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Move" to="." method="_on_move_button_up"]
+[connection signal="pressed" from="Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
