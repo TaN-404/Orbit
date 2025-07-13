@@ -4,26 +4,29 @@
 
 [node name="Settings" type="Window"]
 initial_position = 1
-size = Vector2i(1080, 720)
+size = Vector2i(720, 480)
 script = ExtResource("1_vcjtg")
 
 [node name="Settings_control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 720.0
+offset_bottom = 480.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Settings_control"]
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 720.0
+offset_bottom = 480.0
 
 [node name="Panel" type="Panel" parent="Settings_control/PanelContainer"]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Settings_control/PanelContainer/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -34,16 +37,19 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_constants/margin_right = 15
+size_flags_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_vertical = 8
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(968, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Settings"
 
 [node name="Move" type="Button" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]

@@ -10,9 +10,16 @@ var window_dragging := false
 
 @export var sticky_notes : PackedScene
 @export var settings : PackedScene
-@export var QuickMenu : PackedScene
+@export var AppMenu : PackedScene
 
 @onready var menu: Control = $Menu
+@onready var confirm_menu: Control = $ConfirmMenu
+
+
+"""LABELS"""
+@onready var menu_name: RichTextLabel = $Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/MenuName
+@onready var confirm_message: RichTextLabel = $ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/ConfirmMessage
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,10 +32,17 @@ func _ready() -> void:
 	# NOTES APP
 	
 	menu.visible = false
+	confirm_menu.visible  = false
 	
 	print(_MainWindow.get_size_with_decorations())
 	_MainWindow.size = Vector2(320, 320)
 	print(_MainWindow.get_size_with_decorations())
+	
+	
+	#menu_name.text_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	#confirm_message.text_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	menu_name.PRESET_CENTER
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -74,7 +88,7 @@ func _on_move_window_button_button_up() -> void:
 """MENU BUTTONS"""
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
+	confirm_menu.visible = true
 	
 
 
@@ -86,37 +100,48 @@ func _on_settings_pressed() -> void:
 
 
 func _on_quick_menu_pressed() -> void:
-	if QuickMenu != null:
-		var quickm_instance = QuickMenu.instantiate()
-		add_child(quickm_instance)
-		quickm_instance.visible = true
+	if AppMenu != null:
+		var appm_instance = AppMenu.instantiate()
+		add_child(appm_instance)
+		appm_instance.visible = true
 		var screen_size = DisplayServer.screen_get_size()
 		var main_window_pos = _MainWindow.position
 		var main_window_size = _MainWindow.size
 		
 		# QuickMenu size (adjust if needed)
-		var quick_menu_width = quickm_instance.size.x if quickm_instance.size.x > 0 else 200
+		var app_menu_width = appm_instance.size.x if appm_instance.size.x > 0 else 200
 
 		# Check if QuickMenu fits on the right side
 		var space_on_right = screen_size.x - (main_window_pos.x + main_window_size.x)
 		var space_on_left = main_window_pos.x
 
-		if space_on_right >= quick_menu_width or space_on_right >= space_on_left:
+		if space_on_right >= app_menu_width or space_on_right >= space_on_left:
 			# Place on the right
-			quickm_instance.position = Vector2(
+			appm_instance.position = Vector2(
 				main_window_pos.x + main_window_size.x,
 				main_window_pos.y
 			)
 		else:
 			# Place on the left
-			quickm_instance.position = Vector2(
-				main_window_pos.x - quick_menu_width,
+			appm_instance.position = Vector2(
+				main_window_pos.x - app_menu_width,
 				main_window_pos.y
 			)
 		
 		# Ensure QuickMenu doesn't go off-screen (clamping)
-		quickm_instance.position.x = clamp(
-			quickm_instance.position.x,
+		appm_instance.position.x = clamp(
+			appm_instance.position.x,
 			0,
-			screen_size.x - quick_menu_width
+			screen_size.x - app_menu_width
 		)
+		
+		
+		
+"""CONFIRM MENU"""
+
+func _on_yes_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_no_pressed() -> void:
+	confirm_menu.visible = false
