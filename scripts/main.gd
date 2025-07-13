@@ -10,6 +10,7 @@ var window_dragging := false
 
 @export var sticky_notes : PackedScene
 @export var settings : PackedScene
+@export var QuickMenu : PackedScene
 
 @onready var menu: Control = $Menu
 
@@ -82,3 +83,40 @@ func _on_settings_pressed() -> void:
 		var setting_instance = settings.instantiate()
 		add_child(setting_instance)
 		setting_instance.visible = true
+
+
+func _on_quick_menu_pressed() -> void:
+	if QuickMenu != null:
+		var quickm_instance = QuickMenu.instantiate()
+		add_child(quickm_instance)
+		quickm_instance.visible = true
+		var screen_size = DisplayServer.screen_get_size()
+		var main_window_pos = _MainWindow.position
+		var main_window_size = _MainWindow.size
+		
+		# QuickMenu size (adjust if needed)
+		var quick_menu_width = quickm_instance.size.x if quickm_instance.size.x > 0 else 200
+
+		# Check if QuickMenu fits on the right side
+		var space_on_right = screen_size.x - (main_window_pos.x + main_window_size.x)
+		var space_on_left = main_window_pos.x
+
+		if space_on_right >= quick_menu_width or space_on_right >= space_on_left:
+			# Place on the right
+			quickm_instance.position = Vector2(
+				main_window_pos.x + main_window_size.x,
+				main_window_pos.y
+			)
+		else:
+			# Place on the left
+			quickm_instance.position = Vector2(
+				main_window_pos.x - quick_menu_width,
+				main_window_pos.y
+			)
+		
+		# Ensure QuickMenu doesn't go off-screen (clamping)
+		quickm_instance.position.x = clamp(
+			quickm_instance.position.x,
+			0,
+			screen_size.x - quick_menu_width
+		)
