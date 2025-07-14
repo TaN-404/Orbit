@@ -2,25 +2,26 @@
 
 [ext_resource type="Script" path="res://scripts/time_panel.gd" id="1_oerdv"]
 
-[node name="TimePanel" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TimePanel" type="Window"]
+position = Vector2i(0, 36)
+size = Vector2i(320, 192)
 script = ExtResource("1_oerdv")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Panel" type="Panel" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+offset_right = 320.0
+offset_bottom = 192.0
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer"]
 custom_minimum_size = Vector2(320, 192)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,18 +39,18 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/Panel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="Exit" type="Button" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="Control/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 8
 text = "X"
 
-[node name="Time" type="RichTextLabel" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Time" type="RichTextLabel" parent="Control/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 65)
 layout_mode = 2
 size_flags_vertical = 3
@@ -57,7 +58,7 @@ theme_override_font_sizes/normal_font_size = 26
 text = "Time"
 scroll_active = false
 
-[node name="Date" type="RichTextLabel" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Date" type="RichTextLabel" parent="Control/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 65)
 layout_mode = 2
 size_flags_vertical = 3

@@ -17,8 +17,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if dragging:
 		position = (Vector2(DisplayServer.mouse_get_position()) + drag_offset).round()
-	print("Mouse position" , Vector2(DisplayServer.mouse_get_position()))
-	print("Position" , position)
 
 func _on_move_button_down() -> void:
 	dragging = true

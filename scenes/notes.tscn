@@ -34,7 +34,7 @@ theme_override_constants/margin_right = 10
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(315, 32)
+custom_minimum_size = Vector2(282, 0)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Panel"]
@@ -49,7 +49,11 @@ theme_override_constants/margin_left = 15
 [node name="Label" type="Label" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Panel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Title"
+text = "Untitled*"
+
+[node name="Button" type="Button" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
 
 [node name="Move" type="Button" parent="Notes-app/VBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)

@@ -1,8 +1,9 @@
-extends Control
+extends Window
 
-@onready var time: RichTextLabel = $PanelContainer/Panel/MarginContainer/VBoxContainer/Time
+
 @onready var update_timer: Timer = $UpdateTimer
-@onready var date: RichTextLabel = $PanelContainer/Panel/MarginContainer/VBoxContainer/Date
+@onready var date: RichTextLabel = $Control/PanelContainer/Panel/MarginContainer/VBoxContainer/Date
+@onready var time: RichTextLabel = $Control/PanelContainer/Panel/MarginContainer/VBoxContainer/Time
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
