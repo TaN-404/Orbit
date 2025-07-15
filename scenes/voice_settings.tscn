@@ -51,7 +51,8 @@ size_flags_horizontal = 0
 [node name="CheckButton" type="CheckButton" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Check Commands"
+text = "Test Commands
+"
 
 [node name="Panel" type="Panel" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(310, 50)

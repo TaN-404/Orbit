@@ -3,6 +3,8 @@ extends Window
 @onready var _settings_window : Window =  get_window()
 # Called when the node enters the scene tree for the first time.
 @onready var move: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Move
+@onready var settings_tab: TabContainer = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab
+@onready var app: TabBar = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App
 
 
 var dragging = false
@@ -29,3 +31,11 @@ func _on_move_button_down() -> void:
 
 func _on_move_button_up() -> void:
 	dragging = false
+	
+	
+func open_tab(tab_name: String):
+	print(tab_name)
+	for i in settings_tab.get_tab_count():
+		if settings_tab.get_tab_title(i) == tab_name:
+			settings_tab.current_tab = i
+			break

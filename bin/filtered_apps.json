@@ -1,0 +1,1430 @@
+{
+  "7z": {
+    "path": "C:/Program Files/7-Zip/7z.exe",
+    "icon": "app_icons/7z.png"
+  },
+  "7zfm": {
+    "path": "C:/Program Files/7-Zip/7zFM.exe",
+    "icon": "app_icons/7zfm.png"
+  },
+  "7zg": {
+    "path": "C:/Program Files/7-Zip/7zG.exe",
+    "icon": "app_icons/7zg.png"
+  },
+  "aseprite": {
+    "path": "C:/Program Files/Aseprite/Aseprite.exe",
+    "icon": "app_icons/aseprite.png"
+  },
+  "unins000": {
+    "path": "C:/Program Files/Aseprite/Uninstall/unins000.exe",
+    "icon": "app_icons/unins000.png"
+  },
+  "brave": {
+    "path": "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe",
+    "icon": "app_icons/brave.png"
+  },
+  "chrome_proxy": {
+    "path": "C:/Program Files/BraveSoftware/Brave-Browser/Application/chrome_proxy.exe",
+    "icon": "app_icons/chrome_proxy.png"
+  },
+  "chrmstp": {
+    "path": "C:/Program Files/BraveSoftware/Brave-Browser/Application/138.1.80.120/Installer/chrmstp.exe",
+    "icon": "app_icons/chrmstp.png"
+  },
+  "benchmark": {
+    "path": "C:/Program Files/EqualizerAPO/Benchmark.exe",
+    "icon": "app_icons/benchmark.png"
+  },
+  "deviceselector": {
+    "path": "C:/Program Files/EqualizerAPO/DeviceSelector.exe",
+    "icon": "app_icons/deviceselector.png"
+  },
+  "editor": {
+    "path": "C:/Program Files/EqualizerAPO/Editor.exe",
+    "icon": "app_icons/editor.png"
+  },
+  "voicemeeterclient": {
+    "path": "C:/Program Files/EqualizerAPO/VoicemeeterClient.exe",
+    "icon": "app_icons/voicemeeterclient.png"
+  },
+  "peace": {
+    "path": "C:/Program Files/EqualizerAPO/config/Peace.exe",
+    "icon": "app_icons/peace.png"
+  },
+  "ffmpeg": {
+    "path": "C:/Program Files/File Converter/ffmpeg.exe",
+    "icon": "app_icons/ffmpeg.png"
+  },
+  "fileconverter": {
+    "path": "C:/Program Files/File Converter/FileConverter.exe",
+    "icon": "app_icons/fileconverter.png"
+  },
+  "gswin64c": {
+    "path": "C:/Program Files/File Converter/gswin64c.exe",
+    "icon": "app_icons/gswin64c.png"
+  },
+  "chrome": {
+    "path": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "icon": "app_icons/chrome.png"
+  },
+  "new_chrome": {
+    "path": "C:/Program Files/Google/Chrome/Application/new_chrome.exe",
+    "icon": "app_icons/new_chrome.png"
+  },
+  "new_chrome_proxy": {
+    "path": "C:/Program Files/Google/Chrome/Application/new_chrome_proxy.exe",
+    "icon": "app_icons/new_chrome_proxy.png"
+  },
+  "os_update_handler": {
+    "path": "C:/Program Files/Google/Chrome/Application/138.0.7204.101/os_update_handler.exe",
+    "icon": "app_icons/os_update_handler.png"
+  },
+  "addpsuserconfig": {
+    "path": "C:/Program Files/HuionTablet/AddPSUserConfig.exe",
+    "icon": "app_icons/addpsuserconfig.png"
+  },
+  "deletepsuserconfig": {
+    "path": "C:/Program Files/HuionTablet/DeletePSUserConfig.exe",
+    "icon": "app_icons/deletepsuserconfig.png"
+  },
+  "huiontablet": {
+    "path": "C:/Program Files/HuionTablet/HuionTablet.exe",
+    "icon": "app_icons/huiontablet.png"
+  },
+  "huiontabletcore": {
+    "path": "C:/Program Files/HuionTablet/HuionTabletCore.exe",
+    "icon": "app_icons/huiontabletcore.png"
+  },
+  "osd": {
+    "path": "C:/Program Files/HuionTablet/OSD.exe",
+    "icon": "app_icons/osd.png"
+  },
+  "osdii": {
+    "path": "C:/Program Files/HuionTablet/OSDII.exe",
+    "icon": "app_icons/osdii.png"
+  },
+  "releasewintab32": {
+    "path": "C:/Program Files/HuionTablet/ReleaseWintab32.exe",
+    "icon": "app_icons/releasewintab32.png"
+  },
+  "releasewintab32x64": {
+    "path": "C:/Program Files/HuionTablet/ReleaseWintab32X64.exe",
+    "icon": "app_icons/releasewintab32x64.png"
+  },
+  "removedongle": {
+    "path": "C:/Program Files/HuionTablet/RemoveDongle.exe",
+    "icon": "app_icons/removedongle.png"
+  },
+  "removedonglex64": {
+    "path": "C:/Program Files/HuionTablet/RemoveDongleX64.exe",
+    "icon": "app_icons/removedonglex64.png"
+  },
+  "checktool": {
+    "path": "C:/Program Files/Intel/HAXM/checktool.exe",
+    "icon": "app_icons/checktool.png"
+  },
+  "extexport": {
+    "path": "C:/Program Files/Internet Explorer/ExtExport.exe",
+    "icon": "app_icons/extexport.png"
+  },
+  "iediagcmd": {
+    "path": "C:/Program Files/Internet Explorer/iediagcmd.exe",
+    "icon": "app_icons/iediagcmd.png"
+  },
+  "ieinstal": {
+    "path": "C:/Program Files/Internet Explorer/ieinstal.exe",
+    "icon": "app_icons/ieinstal.png"
+  },
+  "ielowutil": {
+    "path": "C:/Program Files/Internet Explorer/ielowutil.exe",
+    "icon": "app_icons/ielowutil.png"
+  },
+  "iexplore": {
+    "path": "C:/Program Files/Internet Explorer/iexplore.exe",
+    "icon": "app_icons/iexplore.png"
+  },
+  "macrokey": {
+    "path": "C:/Program Files/MI/OSD Utility/1.0.1.271/MacroKey.exe",
+    "icon": "app_icons/macrokey.png"
+  },
+  "macrokeyun": {
+    "path": "C:/Program Files/MI/OSD Utility/1.0.1.271/MacroKeyUn.exe",
+    "icon": "app_icons/macrokeyun.png"
+  },
+  "osdutility": {
+    "path": "C:/Program Files/MI/OSD Utility/1.0.1.271/OSDUtility.exe",
+    "icon": "app_icons/osdutility.png"
+  },
+  "updatebroker": {
+    "path": "C:/Program Files/MI/OSD Utility/1.0.1.271/UpdateBroker.exe",
+    "icon": "app_icons/updatebroker.png"
+  },
+  "xaappstore": {
+    "path": "C:/Program Files/MI/OSD Utility/1.0.1.271/XaAppStore.exe",
+    "icon": "app_icons/xaappstore.png"
+  },
+  "devcon": {
+    "path": "C:/Program Files/MI/OSD Utility/1.0.1.271/Drivers/devcon.exe",
+    "icon": "app_icons/devcon.png"
+  },
+  "osdtoastapp": {
+    "path": "C:/Program Files/MI/OSD Utility/1.0.1.271/oled/OsdToastApp.exe",
+    "icon": "app_icons/osdtoastapp.png"
+  },
+  "ospprearm": {
+    "path": "C:/Program Files/Microsoft Office/Office16/OSPPREARM.EXE",
+    "icon": "app_icons/ospprearm.png"
+  },
+  "integratedoffice": {
+    "path": "C:/Program Files/Microsoft Office 15/ClientX64/IntegratedOffice.exe",
+    "icon": "app_icons/integratedoffice.png"
+  },
+  "officeclicktorun": {
+    "path": "C:/Program Files/Microsoft Office 15/ClientX64/OfficeClickToRun.exe",
+    "icon": "app_icons/officeclicktorun.png"
+  },
+  "onedrive": {
+    "path": "C:/Program Files/Microsoft OneDrive/OneDrive.exe",
+    "icon": "app_icons/onedrive.png"
+  },
+  "filecoauth": {
+    "path": "C:/Program Files/Microsoft OneDrive/25.115.0615.0002/FileCoAuth.exe",
+    "icon": "app_icons/filecoauth.png"
+  },
+  "filesyncconfig": {
+    "path": "C:/Program Files/Microsoft OneDrive/25.115.0615.0002/FileSyncConfig.exe",
+    "icon": "app_icons/filesyncconfig.png"
+  },
+  "microsoft.sharepoint": {
+    "path": "C:/Program Files/Microsoft OneDrive/25.115.0615.0002/Microsoft.SharePoint.exe",
+    "icon": "app_icons/microsoft.sharepoint.png"
+  },
+  "microsoft.sharepoint.nativemessagingclient": {
+    "path": "C:/Program Files/Microsoft OneDrive/25.115.0615.0002/Microsoft.SharePoint.NativeMessagingClient.exe",
+    "icon": "app_icons/microsoft.sharepoint.nativemessagingclient.png"
+  },
+  "onedrivepatcher": {
+    "path": "C:/Program Files/Microsoft OneDrive/25.115.0615.0002/OneDrivePatcher.exe",
+    "icon": "app_icons/onedrivepatcher.png"
+  },
+  "uhssvc": {
+    "path": "C:/Program Files/Microsoft Update Health Tools/uhssvc.exe",
+    "icon": "app_icons/uhssvc.png"
+  },
+  "ddconfigca": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/DDConfigCA.exe",
+    "icon": "app_icons/ddconfigca.png"
+  },
+  "devenv": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/devenv.exe",
+    "icon": "app_icons/devenv.png"
+  },
+  "microsoft.visualstudio.extensibility.finalizer": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Microsoft.VisualStudio.Extensibility.Finalizer.exe",
+    "icon": "app_icons/microsoft.visualstudio.extensibility.finalizer.png"
+  },
+  "microsoft.visualstudio.web.host": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Microsoft.VisualStudio.Web.Host.exe",
+    "icon": "app_icons/microsoft.visualstudio.web.host.png"
+  },
+  "mspdbsrv": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/mspdbsrv.exe",
+    "icon": "app_icons/mspdbsrv.png"
+  },
+  "mstest": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/MSTest.exe",
+    "icon": "app_icons/mstest.png"
+  },
+  "mstest64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/MSTest64.exe",
+    "icon": "app_icons/mstest64.png"
+  },
+  "perfwatson2": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/PerfWatson2.exe",
+    "icon": "app_icons/perfwatson2.png"
+  },
+  "publicize": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Publicize.exe",
+    "icon": "app_icons/publicize.png"
+  },
+  "qtagent": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/QTAgent.exe",
+    "icon": "app_icons/qtagent.png"
+  },
+  "qtagent32": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/QTAgent32.exe",
+    "icon": "app_icons/qtagent32.png"
+  },
+  "qtagent32_35": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/QTAgent32_35.exe",
+    "icon": "app_icons/qtagent32_35.png"
+  },
+  "qtagent32_40": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/QTAgent32_40.exe",
+    "icon": "app_icons/qtagent32_40.png"
+  },
+  "qtagent_35": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/QTAgent_35.exe",
+    "icon": "app_icons/qtagent_35.png"
+  },
+  "qtagent_40": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/QTAgent_40.exe",
+    "icon": "app_icons/qtagent_40.png"
+  },
+  "qtdcagent": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/QTDCAgent.exe",
+    "icon": "app_icons/qtdcagent.png"
+  },
+  "qtdcagent32": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/QTDCAgent32.exe",
+    "icon": "app_icons/qtdcagent32.png"
+  },
+  "storepid": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/StorePID.exe",
+    "icon": "app_icons/storepid.png"
+  },
+  "symsrvhost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/symsrvhost.exe",
+    "icon": "app_icons/symsrvhost.png"
+  },
+  "t4vshostprocess": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/T4VSHostProcess.exe",
+    "icon": "app_icons/t4vshostprocess.png"
+  },
+  "texttransform": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/TextTransform.exe",
+    "icon": "app_icons/texttransform.png"
+  },
+  "texttransformcore": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/TextTransformCore.exe",
+    "icon": "app_icons/texttransformcore.png"
+  },
+  "usercontroltestcontainer": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/UserControlTestContainer.exe",
+    "icon": "app_icons/usercontroltestcontainer.png"
+  },
+  "vb7to8": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/vb7to8.exe",
+    "icon": "app_icons/vb7to8.png"
+  },
+  "vcxprojreader": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VcxprojReader.exe",
+    "icon": "app_icons/vcxprojreader.png"
+  },
+  "vsfinalizer": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VSFinalizer.exe",
+    "icon": "app_icons/vsfinalizer.png"
+  },
+  "vsga": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VsGa.exe",
+    "icon": "app_icons/vsga.png"
+  },
+  "vshivestub": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VSHiveStub.exe",
+    "icon": "app_icons/vshivestub.png"
+  },
+  "vshost-clr2": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/vshost-clr2.exe",
+    "icon": "app_icons/vshost-clr2.png"
+  },
+  "vshost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/vshost.exe",
+    "icon": "app_icons/vshost.png"
+  },
+  "vshost32-clr2": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/vshost32-clr2.exe",
+    "icon": "app_icons/vshost32-clr2.png"
+  },
+  "vshost32": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/vshost32.exe",
+    "icon": "app_icons/vshost32.png"
+  },
+  "vsinitializer": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VSInitializer.exe",
+    "icon": "app_icons/vsinitializer.png"
+  },
+  "vsixinstaller": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VSIXInstaller.exe",
+    "icon": "app_icons/vsixinstaller.png"
+  },
+  "vslaunchbrowser": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VSLaunchBrowser.exe",
+    "icon": "app_icons/vslaunchbrowser.png"
+  },
+  "vsn": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/vsn.exe",
+    "icon": "app_icons/vsn.png"
+  },
+  "vsngenrunner": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VSNgenRunner.exe",
+    "icon": "app_icons/vsngenrunner.png"
+  },
+  "vsregedit": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VsRegEdit.exe",
+    "icon": "app_icons/vsregedit.png"
+  },
+  "vswebhandler": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VSWebHandler.exe",
+    "icon": "app_icons/vswebhandler.png"
+  },
+  "ninja": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe",
+    "icon": "app_icons/ninja.png"
+  },
+  "nuget.build.tasks.console": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/NuGet/NuGet.Build.Tasks.Console.exe",
+    "icon": "app_icons/nuget.build.tasks.console.png"
+  },
+  "credentialprovider.microsoft": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/NuGet/Plugins/CredentialProvider.Microsoft/CredentialProvider.Microsoft.exe",
+    "icon": "app_icons/credentialprovider.microsoft.png"
+  },
+  "buildnotificationapp": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/BuildNotificationApp.exe",
+    "icon": "app_icons/buildnotificationapp.png"
+  },
+  "endtask": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/EndTask.exe",
+    "icon": "app_icons/endtask.png"
+  },
+  "tf": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/TF.exe",
+    "icon": "app_icons/tf.png"
+  },
+  "tfsbuild": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/TFSBuild.exe",
+    "icon": "app_icons/tfsbuild.png"
+  },
+  "tfsdeleteproject": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/TfsDeleteProject.exe",
+    "icon": "app_icons/tfsdeleteproject.png"
+  },
+  "tfssecurity": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/TFSSecurity.exe",
+    "icon": "app_icons/tfssecurity.png"
+  },
+  "vsdiffmerge": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/vsDiffMerge.exe",
+    "icon": "app_icons/vsdiffmerge.png"
+  },
+  "witadmin": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/witadmin.exe",
+    "icon": "app_icons/witadmin.png"
+  },
+  "winpty-agent": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/Terminal/ServiceHub/winpty-agent.exe",
+    "icon": "app_icons/winpty-agent.png"
+  },
+  "openconsole": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/Terminal/ServiceHub/os64/OpenConsole.exe",
+    "icon": "app_icons/openconsole.png"
+  },
+  "vstest.console": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/vstest.console.exe",
+    "icon": "app_icons/vstest.console.png"
+  },
+  "testwindowremoteagent": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/RemoteAgent/TestWindowRemoteAgent.exe",
+    "icon": "app_icons/testwindowremoteagent.png"
+  },
+  "dumpminitool.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/Extensions/dump/DumpMinitool.arm64.exe",
+    "icon": "app_icons/dumpminitool.arm64.png"
+  },
+  "dumpminitool": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/Extensions/dump/DumpMinitool.exe",
+    "icon": "app_icons/dumpminitool.png"
+  },
+  "dumpminitool.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/Extensions/dump/DumpMinitool.x86.exe",
+    "icon": "app_icons/dumpminitool.x86.png"
+  },
+  "datacollector.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/datacollector.arm64.exe",
+    "icon": "app_icons/datacollector.arm64.png"
+  },
+  "datacollector": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/datacollector.exe",
+    "icon": "app_icons/datacollector.png"
+  },
+  "testhost.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.arm64.exe",
+    "icon": "app_icons/testhost.arm64.png"
+  },
+  "testhost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.exe",
+    "icon": "app_icons/testhost.png"
+  },
+  "testhost.net47.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net47.arm64.exe",
+    "icon": "app_icons/testhost.net47.arm64.png"
+  },
+  "testhost.net47": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net47.exe",
+    "icon": "app_icons/testhost.net47.png"
+  },
+  "testhost.net47.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net47.x86.exe",
+    "icon": "app_icons/testhost.net47.x86.png"
+  },
+  "testhost.net471.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net471.arm64.exe",
+    "icon": "app_icons/testhost.net471.arm64.png"
+  },
+  "testhost.net471": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net471.exe",
+    "icon": "app_icons/testhost.net471.png"
+  },
+  "testhost.net471.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net471.x86.exe",
+    "icon": "app_icons/testhost.net471.x86.png"
+  },
+  "testhost.net472.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net472.arm64.exe",
+    "icon": "app_icons/testhost.net472.arm64.png"
+  },
+  "testhost.net472": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net472.exe",
+    "icon": "app_icons/testhost.net472.png"
+  },
+  "testhost.net472.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net472.x86.exe",
+    "icon": "app_icons/testhost.net472.x86.png"
+  },
+  "testhost.net48.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net48.arm64.exe",
+    "icon": "app_icons/testhost.net48.arm64.png"
+  },
+  "testhost.net48": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net48.exe",
+    "icon": "app_icons/testhost.net48.png"
+  },
+  "testhost.net48.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net48.x86.exe",
+    "icon": "app_icons/testhost.net48.x86.png"
+  },
+  "testhost.net481.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net481.arm64.exe",
+    "icon": "app_icons/testhost.net481.arm64.png"
+  },
+  "testhost.net481": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net481.exe",
+    "icon": "app_icons/testhost.net481.png"
+  },
+  "testhost.net481.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.net481.x86.exe",
+    "icon": "app_icons/testhost.net481.x86.png"
+  },
+  "testhost.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/VsTest/TestHostNetFramework/testhost.x86.exe",
+    "icon": "app_icons/testhost.x86.png"
+  },
+  "microsoft.codeanalysis.workspaces.msbuild.buildhost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/VBCSharp/LanguageServices/BuildHost-net472/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe",
+    "icon": "app_icons/microsoft.codeanalysis.workspaces.msbuild.buildhost.png"
+  },
+  "interactivehost64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/VBCSharp/LanguageServices/InteractiveHost/Core/InteractiveHost64.exe",
+    "icon": "app_icons/interactivehost64.png"
+  },
+  "interactivehost32": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/VBCSharp/LanguageServices/InteractiveHost/Desktop/InteractiveHost32.exe",
+    "icon": "app_icons/interactivehost32.png"
+  },
+  "vsdebugconsole": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Platform/Debugger/VsDebugConsole.exe",
+    "icon": "app_icons/vsdebugconsole.png"
+  },
+  "enablegraphicstools": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/Microsoft/Graphics/Debugger/EnableGraphicsTools.exe",
+    "icon": "app_icons/enablegraphicstools.png"
+  },
+  "vsgraphicsdesktopengine": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/Microsoft/Graphics/Debugger/VsGraphicsDesktopEngine.exe",
+    "icon": "app_icons/vsgraphicsdesktopengine.png"
+  },
+  "createdump": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/Microsoft/LiveShare/Agent/createdump.exe",
+    "icon": "app_icons/createdump.png"
+  },
+  "vsls-agent": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/Microsoft/LiveShare/Agent/vsls-agent.exe",
+    "icon": "app_icons/vsls-agent.png"
+  },
+  "vsgraphics": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/Microsoft/VsGraphics/vsgraphics.exe",
+    "icon": "app_icons/vsgraphics.png"
+  },
+  "microsoft.webtools.languages.languageserver.host": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/Microsoft/Web Tools/Languages/Microsoft.WebTools.Languages.LanguageServer.Host.exe",
+    "icon": "app_icons/microsoft.webtools.languages.languageserver.host.png"
+  },
+  "settingsmigrator": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/TestPlatform/SettingsMigrator.exe",
+    "icon": "app_icons/settingsmigrator.png"
+  },
+  "vstest.console.arm64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/TestPlatform/vstest.console.arm64.exe",
+    "icon": "app_icons/vstest.console.arm64.png"
+  },
+  "vstestvideorecorder": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Extensions/TestPlatform/Extensions/VideoRecorder/VSTestVideoRecorder.exe",
+    "icon": "app_icons/vstestvideorecorder.png"
+  },
+  "checkhypervhost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/PrivateAssemblies/CheckHyperVHost.exe",
+    "icon": "app_icons/checkhypervhost.png"
+  },
+  "appxdebugsystray": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Remote Debugger/Appx/AppxDebugSysTray.exe",
+    "icon": "app_icons/appxdebugsystray.png"
+  },
+  "msvsmon": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Remote Debugger/x64/msvsmon.exe",
+    "icon": "app_icons/msvsmon.png"
+  },
+  "vsdebuglaunchnotify": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Remote Debugger/x64/VsDebugLaunchNotify.exe",
+    "icon": "app_icons/vsdebuglaunchnotify.png"
+  },
+  "vsgraphicsremoteengine": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Remote Debugger/x64/VsGraphicsRemoteEngine.exe",
+    "icon": "app_icons/vsgraphicsremoteengine.png"
+  },
+  "isense_model_extractor": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VC/vcpackages/isense_model_extractor.exe",
+    "icon": "app_icons/isense_model_extractor.png"
+  },
+  "vcpkgsrv": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/VC/vcpackages/vcpkgsrv.exe",
+    "icon": "app_icons/vcpkgsrv.png"
+  },
+  "microsoft.xsldebugger.host": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Xml/Microsoft.XslDebugger.Host.exe",
+    "icon": "app_icons/microsoft.xsldebugger.host.png"
+  },
+  "microsoft.servicehub.controller": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Controller/Microsoft.ServiceHub.Controller.exe",
+    "icon": "app_icons/microsoft.servicehub.controller.png"
+  },
+  "servicehub.host.anycpu": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.AnyCPU/ServiceHub.Host.AnyCPU.exe",
+    "icon": "app_icons/servicehub.host.anycpu.png"
+  },
+  "servicehub.liveunittesting": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.AnyCPU/ServiceHub.LiveUnitTesting.exe",
+    "icon": "app_icons/servicehub.liveunittesting.png"
+  },
+  "servicehub.roslyncodeanalysisservices": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.AnyCPU/ServiceHub.RoslynCodeAnalysisServiceS.exe",
+    "icon": "app_icons/servicehub.roslyncodeanalysisservices.png"
+  },
+  "servicehub.settingshost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.AnyCPU/ServiceHub.SettingsHost.exe",
+    "icon": "app_icons/servicehub.settingshost.png"
+  },
+  "servicehub.testwindowstorehost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.AnyCPU/ServiceHub.TestWindowStoreHost.exe",
+    "icon": "app_icons/servicehub.testwindowstorehost.png"
+  },
+  "servicehub.threadedwaitdialog": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.AnyCPU/ServiceHub.ThreadedWaitDialog.exe",
+    "icon": "app_icons/servicehub.threadedwaitdialog.png"
+  },
+  "servicehub.vsdetouredhost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.AnyCPU/ServiceHub.VSDetouredHost.exe",
+    "icon": "app_icons/servicehub.vsdetouredhost.png"
+  },
+  "servicehub.datawarehousehost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.dotnet.x64/ServiceHub.DataWarehouseHost.exe",
+    "icon": "app_icons/servicehub.datawarehousehost.png"
+  },
+  "servicehub.host.dotnet.x64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.dotnet.x64/ServiceHub.Host.dotnet.x64.exe",
+    "icon": "app_icons/servicehub.host.dotnet.x64.png"
+  },
+  "servicehub.identityhost": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.dotnet.x64/ServiceHub.IdentityHost.exe",
+    "icon": "app_icons/servicehub.identityhost.png"
+  },
+  "servicehub.liveunittesting.remotesyncmanager": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.dotnet.x64/ServiceHub.LiveUnitTesting.RemoteSyncManager.exe",
+    "icon": "app_icons/servicehub.liveunittesting.remotesyncmanager.png"
+  },
+  "servicehub.host.extensibility.x64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.Extensibility.amd64/ServiceHub.Host.Extensibility.x64.exe",
+    "icon": "app_icons/servicehub.host.extensibility.x64.png"
+  },
+  "servicehub.host.netfx.x64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.netfx.x64/ServiceHub.Host.netfx.x64.exe",
+    "icon": "app_icons/servicehub.host.netfx.x64.png"
+  },
+  "servicehub.host.netfx.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/ServiceHub/Hosts/ServiceHub.Host.netfx.x86/ServiceHub.Host.netfx.x86.exe",
+    "icon": "app_icons/servicehub.host.netfx.x86.png"
+  },
+  "errlook": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/errlook.exe",
+    "icon": "app_icons/errlook.png"
+  },
+  "guidgen": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/guidgen.exe",
+    "icon": "app_icons/guidgen.png"
+  },
+  "makehm": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/makehm.exe",
+    "icon": "app_icons/makehm.png"
+  },
+  "spyxx": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/spyxx.exe",
+    "icon": "app_icons/spyxx.png"
+  },
+  "spyxx_amd64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/spyxx_amd64.exe",
+    "icon": "app_icons/spyxx_amd64.png"
+  },
+  "dotnet": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/dotnet/net8.0/runtime/dotnet.exe",
+    "icon": "app_icons/dotnet.png"
+  },
+  "node": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs/node.exe",
+    "icon": "app_icons/node.png"
+  },
+  "vsdiagnostics": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Team Tools/DiagnosticsHub/Collector/VSDiagnostics.exe",
+    "icon": "app_icons/vsdiagnostics.png"
+  },
+  "vsinstr": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Team Tools/DiagnosticsHub/Collector/VSInstr.exe",
+    "icon": "app_icons/vsinstr.png"
+  },
+  "vsperfreport": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Team Tools/Performance Tools/VSPerfReport.exe",
+    "icon": "app_icons/vsperfreport.png"
+  },
+  "fxcopcmd": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/Team Tools/Static Analysis Tools/FxCop/FxCopCmd.exe",
+    "icon": "app_icons/fxcopcmd.png"
+  },
+  "vc_redist.x64": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/vc_redist.x64.exe",
+    "icon": "app_icons/vc_redist.x64.png"
+  },
+  "vc_redist.x86": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/vc_redist.x86.exe",
+    "icon": "app_icons/vc_redist.x86.png"
+  },
+  "vcpkg": {
+    "path": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/vcpkg/vcpkg.exe",
+    "icon": "app_icons/vcpkg.png"
+  },
+  "code": {
+    "path": "C:/Program Files/Microsoft VS Code/Code.exe",
+    "icon": "app_icons/code.png"
+  },
+  "powertoys.actionrunner": {
+    "path": "C:/Program Files/PowerToys/PowerToys.ActionRunner.exe",
+    "icon": "app_icons/powertoys.actionrunner.png"
+  },
+  "powertoys.alwaysontop": {
+    "path": "C:/Program Files/PowerToys/PowerToys.AlwaysOnTop.exe",
+    "icon": "app_icons/powertoys.alwaysontop.png"
+  },
+  "powertoys.awake": {
+    "path": "C:/Program Files/PowerToys/PowerToys.Awake.exe",
+    "icon": "app_icons/powertoys.awake.png"
+  },
+  "powertoys.colorpickerui": {
+    "path": "C:/Program Files/PowerToys/PowerToys.ColorPickerUI.exe",
+    "icon": "app_icons/powertoys.colorpickerui.png"
+  },
+  "powertoys.cropandlock": {
+    "path": "C:/Program Files/PowerToys/PowerToys.CropAndLock.exe",
+    "icon": "app_icons/powertoys.cropandlock.png"
+  },
+  "powertoys": {
+    "path": "C:/Program Files/PowerToys/PowerToys.exe",
+    "icon": "app_icons/powertoys.png"
+  },
+  "powertoys.fancyzones": {
+    "path": "C:/Program Files/PowerToys/PowerToys.FancyZones.exe",
+    "icon": "app_icons/powertoys.fancyzones.png"
+  },
+  "powertoys.fancyzoneseditor": {
+    "path": "C:/Program Files/PowerToys/PowerToys.FancyZonesEditor.exe",
+    "icon": "app_icons/powertoys.fancyzoneseditor.png"
+  },
+  "powertoys.gcodepreviewhandler": {
+    "path": "C:/Program Files/PowerToys/PowerToys.GcodePreviewHandler.exe",
+    "icon": "app_icons/powertoys.gcodepreviewhandler.png"
+  },
+  "powertoys.gcodethumbnailprovider": {
+    "path": "C:/Program Files/PowerToys/PowerToys.GcodeThumbnailProvider.exe",
+    "icon": "app_icons/powertoys.gcodethumbnailprovider.png"
+  },
+  "powertoys.imageresizer": {
+    "path": "C:/Program Files/PowerToys/PowerToys.ImageResizer.exe",
+    "icon": "app_icons/powertoys.imageresizer.png"
+  },
+  "powertoys.markdownpreviewhandler": {
+    "path": "C:/Program Files/PowerToys/PowerToys.MarkdownPreviewHandler.exe",
+    "icon": "app_icons/powertoys.markdownpreviewhandler.png"
+  },
+  "powertoys.monacopreviewhandler": {
+    "path": "C:/Program Files/PowerToys/PowerToys.MonacoPreviewHandler.exe",
+    "icon": "app_icons/powertoys.monacopreviewhandler.png"
+  },
+  "powertoys.mousejumpui": {
+    "path": "C:/Program Files/PowerToys/PowerToys.MouseJumpUI.exe",
+    "icon": "app_icons/powertoys.mousejumpui.png"
+  },
+  "powertoys.mousewithoutborders": {
+    "path": "C:/Program Files/PowerToys/PowerToys.MouseWithoutBorders.exe",
+    "icon": "app_icons/powertoys.mousewithoutborders.png"
+  },
+  "powertoys.pdfpreviewhandler": {
+    "path": "C:/Program Files/PowerToys/PowerToys.PdfPreviewHandler.exe",
+    "icon": "app_icons/powertoys.pdfpreviewhandler.png"
+  },
+  "powertoys.pdfthumbnailprovider": {
+    "path": "C:/Program Files/PowerToys/PowerToys.PdfThumbnailProvider.exe",
+    "icon": "app_icons/powertoys.pdfthumbnailprovider.png"
+  },
+  "powertoys.poweraccent": {
+    "path": "C:/Program Files/PowerToys/PowerToys.PowerAccent.exe",
+    "icon": "app_icons/powertoys.poweraccent.png"
+  },
+  "powertoys.powerocr": {
+    "path": "C:/Program Files/PowerToys/PowerToys.PowerOCR.exe",
+    "icon": "app_icons/powertoys.powerocr.png"
+  },
+  "powertoys.qoipreviewhandler": {
+    "path": "C:/Program Files/PowerToys/PowerToys.QoiPreviewHandler.exe",
+    "icon": "app_icons/powertoys.qoipreviewhandler.png"
+  },
+  "powertoys.qoithumbnailprovider": {
+    "path": "C:/Program Files/PowerToys/PowerToys.QoiThumbnailProvider.exe",
+    "icon": "app_icons/powertoys.qoithumbnailprovider.png"
+  },
+  "powertoys.shortcutguide": {
+    "path": "C:/Program Files/PowerToys/PowerToys.ShortcutGuide.exe",
+    "icon": "app_icons/powertoys.shortcutguide.png"
+  },
+  "powertoys.stlthumbnailprovider": {
+    "path": "C:/Program Files/PowerToys/PowerToys.StlThumbnailProvider.exe",
+    "icon": "app_icons/powertoys.stlthumbnailprovider.png"
+  },
+  "powertoys.svgpreviewhandler": {
+    "path": "C:/Program Files/PowerToys/PowerToys.SvgPreviewHandler.exe",
+    "icon": "app_icons/powertoys.svgpreviewhandler.png"
+  },
+  "powertoys.svgthumbnailprovider": {
+    "path": "C:/Program Files/PowerToys/PowerToys.SvgThumbnailProvider.exe",
+    "icon": "app_icons/powertoys.svgthumbnailprovider.png"
+  },
+  "powertoys.keyboardmanagereditor": {
+    "path": "C:/Program Files/PowerToys/KeyboardManagerEditor/PowerToys.KeyboardManagerEditor.exe",
+    "icon": "app_icons/powertoys.keyboardmanagereditor.png"
+  },
+  "powertoys.keyboardmanagerengine": {
+    "path": "C:/Program Files/PowerToys/KeyboardManagerEngine/PowerToys.KeyboardManagerEngine.exe",
+    "icon": "app_icons/powertoys.keyboardmanagerengine.png"
+  },
+  "powertoys.bugreporttool": {
+    "path": "C:/Program Files/PowerToys/Tools/PowerToys.BugReportTool.exe",
+    "icon": "app_icons/powertoys.bugreporttool.png"
+  },
+  "powertoys.stylesreporttool": {
+    "path": "C:/Program Files/PowerToys/Tools/PowerToys.StylesReportTool.exe",
+    "icon": "app_icons/powertoys.stylesreporttool.png"
+  },
+  "powertoys.webcamreporttool": {
+    "path": "C:/Program Files/PowerToys/Tools/PowerToys.WebcamReportTool.exe",
+    "icon": "app_icons/powertoys.webcamreporttool.png"
+  },
+  "powertoys.environmentvariables": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/PowerToys.EnvironmentVariables.exe",
+    "icon": "app_icons/powertoys.environmentvariables.png"
+  },
+  "powertoys.filelocksmithui": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/PowerToys.FileLocksmithUI.exe",
+    "icon": "app_icons/powertoys.filelocksmithui.png"
+  },
+  "powertoys.hosts": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/PowerToys.Hosts.exe",
+    "icon": "app_icons/powertoys.hosts.png"
+  },
+  "powertoys.measuretoolui": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/PowerToys.MeasureToolUI.exe",
+    "icon": "app_icons/powertoys.measuretoolui.png"
+  },
+  "powertoys.peek.ui": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/PowerToys.Peek.UI.exe",
+    "icon": "app_icons/powertoys.peek.ui.png"
+  },
+  "powertoys.powerrename": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/PowerToys.PowerRename.exe",
+    "icon": "app_icons/powertoys.powerrename.png"
+  },
+  "powertoys.registrypreview": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/PowerToys.RegistryPreview.exe",
+    "icon": "app_icons/powertoys.registrypreview.png"
+  },
+  "powertoys.settings": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/PowerToys.Settings.exe",
+    "icon": "app_icons/powertoys.settings.png"
+  },
+  "restartagent": {
+    "path": "C:/Program Files/PowerToys/WinUI3Apps/RestartAgent.exe",
+    "icon": "app_icons/restartagent.png"
+  },
+  "installer": {
+    "path": "C:/Program Files/Riot Vanguard/installer.exe",
+    "icon": "app_icons/installer.png"
+  },
+  "log-uploader": {
+    "path": "C:/Program Files/Riot Vanguard/log-uploader.exe",
+    "icon": "app_icons/log-uploader.png"
+  },
+  "vgc": {
+    "path": "C:/Program Files/Riot Vanguard/vgc.exe",
+    "icon": "app_icons/vgc.png"
+  },
+  "vgm": {
+    "path": "C:/Program Files/Riot Vanguard/vgm.exe",
+    "icon": "app_icons/vgm.png"
+  },
+  "vgtray": {
+    "path": "C:/Program Files/Riot Vanguard/vgtray.exe",
+    "icon": "app_icons/vgtray.png"
+  },
+  "vlc-cache-gen": {
+    "path": "C:/Program Files/VideoLAN/VLC/vlc-cache-gen.exe",
+    "icon": "app_icons/vlc-cache-gen.png"
+  },
+  "vlc": {
+    "path": "C:/Program Files/VideoLAN/VLC/vlc.exe",
+    "icon": "app_icons/vlc.png"
+  },
+  "configsecuritypolicy": {
+    "path": "C:/Program Files/Windows Defender/ConfigSecurityPolicy.exe",
+    "icon": "app_icons/configsecuritypolicy.png"
+  },
+  "dlpuseragent": {
+    "path": "C:/Program Files/Windows Defender/DlpUserAgent.exe",
+    "icon": "app_icons/dlpuseragent.png"
+  },
+  "mpcmdrun": {
+    "path": "C:/Program Files/Windows Defender/MpCmdRun.exe",
+    "icon": "app_icons/mpcmdrun.png"
+  },
+  "mpcopyaccelerator": {
+    "path": "C:/Program Files/Windows Defender/MpCopyAccelerator.exe",
+    "icon": "app_icons/mpcopyaccelerator.png"
+  },
+  "mpdlpcmd": {
+    "path": "C:/Program Files/Windows Defender/MpDlpCmd.exe",
+    "icon": "app_icons/mpdlpcmd.png"
+  },
+  "mpextms": {
+    "path": "C:/Program Files/Windows Defender/mpextms.exe",
+    "icon": "app_icons/mpextms.png"
+  },
+  "msmpeng": {
+    "path": "C:/Program Files/Windows Defender/MsMpEng.exe",
+    "icon": "app_icons/msmpeng.png"
+  },
+  "nissrv": {
+    "path": "C:/Program Files/Windows Defender/NisSrv.exe",
+    "icon": "app_icons/nissrv.png"
+  },
+  "offlinescannershell": {
+    "path": "C:/Program Files/Windows Defender/Offline/OfflineScannerShell.exe",
+    "icon": "app_icons/offlinescannershell.png"
+  },
+  "wab": {
+    "path": "C:/Program Files/Windows Mail/wab.exe",
+    "icon": "app_icons/wab.png"
+  },
+  "wabmig": {
+    "path": "C:/Program Files/Windows Mail/wabmig.exe",
+    "icon": "app_icons/wabmig.png"
+  },
+  "setup_wm": {
+    "path": "C:/Program Files/Windows Media Player/setup_wm.exe",
+    "icon": "app_icons/setup_wm.png"
+  },
+  "wmlaunch": {
+    "path": "C:/Program Files/Windows Media Player/wmlaunch.exe",
+    "icon": "app_icons/wmlaunch.png"
+  },
+  "wmpconfig": {
+    "path": "C:/Program Files/Windows Media Player/wmpconfig.exe",
+    "icon": "app_icons/wmpconfig.png"
+  },
+  "wmplayer": {
+    "path": "C:/Program Files/Windows Media Player/wmplayer.exe",
+    "icon": "app_icons/wmplayer.png"
+  },
+  "wmpnetwk": {
+    "path": "C:/Program Files/Windows Media Player/wmpnetwk.exe",
+    "icon": "app_icons/wmpnetwk.png"
+  },
+  "wmpnscfg": {
+    "path": "C:/Program Files/Windows Media Player/wmpnscfg.exe",
+    "icon": "app_icons/wmpnscfg.png"
+  },
+  "wmprph": {
+    "path": "C:/Program Files/Windows Media Player/wmprph.exe",
+    "icon": "app_icons/wmprph.png"
+  },
+  "wmpshare": {
+    "path": "C:/Program Files/Windows Media Player/wmpshare.exe",
+    "icon": "app_icons/wmpshare.png"
+  },
+  "imagingdevices": {
+    "path": "C:/Program Files/Windows Photo Viewer/ImagingDevices.exe",
+    "icon": "app_icons/imagingdevices.png"
+  },
+  "msal.wsl.proxy": {
+    "path": "C:/Program Files/WSL/msal.wsl.proxy.exe",
+    "icon": "app_icons/msal.wsl.proxy.png"
+  },
+  "msrdc": {
+    "path": "C:/Program Files/WSL/msrdc.exe",
+    "icon": "app_icons/msrdc.png"
+  },
+  "wsl": {
+    "path": "C:/Program Files/WSL/wsl.exe",
+    "icon": "app_icons/wsl.png"
+  },
+  "wslg": {
+    "path": "C:/Program Files/WSL/wslg.exe",
+    "icon": "app_icons/wslg.png"
+  },
+  "wslhost": {
+    "path": "C:/Program Files/WSL/wslhost.exe",
+    "icon": "app_icons/wslhost.png"
+  },
+  "wslrelay": {
+    "path": "C:/Program Files/WSL/wslrelay.exe",
+    "icon": "app_icons/wslrelay.png"
+  },
+  "wslsettings": {
+    "path": "C:/Program Files/WSL/wslsettings/wslsettings.exe",
+    "icon": "app_icons/wslsettings.png"
+  },
+  "blackmagicrawplayer": {
+    "path": "C:/Program Files (x86)/Blackmagic Design/Blackmagic RAW/Blackmagic RAW Player/BlackmagicRAWPlayer.exe",
+    "icon": "app_icons/blackmagicrawplayer.png"
+  },
+  "blackmagicrawspeedtest": {
+    "path": "C:/Program Files (x86)/Blackmagic Design/Blackmagic RAW/Blackmagic RAW Speed Test/BlackmagicRAWSpeedTest.exe",
+    "icon": "app_icons/blackmagicrawspeedtest.png"
+  },
+  "bravecrashhandler": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/1.3.361.151/BraveCrashHandler.exe",
+    "icon": "app_icons/bravecrashhandler.png"
+  },
+  "bravecrashhandler64": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/1.3.361.151/BraveCrashHandler64.exe",
+    "icon": "app_icons/bravecrashhandler64.png"
+  },
+  "bravecrashhandlerarm64": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/1.3.361.151/BraveCrashHandlerArm64.exe",
+    "icon": "app_icons/bravecrashhandlerarm64.png"
+  },
+  "braveupdatebroker": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/1.3.361.151/BraveUpdateBroker.exe",
+    "icon": "app_icons/braveupdatebroker.png"
+  },
+  "braveupdatecomregistershell64": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/1.3.361.151/BraveUpdateComRegisterShell64.exe",
+    "icon": "app_icons/braveupdatecomregistershell64.png"
+  },
+  "braveupdatecomregistershellarm64": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/1.3.361.151/BraveUpdateComRegisterShellArm64.exe",
+    "icon": "app_icons/braveupdatecomregistershellarm64.png"
+  },
+  "braveupdatecore": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/1.3.361.151/BraveUpdateCore.exe",
+    "icon": "app_icons/braveupdatecore.png"
+  },
+  "braveupdateondemand": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/1.3.361.151/BraveUpdateOnDemand.exe",
+    "icon": "app_icons/braveupdateondemand.png"
+  },
+  "brave_installer-delta-x64": {
+    "path": "C:/Program Files (x86)/BraveSoftware/Update/Download/{AFE6A462-C574-4B8A-AF43-4CC60DF4563B}/138.1.80.120/brave_installer-delta-x64.exe",
+    "icon": "app_icons/brave_installer-delta-x64.png"
+  },
+  "mdicom": {
+    "path": "C:/Program Files (x86)/MicroDicom/mDicom.exe",
+    "icon": "app_icons/mdicom.png"
+  },
+  "msedge": {
+    "path": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "icon": "app_icons/msedge.png"
+  },
+  "msedge_proxy": {
+    "path": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge_proxy.exe",
+    "icon": "app_icons/msedge_proxy.png"
+  },
+  "cookie_exporter": {
+    "path": "C:/Program Files (x86)/Microsoft/Edge/Application/138.0.3351.83/cookie_exporter.exe",
+    "icon": "app_icons/cookie_exporter.png"
+  },
+  "msedgewebview2": {
+    "path": "C:/Program Files (x86)/Microsoft/Edge/Application/138.0.3351.83/msedgewebview2.exe",
+    "icon": "app_icons/msedgewebview2.png"
+  },
+  "ie_to_edge_stub": {
+    "path": "C:/Program Files (x86)/Microsoft/Edge/Application/138.0.3351.83/BHO/ie_to_edge_stub.exe",
+    "icon": "app_icons/ie_to_edge_stub.png"
+  },
+  "microsoftedgecomregistershellarm64": {
+    "path": "C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.61/MicrosoftEdgeComRegisterShellARM64.exe",
+    "icon": "app_icons/microsoftedgecomregistershellarm64.png"
+  },
+  "microsoftedgeupdatebroker": {
+    "path": "C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.61/MicrosoftEdgeUpdateBroker.exe",
+    "icon": "app_icons/microsoftedgeupdatebroker.png"
+  },
+  "microsoftedgeupdatecomregistershell64": {
+    "path": "C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.61/MicrosoftEdgeUpdateComRegisterShell64.exe",
+    "icon": "app_icons/microsoftedgeupdatecomregistershell64.png"
+  },
+  "microsoftedgeupdatecore": {
+    "path": "C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.61/MicrosoftEdgeUpdateCore.exe",
+    "icon": "app_icons/microsoftedgeupdatecore.png"
+  },
+  "microsoftedgeupdateondemand": {
+    "path": "C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.61/MicrosoftEdgeUpdateOnDemand.exe",
+    "icon": "app_icons/microsoftedgeupdateondemand.png"
+  },
+  "microsoftedge_x64_138.0.3351.83_138.0.3351.77": {
+    "path": "C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}/138.0.3351.83/MicrosoftEdge_X64_138.0.3351.83_138.0.3351.77.exe",
+    "icon": "app_icons/microsoftedge_x64_138.0.3351.83_138.0.3351.77.png"
+  },
+  "microsoftedgeupdatesetup_x86_1.3.195.61": {
+    "path": "C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{F3C4FE00-EFD5-403B-9569-398A20F1BA4A}/1.3.195.61/MicrosoftEdgeUpdateSetup_X86_1.3.195.61.exe",
+    "icon": "app_icons/microsoftedgeupdatesetup_x86_1.3.195.61.png"
+  },
+  "feedback": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/feedback.exe",
+    "icon": "app_icons/feedback.png"
+  },
+  "installcleanup": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/InstallCleanup.exe",
+    "icon": "app_icons/installcleanup.png"
+  },
+  "microsoft.visualstudio.setup.toastnotification": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/Microsoft.VisualStudio.Setup.ToastNotification.exe",
+    "icon": "app_icons/microsoft.visualstudio.setup.toastnotification.png"
+  },
+  "vswhere": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe",
+    "icon": "app_icons/vswhere.png"
+  },
+  "vs_installer": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vs_installer.exe",
+    "icon": "app_icons/vs_installer.png"
+  },
+  "vs_installer.windows": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vs_installer.windows.exe",
+    "icon": "app_icons/vs_installer.windows.png"
+  },
+  "vs_installershell": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vs_installershell.exe",
+    "icon": "app_icons/vs_installershell.png"
+  },
+  "vs_layout": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vs_layout.exe",
+    "icon": "app_icons/vs_layout.png"
+  },
+  "dump64": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/Feedback/dump64.exe",
+    "icon": "app_icons/dump64.png"
+  },
+  "dump64a": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/Feedback/dump64a.exe",
+    "icon": "app_icons/dump64a.png"
+  },
+  "backgrounddownload": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/resources/app/ServiceHub/Services/Microsoft.VisualStudio.Setup.Service/BackgroundDownload.exe",
+    "icon": "app_icons/backgrounddownload.png"
+  },
+  "vsperfaspnetcmd": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Common/VSPerfCollectionTools/vs2022/VSPerfASPNetCmd.exe",
+    "icon": "app_icons/vsperfaspnetcmd.png"
+  },
+  "vsperfcmd": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Common/VSPerfCollectionTools/vs2022/VSPerfCmd.exe",
+    "icon": "app_icons/vsperfcmd.png"
+  },
+  "vsperfmon": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Common/VSPerfCollectionTools/vs2022/VSPerfMon.exe",
+    "icon": "app_icons/vsperfmon.png"
+  },
+  "vsperfsrv": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Shared/Common/VSPerfCollectionTools/vs2022/VSPerfSrv.exe",
+    "icon": "app_icons/vsperfsrv.png"
+  },
+  "microsoft.visualstudio.githubprotocolhandler": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Shared/GitHubProtocolHandler/Microsoft.VisualStudio.GitHubProtocolHandler.exe",
+    "icon": "app_icons/microsoft.visualstudio.githubprotocolhandler.png"
+  },
+  "microsoft.visualstudio.vswebprotocolselector": {
+    "path": "C:/Program Files (x86)/Microsoft Visual Studio/Shared/VsWebProtocolSelector/Microsoft.VisualStudio.VsWebProtocolSelector.exe",
+    "icon": "app_icons/microsoft.visualstudio.vswebprotocolselector.png"
+  },
+  "gameoverlayui": {
+    "path": "C:/Program Files (x86)/Steam/GameOverlayUI.exe",
+    "icon": "app_icons/gameoverlayui.png"
+  },
+  "steam": {
+    "path": "C:/Program Files (x86)/Steam/steam.exe",
+    "icon": "app_icons/steam.png"
+  },
+  "steamerrorreporter": {
+    "path": "C:/Program Files (x86)/Steam/steamerrorreporter.exe",
+    "icon": "app_icons/steamerrorreporter.png"
+  },
+  "steamerrorreporter64": {
+    "path": "C:/Program Files (x86)/Steam/steamerrorreporter64.exe",
+    "icon": "app_icons/steamerrorreporter64.png"
+  },
+  "steamsysinfo": {
+    "path": "C:/Program Files (x86)/Steam/steamsysinfo.exe",
+    "icon": "app_icons/steamsysinfo.png"
+  },
+  "streaming_client": {
+    "path": "C:/Program Files (x86)/Steam/streaming_client.exe",
+    "icon": "app_icons/streaming_client.png"
+  },
+  "writeminidump": {
+    "path": "C:/Program Files (x86)/Steam/WriteMiniDump.exe",
+    "icon": "app_icons/writeminidump.png"
+  },
+  "oalinst": {
+    "path": "C:/Program Files (x86)/Steam/steamapps/common/Steamworks Shared/_CommonRedist/OpenAL/2.0.7.0/oalinst.exe",
+    "icon": "app_icons/oalinst.png"
+  },
+  "aitstatic": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/App Certification Kit/aitstatic.exe",
+    "icon": "app_icons/aitstatic.png"
+  },
+  "appcert": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/App Certification Kit/appcert.exe",
+    "icon": "app_icons/appcert.png"
+  },
+  "appcertui": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/App Certification Kit/appcertui.exe",
+    "icon": "app_icons/appcertui.png"
+  },
+  "makeappx": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/App Certification Kit/makeappx.exe",
+    "icon": "app_icons/makeappx.png"
+  },
+  "microsoft.windows.softwarelogo.taskengine": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/App Certification Kit/microsoft.windows.softwarelogo.taskengine.exe",
+    "icon": "app_icons/microsoft.windows.softwarelogo.taskengine.png"
+  },
+  "rmlogotest": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/App Certification Kit/rmlogotest.exe",
+    "icon": "app_icons/rmlogotest.png"
+  },
+  "signtool": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/App Certification Kit/signtool.exe",
+    "icon": "app_icons/signtool.png"
+  },
+  "dxc": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Redist/D3D/arm64/dxc.exe",
+    "icon": "app_icons/dxc.png"
+  },
+  "conduit.broker.host": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/Conduit.Broker.Host.exe",
+    "icon": "app_icons/conduit.broker.host.png"
+  },
+  "te": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/TE.exe",
+    "icon": "app_icons/te.png"
+  },
+  "te.processhost": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/TE.ProcessHost.exe",
+    "icon": "app_icons/te.processhost.png"
+  },
+  "te.processhost.uap": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/TE.ProcessHost.UAP.exe",
+    "icon": "app_icons/te.processhost.uap.png"
+  },
+  "wex.services": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/Wex.Services.exe",
+    "icon": "app_icons/wex.services.png"
+  },
+  "symcachegen": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/symcachegen.exe",
+    "icon": "app_icons/symcachegen.png"
+  },
+  "wpa": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/wpa.exe",
+    "icon": "app_icons/wpa.png"
+  },
+  "wpaexporter": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/wpaexporter.exe",
+    "icon": "app_icons/wpaexporter.png"
+  },
+  "wpr": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/wpr.exe",
+    "icon": "app_icons/wpr.png"
+  },
+  "wprui": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/WPRUI.exe",
+    "icon": "app_icons/wprui.png"
+  },
+  "xbootmgr": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/xbootmgr.exe",
+    "icon": "app_icons/xbootmgr.png"
+  },
+  "xbootmgrsleep": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/xbootmgrsleep.exe",
+    "icon": "app_icons/xbootmgrsleep.png"
+  },
+  "xperf": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/xperf.exe",
+    "icon": "app_icons/xperf.png"
+  },
+  "gpuview": {
+    "path": "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/gpuview/GPUView.exe",
+    "icon": "app_icons/gpuview.png"
+  },
+  "cursor": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/cursor/Cursor.exe",
+    "icon": "app_icons/cursor.png"
+  },
+  "unins001": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/cursor/unins001.exe",
+    "icon": "app_icons/unins001.png"
+  },
+  "notion": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Notion/Notion.exe",
+    "icon": "app_icons/notion.png"
+  },
+  "uninstall notion": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Notion/Uninstall Notion.exe",
+    "icon": "app_icons/uninstall notion.png"
+  },
+  "elevate": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Notion/resources/elevate.exe",
+    "icon": "app_icons/elevate.png"
+  },
+  "py": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Launcher/py.exe",
+    "icon": "app_icons/py.png"
+  },
+  "pyw": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Launcher/pyw.exe",
+    "icon": "app_icons/pyw.png"
+  },
+  "python": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/python.exe",
+    "icon": "app_icons/python.png"
+  },
+  "pythonw": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/pythonw.exe",
+    "icon": "app_icons/pythonw.png"
+  },
+  "convert-caffe2-to-onnx": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/convert-caffe2-to-onnx.exe",
+    "icon": "app_icons/convert-caffe2-to-onnx.png"
+  },
+  "convert-onnx-to-caffe2": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/convert-onnx-to-caffe2.exe",
+    "icon": "app_icons/convert-onnx-to-caffe2.png"
+  },
+  "dotenv": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/dotenv.exe",
+    "icon": "app_icons/dotenv.png"
+  },
+  "f2py": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/f2py.exe",
+    "icon": "app_icons/f2py.png"
+  },
+  "isympy": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/isympy.exe",
+    "icon": "app_icons/isympy.png"
+  },
+  "normalizer": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/normalizer.exe",
+    "icon": "app_icons/normalizer.png"
+  },
+  "pip": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pip.exe",
+    "icon": "app_icons/pip.png"
+  },
+  "pip3.12": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pip3.12.exe",
+    "icon": "app_icons/pip3.12.png"
+  },
+  "pip3": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pip3.exe",
+    "icon": "app_icons/pip3.png"
+  },
+  "pyi-archive_viewer": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pyi-archive_viewer.exe",
+    "icon": "app_icons/pyi-archive_viewer.png"
+  },
+  "pyi-bindepend": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pyi-bindepend.exe",
+    "icon": "app_icons/pyi-bindepend.png"
+  },
+  "pyi-grab_version": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pyi-grab_version.exe",
+    "icon": "app_icons/pyi-grab_version.png"
+  },
+  "pyi-makespec": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pyi-makespec.exe",
+    "icon": "app_icons/pyi-makespec.png"
+  },
+  "pyi-set_version": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pyi-set_version.exe",
+    "icon": "app_icons/pyi-set_version.png"
+  },
+  "pyinstaller": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pyinstaller.exe",
+    "icon": "app_icons/pyinstaller.png"
+  },
+  "pywin32_postinstall": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pywin32_postinstall.exe",
+    "icon": "app_icons/pywin32_postinstall.png"
+  },
+  "pywin32_testall": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/pywin32_testall.exe",
+    "icon": "app_icons/pywin32_testall.png"
+  },
+  "stable-ts": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/stable-ts.exe",
+    "icon": "app_icons/stable-ts.png"
+  },
+  "torchrun": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/torchrun.exe",
+    "icon": "app_icons/torchrun.png"
+  },
+  "tqdm": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/tqdm.exe",
+    "icon": "app_icons/tqdm.png"
+  },
+  "whisper": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/whisper.exe",
+    "icon": "app_icons/whisper.png"
+  },
+  "wsdump": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/Scripts/wsdump.exe",
+    "icon": "app_icons/wsdump.png"
+  },
+  "x86_64-w64-mingw32-nmakehlp": {
+    "path": "C:/Users/tanay/AppData/Local/Programs/Python/Python312/tcl/nmake/x86_64-w64-mingw32-nmakehlp.exe",
+    "icon": "app_icons/x86_64-w64-mingw32-nmakehlp.png"
+  }
+}

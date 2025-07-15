@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 				speech_text = message["Message"]
 				message_number += 1
 				
-	voice_command.text = speech_text
+	voice_command.text = "Voice Command : " + speech_text
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	SpeechListener.test_voice_mode = !SpeechListener.test_voice_mode

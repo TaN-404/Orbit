@@ -100,9 +100,10 @@ func _on_settings_pressed() -> void:
 
 
 func _on_quick_menu_pressed() -> void:
-	if AppMenu != null:
+	if AppMenu != null and !GameManager.app_menu_active:
 		var appm_instance = AppMenu.instantiate()
 		add_child(appm_instance)
+		GameManager.app_menu_active = true
 		appm_instance.visible = true
 		var screen_size = DisplayServer.screen_get_size()
 		var main_window_pos = _MainWindow.position

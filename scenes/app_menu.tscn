@@ -27,6 +27,11 @@ theme_override_constants/margin_right = 10
 layout_mode = 2
 size_flags_horizontal = 8
 
+[node name="AddApps" type="Button" parent="Amenu/VBoxContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+text = "+"
+
 [node name="Move" type="Button" parent="Amenu/VBoxContainer/MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -80,6 +85,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
+[connection signal="pressed" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/AddApps" to="." method="_on_add_apps_pressed"]
 [connection signal="button_down" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Move" to="." method="_on_move_button_down"]
 [connection signal="button_up" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Move" to="." method="_on_move_button_up"]
 [connection signal="pressed" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
