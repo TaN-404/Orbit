@@ -10,6 +10,7 @@ var speech_process_id = -1
 
 var args = []
 
+var test_voice_mode : bool = false
 var voice_mode : bool = false
 var listener_ready : bool = false
 var client_active : bool = false
@@ -37,7 +38,14 @@ func start_client(exe_path) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	#print(test_voice_mode)
+	
 	if !OS.has_feature("standalone") and voice_mode and !client_active:
+		exe_path = ProjectSettings.globalize_path("res://bin/speech_client.exe")
+		start_client(exe_path)
+		client_active = true
+		
+	if !OS.has_feature("standalone") and test_voice_mode and !client_active:
 		exe_path = ProjectSettings.globalize_path("res://bin/speech_client.exe")
 		start_client(exe_path)
 		client_active = true
@@ -79,6 +87,13 @@ func kill_process(pid):
 	if OS.has_feature("windows") and pid != -1:
 		OS.kill(pid) 
 		
+		
+func cleanup_process(exe_name):
+	var result = get_all_pids_by_exe_name(exe_name)
+	if result:
+		for i in range(len(result)):
+			kill_process(result[i])
+	
 		
 """ALTERNATIVE WAY OF GETTING PIDs"""
 func get_all_pids_by_exe_name(exe_name: String) -> Array:
