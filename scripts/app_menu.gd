@@ -15,7 +15,7 @@ func _ready() -> void:
 	_menu_window.transparent = true
 	_menu_window.transparent_bg = true
 	
-	_menu_window.size = Vector2(120, 270)
+	_menu_window.size = Vector2(120, 312)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,6 +44,10 @@ func _on_add_apps_pressed() -> void:
 	var applist_instance = AppWindow.instantiate()
 	get_tree().root.add_child(applist_instance)
 	applist_instance.visible = true
+	
+	applist_instance.app_list.app_selected.connect(func(name, path, icon):
+		print("Selected:", name, path, icon)
+	)
 	#var tab_name = "App"
 	#await settings_instance.ready
 	#settings_instance.open_tab(tab_name)

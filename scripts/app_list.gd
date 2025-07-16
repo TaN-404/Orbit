@@ -1,6 +1,8 @@
 extends Control
 
 signal app_selected(app_name: String, app_path: String, icon_path: String)
+@onready var app_list_window: Window = $"../../.."
+
 
 var app_list = {}
 const BASE_PATH := "res://bin/"
@@ -55,11 +57,12 @@ func populate_ui():
 
 		# -- Add Button
 		var add_button = Button.new()
+		#add_button.icon.get_image()
 		add_button.text = "Add"
 		add_button.custom_minimum_size = Vector2(50,50)
 		add_button.pressed.connect(func():
 			emit_signal("app_selected", app_name, app_info["path"], icon_path)
-			hide()
+			app_list_window.queue_free()
 		)
 		hbox.add_child(add_button)
 

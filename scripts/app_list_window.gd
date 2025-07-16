@@ -1,6 +1,7 @@
 extends Window
 
 @onready var _app_list_window : Window = get_window()
+@onready var app_list: Control = $MarginContainer/VBoxContainer/AppList
 
 var dragging = false
 var drag_offset := Vector2.ZERO

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SpeechListener="*res://scripts/SpeechListener.gd"
 CommandManager="*res://scripts/CommandManager.gd"
 GameManager="*res://scripts/GameManager.gd"
+AppManager="*res://scripts/AppManager.gd"
 
 [display]
 
