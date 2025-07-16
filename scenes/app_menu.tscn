@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c73sdfceperq4"]
 
 [ext_resource type="Script" path="res://scripts/app_menu.gd" id="1_nwerr"]
-[ext_resource type="Script" path="res://scripts/am-buttons.gd" id="2_u80kt"]
+[ext_resource type="PackedScene" uid="uid://cljqbnqg2m2tn" path="res://scenes/app.tscn" id="3_7auvn"]
 
 [node name="AppMenu" type="Window"]
 position = Vector2i(0, 36)
@@ -54,37 +54,36 @@ theme_override_constants/margin_bottom = 10
 [node name="GridContainer" type="GridContainer" parent="Amenu/VBoxContainer/MarginContainer"]
 layout_mode = 2
 columns = 2
-script = ExtResource("2_u80kt")
 
-[node name="App1" type="Button" parent="Amenu/VBoxContainer/MarginContainer/GridContainer"]
+[node name="App1" parent="Amenu/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("3_7auvn")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="App2" type="Button" parent="Amenu/VBoxContainer/MarginContainer/GridContainer"]
+[node name="App2" parent="Amenu/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("3_7auvn")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="App3" type="Button" parent="Amenu/VBoxContainer/MarginContainer/GridContainer"]
+[node name="App3" parent="Amenu/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("3_7auvn")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="App4" type="Button" parent="Amenu/VBoxContainer/MarginContainer/GridContainer"]
+[node name="App4" parent="Amenu/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("3_7auvn")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="App5" type="Button" parent="Amenu/VBoxContainer/MarginContainer/GridContainer"]
+[node name="App5" parent="Amenu/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("3_7auvn")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="App6" type="Button" parent="Amenu/VBoxContainer/MarginContainer/GridContainer"]
+[node name="App6" parent="Amenu/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("3_7auvn")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="App7" type="Button" parent="Amenu/VBoxContainer/MarginContainer/GridContainer"]
+[node name="App7" parent="Amenu/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("3_7auvn")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="App8" type="Button" parent="Amenu/VBoxContainer/MarginContainer/GridContainer"]
+[node name="App8" parent="Amenu/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("3_7auvn")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
@@ -105,4 +104,4 @@ text = "Edit
 [connection signal="button_down" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Move" to="." method="_on_move_button_down"]
 [connection signal="button_up" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Move" to="." method="_on_move_button_up"]
 [connection signal="pressed" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Amenu/VBoxContainer/MarginContainer3/Edit" to="Amenu/VBoxContainer/MarginContainer/GridContainer" method="_on_edit_pressed"]
+[connection signal="pressed" from="Amenu/VBoxContainer/MarginContainer3/Edit" to="." method="_on_edit_pressed"]

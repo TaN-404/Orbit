@@ -51,3 +51,7 @@ func _on_add_apps_pressed() -> void:
 	#var tab_name = "App"
 	#await settings_instance.ready
 	#settings_instance.open_tab(tab_name)
+
+
+func _on_edit_pressed() -> void:
+	GameManager.am_edit = !GameManager.am_edit

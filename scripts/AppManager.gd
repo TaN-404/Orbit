@@ -57,6 +57,15 @@ func update_button(button_name: String, exe_path: String, exe_icon: String):
 		save_apps()
 	else:
 		push_error("Button %s not found" % button_name)
+		
+		
+func remove_button(button_name : String):
+	if button_name in button_dictionary:
+		button_dictionary[button_name]["exe_path"] = ""
+		button_dictionary[button_name]["exe_icon"] = ""
+		save_apps()
+	else:
+		push_error("Button %s not found" % button_name)
 	
 	
 func update_icon(button: Button, icon: String):
@@ -74,9 +83,11 @@ func update_icon(button: Button, icon: String):
 			print("❌ Failed to load valid texture:", icon)
 	else:
 		print("⚠️ Icon file not found:", icon)
+		button.icon = preload("res://assets/apps/unknown-app.png")
 
 		
-		
+func remove_icon(button : Button):
+	button.icon = preload("res://assets/apps/add-app.png")
 
 	
 func load_apps() :
