@@ -14,7 +14,6 @@ func _ready() -> void:
 	_menu_window.borderless = true
 	_menu_window.transparent = true
 	_menu_window.transparent_bg = true
-	
 	GameManager.menu_window = _menu_window
 	
 	_menu_window.size = Vector2(120, 312)
@@ -42,7 +41,6 @@ func _on_move_button_up() -> void:
 
 
 func _on_add_apps_pressed() -> void:
-	print("applist window instantiating")
 	var AppWindow = preload("res://scenes/app_list_window.tscn")  # Adjust path if needed
 	var applist_instance = AppWindow.instantiate()
 	get_tree().root.add_child(applist_instance)
@@ -56,10 +54,7 @@ func _on_add_apps_pressed() -> void:
 	
 	var space_on_top = _menu_window.position.y
 	var space_on_bottom = screen_size.y - (_menu_window.position.y + _menu_window.size.y)
-	
-	print(space_on_bottom)
-	print(space_on_top)
-	
+
 	
 	if space_on_bottom >= applist_instance.size.y or space_on_bottom >= space_on_top:
 		GameManager.applist_pos = Vector2(

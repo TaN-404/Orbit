@@ -8,8 +8,8 @@ size = Vector2i(680, 385)
 script = ExtResource("1_8hcat")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 670.0
+offset_bottom = 379.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 

@@ -49,7 +49,6 @@ func _on_pressed() -> void:
 		var space_on_top = GameManager.menu_window.position.y
 		var space_on_bottom = screen_size.y - (GameManager.menu_window.position.y + GameManager.menu_window.size.y)
 		
-		print(GameManager.menu_window.position)
 
 
 		if space_on_bottom >= applist_instance.size.y or space_on_bottom >= space_on_top:

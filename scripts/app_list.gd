@@ -2,6 +2,7 @@ extends Control
 
 signal app_selected(app_name: String, app_path: String, icon_path: String)
 @onready var app_list_window: Window = $"../../.."
+
 @onready var container: VBoxContainer = $PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 @onready var search_box: LineEdit = $PanelContainer/Panel/MarginContainer/VBoxContainer/SearchBar
 @onready var message: Label = $PanelContainer/Panel/MarginContainer/VBoxContainer/Message

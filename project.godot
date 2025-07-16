@@ -19,15 +19,13 @@ config/icon="res://icon.svg"
 
 SpeechListener="*res://scripts/SpeechListener.gd"
 CommandManager="*res://scripts/CommandManager.gd"
-GameManager="*res://scripts/GameManager.gd"
 AppManager="*res://scripts/AppManager.gd"
+GameManager="*res://scripts/GameManager.gd"
 
 [display]
 
 window/size/viewport_width=320
 window/size/viewport_height=320
-window/size/window_width_override=320
-window/size/window_height_override=320
 window/subwindows/embed_subwindows=false
 window/per_pixel_transparency/allowed=true
 
