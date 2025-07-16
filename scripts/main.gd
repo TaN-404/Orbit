@@ -97,6 +97,7 @@ func _on_settings_pressed() -> void:
 		var setting_instance = settings.instantiate()
 		add_child(setting_instance)
 		setting_instance.visible = true
+		#setting_instance.position = Vector2(400,1000)
 
 
 func _on_quick_menu_pressed() -> void:

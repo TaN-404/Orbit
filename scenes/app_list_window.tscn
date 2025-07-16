@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dml2y3cj21k2c" path="res://scenes/app_list.tscn" id="2_y23r1"]
 
 [node name="AppListWindow" type="Window"]
-initial_position = 1
 size = Vector2i(680, 385)
 script = ExtResource("1_8hcat")
 

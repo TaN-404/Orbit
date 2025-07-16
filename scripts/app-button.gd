@@ -43,6 +43,28 @@ func _on_pressed() -> void:
 		get_tree().root.add_child(applist_instance)
 		applist_instance.visible = true
 		
+		var screen_size = DisplayServer.screen_get_size()
+		var app_list_height = applist_instance.size.y if applist_instance.size.y > 0 else 600
+
+		var space_on_top = GameManager.menu_window.position.y
+		var space_on_bottom = screen_size.y - (GameManager.menu_window.position.y + GameManager.menu_window.size.y)
+		
+		print(GameManager.menu_window.position)
+
+
+		if space_on_bottom >= applist_instance.size.y or space_on_bottom >= space_on_top:
+			GameManager.applist_pos = Vector2(
+				GameManager.menu_window.position.x,
+				GameManager.menu_window.position.y + GameManager.menu_window.size.y
+			)
+		else:
+			GameManager.applist_pos = Vector2(
+				GameManager.menu_window.position.x,
+				GameManager.menu_window.position.y - applist_instance.size.y
+			)
+			
+		applist_instance.set_window_position()
+		
 		applist_instance.app_list.app_selected.connect(func(name, path, icon):
 			print("Selected:", name, path, icon)
 			

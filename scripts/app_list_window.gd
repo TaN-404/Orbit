@@ -12,9 +12,13 @@ func _ready() -> void:
 	_app_list_window.transparent_bg = true
 	
 	_app_list_window.size = Vector2(680, 385)
+	#print(GameManager.applist_pos)
+	#_app_list_window.position = Vector2(1000,1000)
 	
 
-
+func set_window_position():
+	_app_list_window.position = GameManager.applist_pos
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if dragging:
