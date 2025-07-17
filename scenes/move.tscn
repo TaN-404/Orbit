@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bva1d1awgtrst"]
+
+[ext_resource type="Script" path="res://scripts/move.gd" id="1_afonj"]
+[ext_resource type="Texture2D" uid="uid://c67u5kjqdfkod" path="res://assets/icons/24x24/move-Stroke-Rounded (1).png" id="1_m075u"]
+
+[node name="Move" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -288.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_m075u")
+script = ExtResource("1_afonj")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -8,10 +8,7 @@ var active_buttons = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	clear.visible = false
-	clear.icon = preload("res://assets/apps/clear.png")
-	
-	
-	##icon check
+
 	
 	var exe = AppManager.button_dictionary[self.name]["exe_path"]
 	var icon = AppManager.button_dictionary[self.name]["exe_icon"]
@@ -21,13 +18,17 @@ func _ready() -> void:
 		if !icon.is_empty():
 			AppManager.update_icon(self, icon)
 	else:
-		self.icon = preload("res://assets/apps/add-app.png")
+		#self.icon = preload("res://assets/icons/add-01-Stroke-Rounded.png")
+		pass
 
 
 func _process(delta: float) -> void:
 	if GameManager.am_edit:
+		self.disabled = true
+		clear.disabled = false
 		clear.visible = true
 	else:
+		self.disabled = false
 		clear.visible = false
 
 
@@ -80,4 +81,3 @@ func _on_clear_pressed() -> void:
 	AppManager.remove_icon(self)
 	active_buttons.erase(self.name)
 	#app_button_active = false
-	

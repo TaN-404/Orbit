@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c73sdfceperq4"]
+[gd_scene load_steps=5 format=3 uid="uid://c73sdfceperq4"]
 
 [ext_resource type="Script" path="res://scripts/app_menu.gd" id="1_nwerr"]
+[ext_resource type="PackedScene" uid="uid://bva1d1awgtrst" path="res://scenes/move.tscn" id="2_a23tt"]
 [ext_resource type="PackedScene" uid="uid://cljqbnqg2m2tn" path="res://scenes/app.tscn" id="3_7auvn"]
+[ext_resource type="PackedScene" uid="uid://ygj2cgylrun0" path="res://scenes/exit.tscn" id="3_gcbj0"]
 
 [node name="AppMenu" type="Window"]
 position = Vector2i(100, 4)
@@ -28,21 +30,11 @@ theme_override_constants/margin_right = 10
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="AddApps" type="Button" parent="Amenu/VBoxContainer/MarginContainer2/HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-text = "+"
-
-[node name="Move" type="Button" parent="Amenu/VBoxContainer/MarginContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Move" parent="Amenu/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("2_a23tt")]
 layout_mode = 2
 
-[node name="Exit" type="Button" parent="Amenu/VBoxContainer/MarginContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Exit" parent="Amenu/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("3_gcbj0")]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "X"
 
 [node name="MarginContainer" type="MarginContainer" parent="Amenu/VBoxContainer"]
 layout_mode = 2
@@ -100,8 +92,4 @@ toggle_mode = true
 text = "Edit
 "
 
-[connection signal="pressed" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/AddApps" to="." method="_on_add_apps_pressed"]
-[connection signal="button_down" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Move" to="." method="_on_move_button_down"]
-[connection signal="button_up" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Move" to="." method="_on_move_button_up"]
-[connection signal="pressed" from="Amenu/VBoxContainer/MarginContainer2/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Amenu/VBoxContainer/MarginContainer3/Edit" to="." method="_on_edit_pressed"]

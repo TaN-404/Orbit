@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://culqyx1lvbpaj"]
+[gd_scene load_steps=5 format=3 uid="uid://culqyx1lvbpaj"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_vcjtg"]
 [ext_resource type="PackedScene" uid="uid://70altd8vbmj5" path="res://scenes/voice_settings.tscn" id="2_3iuto"]
+[ext_resource type="PackedScene" uid="uid://ygj2cgylrun0" path="res://scenes/exit.tscn" id="2_803yg"]
+[ext_resource type="PackedScene" uid="uid://bva1d1awgtrst" path="res://scenes/move.tscn" id="2_jyjy2"]
 
 [node name="Settings" type="Window"]
 initial_position = 1
@@ -54,16 +56,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Settings"
 
-[node name="Move" type="Button" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Move" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_jyjy2")]
 layout_mode = 2
 
-[node name="Exit" type="Button" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Exit" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("2_803yg")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-text = "X"
 
 [node name="SettingsTab" type="TabContainer" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -88,6 +85,3 @@ layout_mode = 2
 metadata/_tab_index = 2
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="button_down" from="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Move" to="." method="_on_move_button_down"]
-[connection signal="button_up" from="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Move" to="." method="_on_move_button_up"]
-[connection signal="pressed" from="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]

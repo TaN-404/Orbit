@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ygj2cgylrun0"]
+
+[ext_resource type="Script" path="res://scripts/exit.gd" id="1_5vxea"]
+[ext_resource type="Texture2D" uid="uid://bh0b3vh2hs0f1" path="res://assets/icons/24x24/cancel-01-Stroke-Rounded.png" id="1_sordo"]
+
+[node name="Exit" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -288.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_sordo")
+script = ExtResource("1_5vxea")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

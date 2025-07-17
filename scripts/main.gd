@@ -20,6 +20,10 @@ var window_dragging := false
 @onready var menu_name: RichTextLabel = $Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/MenuName
 @onready var confirm_message: RichTextLabel = $ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/ConfirmMessage
 
+"""BUTTONS"""
+@onready var voice_mode_button: Button = $MenuController/MarginContainer/HBoxContainer/VoiceModeButton
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -76,14 +80,11 @@ func _on_menu_button_pressed() -> void:
 
 func _on_move_window_button_button_down() -> void:
 	window_dragging = true
-	print("down")
 	drag_offset = _MainWindow.position - (DisplayServer.mouse_get_position())
 
 
 func _on_move_window_button_button_up() -> void:
 	window_dragging = false
-	print("up")
-	
 	
 """MENU BUTTONS"""
 
@@ -101,41 +102,42 @@ func _on_settings_pressed() -> void:
 
 
 func _on_quick_menu_pressed() -> void:
-	if AppMenu != null and !GameManager.app_menu_active:
+	if AppMenu != null:
 		var appm_instance = AppMenu.instantiate()
-		add_child(appm_instance)
-		GameManager.app_menu_active = true
-		appm_instance.visible = true
-		var screen_size = DisplayServer.screen_get_size()
-		var main_window_pos = _MainWindow.position
-		var main_window_size = _MainWindow.size
-		
-		# QuickMenu size (adjust if needed)
-		var app_menu_width = appm_instance.size.x if appm_instance.size.x > 0 else 200
+		if !appm_instance.is_active:
+			add_child(appm_instance)
+			appm_instance.is_active = true
+			appm_instance.visible = true
+			var screen_size = DisplayServer.screen_get_size()
+			var main_window_pos = _MainWindow.position
+			var main_window_size = _MainWindow.size
+			
+			# QuickMenu size (adjust if needed)
+			var app_menu_width = appm_instance.size.x if appm_instance.size.x > 0 else 200
 
-		# Check if QuickMenu fits on the right side
-		var space_on_right = screen_size.x - (main_window_pos.x + main_window_size.x)
-		var space_on_left = main_window_pos.x
+			# Check if QuickMenu fits on the right side
+			var space_on_right = screen_size.x - (main_window_pos.x + main_window_size.x)
+			var space_on_left = main_window_pos.x
 
-		if space_on_right >= app_menu_width or space_on_right >= space_on_left:
-			# Place on the right
-			appm_instance.position = Vector2(
-				main_window_pos.x + main_window_size.x,
-				main_window_pos.y
+			if space_on_right >= app_menu_width or space_on_right >= space_on_left:
+				# Place on the right
+				appm_instance.position = Vector2(
+					main_window_pos.x + main_window_size.x,
+					main_window_pos.y
+				)
+			else:
+				# Place on the left
+				appm_instance.position = Vector2(
+					main_window_pos.x - app_menu_width,
+					main_window_pos.y
+				)
+			
+			# Ensure QuickMenu doesn't go off-screen (clamping)
+			appm_instance.position.x = clamp(
+				appm_instance.position.x,
+				0,
+				screen_size.x - app_menu_width
 			)
-		else:
-			# Place on the left
-			appm_instance.position = Vector2(
-				main_window_pos.x - app_menu_width,
-				main_window_pos.y
-			)
-		
-		# Ensure QuickMenu doesn't go off-screen (clamping)
-		appm_instance.position.x = clamp(
-			appm_instance.position.x,
-			0,
-			screen_size.x - app_menu_width
-		)
 		
 		
 		
@@ -147,3 +149,12 @@ func _on_yes_pressed() -> void:
 
 func _on_no_pressed() -> void:
 	confirm_menu.visible = false
+
+
+
+
+func _on_voice_mode_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		voice_mode_button.icon = preload("res://assets/icons/40x40/mic-01-Stroke-Rounded.png")
+	else:
+		voice_mode_button.icon = preload("res://assets/icons/40x40/mic-off-01-Stroke-Rounded (1).png")

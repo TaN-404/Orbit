@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhdj41w42s6uh"
-path="res://.godot/imported/unknown-app.png-c96e05ba1c0a1b064502f4903100a5e2.ctex"
+uid="uid://coavhktu53yvm"
+path="res://.godot/imported/mic-01-Stroke-Rounded.png-f37b4f487ddea08297e9658189bb47e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/apps/unknown-app.png"
-dest_files=["res://.godot/imported/unknown-app.png-c96e05ba1c0a1b064502f4903100a5e2.ctex"]
+source_file="res://assets/icons/40x40/mic-01-Stroke-Rounded.png"
+dest_files=["res://.godot/imported/mic-01-Stroke-Rounded.png-f37b4f487ddea08297e9658189bb47e2.ctex"]
 
 [params]
 

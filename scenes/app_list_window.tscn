@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dme8sf1qy23s"]
+[gd_scene load_steps=5 format=3 uid="uid://dme8sf1qy23s"]
 
 [ext_resource type="Script" path="res://scripts/app_list_window.gd" id="1_8hcat"]
+[ext_resource type="PackedScene" uid="uid://bva1d1awgtrst" path="res://scenes/move.tscn" id="2_x37oi"]
 [ext_resource type="PackedScene" uid="uid://dml2y3cj21k2c" path="res://scenes/app_list.tscn" id="2_y23r1"]
+[ext_resource type="PackedScene" uid="uid://ygj2cgylrun0" path="res://scenes/exit.tscn" id="3_dgcyh"]
 
 [node name="AppListWindow" type="Window"]
 size = Vector2i(680, 385)
@@ -21,18 +23,11 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Move" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Move" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_x37oi")]
 layout_mode = 2
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Exit" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_dgcyh")]
 layout_mode = 2
-text = "X"
 
 [node name="AppList" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_y23r1")]
 layout_mode = 2
-
-[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Move" to="." method="_on_move_button_down"]
-[connection signal="button_up" from="MarginContainer/VBoxContainer/HBoxContainer/Move" to="." method="_on_move_button_up"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]

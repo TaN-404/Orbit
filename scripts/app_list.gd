@@ -72,6 +72,7 @@ func populate_ui(filter: String = ""):
 		# Add Button
 		var add_button = Button.new()
 		add_button.text = "Add"
+		add_button.icon = preload("res://assets/icons/40x40/add-01-Stroke-Rounded.png")
 		add_button.custom_minimum_size = Vector2(50, 50)
 		add_button.pressed.connect(func():
 			emit_signal("app_selected", app_name, app_info["path"], icon_path)

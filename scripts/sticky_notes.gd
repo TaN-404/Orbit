@@ -1,7 +1,9 @@
 extends Window
 
 @onready var move: Button = $"Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Move"
+@onready var exit: Button = $"Notes-app/VBoxContainer/MarginContainer/HBoxContainer/Exit"
 
+var is_active = false
 var dragging := false
 var drag_offset := Vector2.ZERO
 
@@ -10,22 +12,17 @@ func _ready() -> void:
 	self.transparent_bg = true
 	self.transparent = true
 	self.size = Vector2(400, 400)
+	exit.pass_parent(self)
+	move.pass_parent(self)
 
 	#move.mouse_filter = Control.MOUSE_FILTER_PASS
 
 
 func _process(_delta: float) -> void:
-	if dragging:
-		position = (Vector2(DisplayServer.mouse_get_position()) + drag_offset).round()
-
-func _on_move_button_down() -> void:
-	dragging = true
-	drag_offset = position - DisplayServer.mouse_get_position()
+	pass
 
 
-func _on_move_button_up() -> void:
-	dragging = false
 
 
-func _on_exit_pressed() -> void:
-	queue_free() # Replace with function body.
+#func _on_exit_pressed() -> void:
+	#queue_free() # Replace with function body.

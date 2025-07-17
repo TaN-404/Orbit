@@ -6,7 +6,6 @@ var button_dictionary = {}
 func _ready() -> void:
 	initialize_buttons()
 	load_apps()
-	print(button_dictionary)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,7 +45,6 @@ func save_apps():
 		push_error("Failed to save button data")
 	else:
 		print("All buttons saved successfully")
-	print(config)
 		
 	
 	
@@ -83,11 +81,12 @@ func update_icon(button: Button, icon: String):
 			print("❌ Failed to load valid texture:", icon)
 	else:
 		print("⚠️ Icon file not found:", icon)
-		button.icon = preload("res://assets/apps/unknown-app.png")
+		button.icon = preload("res://assets/icons/40x40/alert-square-Stroke-Rounded.png")
 
 		
 func remove_icon(button : Button):
-	button.icon = preload("res://assets/apps/add-app.png")
+	button.icon = preload("res://assets/icons/40x40/add-01-Stroke-Rounded.png")
+	#pass
 
 	
 func load_apps() :

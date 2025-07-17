@@ -5,32 +5,22 @@ extends Window
 @onready var move: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Move
 @onready var settings_tab: TabContainer = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab
 @onready var app: TabBar = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App
+@onready var exit: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Exit
 
-
+var is_active = false
 var dragging = false
 var drag_offset := Vector2.ZERO
 
 func _ready() -> void:
 	_settings_window.borderless = true
 	_settings_window.size = Vector2(720, 480)
+	
+	exit.pass_parent(self)
+	move.pass_parent(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if dragging:
-		position = (Vector2(DisplayServer.mouse_get_position()) + drag_offset).round()	
-
-
-func _on_exit_pressed() -> void:
-	queue_free() # Replace with function body.
-
-
-func _on_move_button_down() -> void:
-	dragging = true
-	drag_offset = position - DisplayServer.mouse_get_position()
-
-
-func _on_move_button_up() -> void:
-	dragging = false
+	pass
 	
 	
 func open_tab(tab_name: String):

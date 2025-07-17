@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ko18rygn3ha3"]
+[gd_scene load_steps=9 format=3 uid="uid://ko18rygn3ha3"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_38bbg"]
 [ext_resource type="Texture2D" uid="uid://cb7on2oual7dc" path="res://assets/magnet.png" id="1_nlsak"]
 [ext_resource type="PackedScene" uid="uid://bjvtvcq0t0jx4" path="res://scenes/notes.tscn" id="2_7sf68"]
 [ext_resource type="PackedScene" uid="uid://culqyx1lvbpaj" path="res://scenes/settings.tscn" id="3_dvawn"]
 [ext_resource type="PackedScene" uid="uid://c73sdfceperq4" path="res://scenes/app_menu.tscn" id="4_wln7i"]
+[ext_resource type="Texture2D" uid="uid://cvjq8ddr7kupp" path="res://assets/icons/40x40/move-Stroke-Rounded.png" id="6_jir7i"]
+[ext_resource type="Texture2D" uid="uid://bej1f4fvl76d1" path="res://assets/icons/40x40/mic-off-01-Stroke-Rounded (1).png" id="7_iobwv"]
+[ext_resource type="Texture2D" uid="uid://bokccl72jlvsb" path="res://assets/icons/40x40/menu-01-Stroke-Rounded.png" id="8_grw41"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_38bbg")
@@ -45,15 +48,18 @@ size_flags_vertical = 0
 [node name="MoveWindowButton" type="Button" parent="MenuController/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+icon = ExtResource("6_jir7i")
 
 [node name="VoiceModeButton" type="Button" parent="MenuController/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 toggle_mode = true
+icon = ExtResource("7_iobwv")
 
 [node name="MenuButton" type="Button" parent="MenuController/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+icon = ExtResource("8_grw41")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
@@ -123,6 +129,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="ConfirmMenu/PanelContainer"]
 layout_mode = 2
@@ -167,6 +175,7 @@ text = "No"
 
 [connection signal="button_down" from="MenuController/MarginContainer/HBoxContainer/MoveWindowButton" to="." method="_on_move_window_button_button_down"]
 [connection signal="button_up" from="MenuController/MarginContainer/HBoxContainer/MoveWindowButton" to="." method="_on_move_window_button_button_up"]
+[connection signal="toggled" from="MenuController/MarginContainer/HBoxContainer/VoiceModeButton" to="." method="_on_voice_mode_button_toggled"]
 [connection signal="pressed" from="MenuController/MarginContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/QuickMenu" to="." method="_on_quick_menu_pressed"]
 [connection signal="pressed" from="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
