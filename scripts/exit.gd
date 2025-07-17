@@ -15,5 +15,4 @@ func pass_parent(parent):
 	_parent = parent
 
 func _on_pressed() -> void:
-	_parent.is_active = false
 	_parent.queue_free()

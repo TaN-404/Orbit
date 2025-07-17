@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ko18rygn3ha3"]
+[gd_scene load_steps=14 format=3 uid="uid://ko18rygn3ha3"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_38bbg"]
 [ext_resource type="Texture2D" uid="uid://cb7on2oual7dc" path="res://assets/magnet.png" id="1_nlsak"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://cvjq8ddr7kupp" path="res://assets/icons/40x40/move-Stroke-Rounded.png" id="6_jir7i"]
 [ext_resource type="Texture2D" uid="uid://bej1f4fvl76d1" path="res://assets/icons/40x40/mic-off-01-Stroke-Rounded (1).png" id="7_iobwv"]
 [ext_resource type="Texture2D" uid="uid://bokccl72jlvsb" path="res://assets/icons/40x40/menu-01-Stroke-Rounded.png" id="8_grw41"]
+[ext_resource type="Texture2D" uid="uid://cnxa1jd7xpwi7" path="res://assets/icons/24x24/grid-view-Stroke-Rounded.png" id="9_upcyi"]
+[ext_resource type="Texture2D" uid="uid://bud2os3ay73rp" path="res://assets/icons/24x24/settings-02-Stroke-Rounded.png" id="10_mhqij"]
+[ext_resource type="Texture2D" uid="uid://bn6v63udj6ai6" path="res://assets/icons/24x24/logout-01-Stroke-Rounded.png" id="11_bkepa"]
+[ext_resource type="Texture2D" uid="uid://gmpe6s3g6bcw" path="res://assets/icons/24x24/tick-04-Stroke-Rounded.png" id="12_7ofnq"]
+[ext_resource type="Texture2D" uid="uid://lvp3jnpbquby" path="res://assets/icons/24x24/cancel-02-Stroke-Rounded.png" id="13_4exck"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_38bbg")
@@ -61,6 +66,33 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 icon = ExtResource("8_grw41")
 
+[node name="PanelContainer" type="PanelContainer" parent="MenuController"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="MenuController/PanelContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="VoiceCommand" type="Label" parent="MenuController/PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -100,17 +132,20 @@ text = "[center]Menu[/center]"
 [node name="QuickMenu" type="Button" parent="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-text = "Apps"
+icon = ExtResource("9_upcyi")
+icon_alignment = 1
 
 [node name="Settings" type="Button" parent="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-text = "Settings"
+icon = ExtResource("10_mhqij")
+icon_alignment = 1
 
 [node name="Exit" type="Button" parent="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-text = "Exit"
+icon = ExtResource("11_bkepa")
+icon_alignment = 1
 
 [node name="ConfirmMenu" type="Control" parent="."]
 layout_mode = 3
@@ -165,13 +200,14 @@ theme_override_constants/separation = 35
 [node name="Yes" type="Button" parent="ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(65, 30)
 layout_mode = 2
-text = "Yes
-"
+icon = ExtResource("12_7ofnq")
+icon_alignment = 1
 
 [node name="No" type="Button" parent="ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(65, 30)
 layout_mode = 2
-text = "No"
+icon = ExtResource("13_4exck")
+icon_alignment = 1
 
 [connection signal="button_down" from="MenuController/MarginContainer/HBoxContainer/MoveWindowButton" to="." method="_on_move_window_button_button_down"]
 [connection signal="button_up" from="MenuController/MarginContainer/HBoxContainer/MoveWindowButton" to="." method="_on_move_window_button_button_up"]

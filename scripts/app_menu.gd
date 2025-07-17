@@ -5,6 +5,7 @@ extends Window
 @onready var _menu_window : Window = get_window()
 var main : Node2D
 
+@onready var _parent
 var is_active = false
 var dragging = false
 var drag_offset := Vector2.ZERO
@@ -27,7 +28,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+func pass_parent(parent):
+	_parent = parent
 
 func _on_edit_pressed() -> void:
 	GameManager.am_edit = !GameManager.am_edit
+	
+func _exit_tree() -> void:
+	_parent.disabled = false

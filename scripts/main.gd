@@ -4,6 +4,7 @@ extends Node2D
 var notes_instance : Window = null
 var message_number = 0
 var message
+var last_text = ""
 
 var drag_offset := Vector2.ZERO
 var window_dragging := false
@@ -14,14 +15,19 @@ var window_dragging := false
 
 @onready var menu: Control = $Menu
 @onready var confirm_menu: Control = $ConfirmMenu
+@onready var panel_container: PanelContainer = $MenuController/PanelContainer
 
 
 """LABELS"""
 @onready var menu_name: RichTextLabel = $Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/MenuName
 @onready var confirm_message: RichTextLabel = $ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/ConfirmMessage
+@onready var voice_command: Label = $MenuController/PanelContainer/Panel/VoiceCommand
 
 """BUTTONS"""
 @onready var voice_mode_button: Button = $MenuController/MarginContainer/HBoxContainer/VoiceModeButton
+@onready var quick_menu: Button = $Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/QuickMenu
+@onready var settings_button: Button = $Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/Settings
+@onready var exit: Button = $Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/Exit
 
 
 
@@ -37,6 +43,7 @@ func _ready() -> void:
 	
 	menu.visible = false
 	confirm_menu.visible  = false
+	panel_container.visible = false
 	
 	print(_MainWindow.get_size_with_decorations())
 	_MainWindow.size = Vector2(320, 320)
@@ -59,8 +66,11 @@ func _process(delta: float) -> void:
 		if SpeechListener.listener_ready: 
 			message = SpeechListener.get_latest_speech()
 			if message["Number"] > message_number:
-				print(message["Message"])
+				#print(message["Message"])
+				last_text = message["Message"]
 				message_number += 1
+	
+	voice_command.text = last_text
 
 
 func _on_test_pressed() -> void:
@@ -90,6 +100,7 @@ func _on_move_window_button_button_up() -> void:
 
 func _on_exit_pressed() -> void:
 	confirm_menu.visible = true
+	exit.disabled = true
 	
 
 
@@ -98,6 +109,8 @@ func _on_settings_pressed() -> void:
 		var setting_instance = settings.instantiate()
 		add_child(setting_instance)
 		setting_instance.visible = true
+		settings_button.disabled = true
+		setting_instance.pass_parent(settings_button)
 		#setting_instance.position = Vector2(400,1000)
 
 
@@ -106,7 +119,8 @@ func _on_quick_menu_pressed() -> void:
 		var appm_instance = AppMenu.instantiate()
 		if !appm_instance.is_active:
 			add_child(appm_instance)
-			appm_instance.is_active = true
+			quick_menu.disabled = true
+			appm_instance.pass_parent(quick_menu)
 			appm_instance.visible = true
 			var screen_size = DisplayServer.screen_get_size()
 			var main_window_pos = _MainWindow.position
@@ -149,12 +163,21 @@ func _on_yes_pressed() -> void:
 
 func _on_no_pressed() -> void:
 	confirm_menu.visible = false
+	exit.disabled = false
+	
 
 
 
 
 func _on_voice_mode_button_toggled(toggled_on: bool) -> void:
+	SpeechListener.voice_mode = !SpeechListener.voice_mode
 	if toggled_on:
+		panel_container.visible = true
 		voice_mode_button.icon = preload("res://assets/icons/40x40/mic-01-Stroke-Rounded.png")
 	else:
+		panel_container.visible = false
 		voice_mode_button.icon = preload("res://assets/icons/40x40/mic-off-01-Stroke-Rounded (1).png")
+		SpeechListener.kill_process(SpeechListener.speech_process_id)
+		SpeechListener.client_active = false
+		var exe = "speech_client.exe"
+		SpeechListener.cleanup_process(exe)

@@ -7,7 +7,7 @@ extends Window
 @onready var app: TabBar = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App
 @onready var exit: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Exit
 
-var is_active = false
+@onready var _parent
 var dragging = false
 var drag_offset := Vector2.ZERO
 
@@ -22,10 +22,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-	
+func pass_parent(parent):
+	_parent = parent
+
 func open_tab(tab_name: String):
 	print(tab_name)
 	for i in settings_tab.get_tab_count():
 		if settings_tab.get_tab_title(i) == tab_name:
 			settings_tab.current_tab = i
 			break
+			
+func _exit_tree() -> void:
+	_parent.disabled = false

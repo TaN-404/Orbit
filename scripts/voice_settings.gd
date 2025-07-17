@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	SpeechListener.test_voice_mode = !SpeechListener.test_voice_mode
 	
-	if !SpeechListener.test_voice_mode:
+	if  !toggled_on:
 		SpeechListener.kill_process(SpeechListener.speech_process_id)
 		SpeechListener.client_active = false
 		var exe = "speech_client.exe"
