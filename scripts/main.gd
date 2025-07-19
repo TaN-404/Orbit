@@ -15,13 +15,17 @@ var window_dragging := false
 
 @onready var menu: Control = $Menu
 @onready var confirm_menu: Control = $ConfirmMenu
-@onready var panel_container: PanelContainer = $MenuController/PanelContainer
+@onready var panel_container: PanelContainer = $MenuController/MarginContainer2/PanelContainer
+
+"""SPRITES"""
+@onready var border: Sprite2D = $Border
 
 
 """LABELS"""
 @onready var menu_name: RichTextLabel = $Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/MenuName
 @onready var confirm_message: RichTextLabel = $ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/ConfirmMessage
-@onready var voice_command: Label = $MenuController/PanelContainer/Panel/VoiceCommand
+@onready var voice_command: Label = $MenuController/MarginContainer2/PanelContainer/Panel/VoiceCommand
+
 
 """BUTTONS"""
 @onready var voice_mode_button: Button = $MenuController/MarginContainer/HBoxContainer/VoiceModeButton
@@ -53,6 +57,7 @@ func _ready() -> void:
 	#menu_name.text_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	#confirm_message.text_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	menu_name.PRESET_CENTER
+	border.visible = false
 	
 
 
@@ -66,7 +71,7 @@ func _process(delta: float) -> void:
 		if SpeechListener.listener_ready: 
 			message = SpeechListener.get_latest_speech()
 			if message["Number"] > message_number:
-				#print(message["Message"])
+				print(message["Message"])
 				last_text = message["Message"]
 				message_number += 1
 	
@@ -91,10 +96,12 @@ func _on_menu_button_pressed() -> void:
 func _on_move_window_button_button_down() -> void:
 	window_dragging = true
 	drag_offset = _MainWindow.position - (DisplayServer.mouse_get_position())
+	border.show()
 
 
 func _on_move_window_button_button_up() -> void:
 	window_dragging = false
+	border.hide()
 	
 """MENU BUTTONS"""
 
@@ -166,6 +173,11 @@ func _on_no_pressed() -> void:
 	exit.disabled = false
 	
 
+func close_client():
+	SpeechListener.kill_process(SpeechListener.speech_process_id)
+	SpeechListener.client_active = false
+	var exe = "speech_client.exe"
+	SpeechListener.cleanup_process(exe)
 
 
 
@@ -177,7 +189,8 @@ func _on_voice_mode_button_toggled(toggled_on: bool) -> void:
 	else:
 		panel_container.visible = false
 		voice_mode_button.icon = preload("res://assets/icons/40x40/mic-off-01-Stroke-Rounded (1).png")
-		SpeechListener.kill_process(SpeechListener.speech_process_id)
-		SpeechListener.client_active = false
-		var exe = "speech_client.exe"
-		SpeechListener.cleanup_process(exe)
+		close_client()
+
+
+func _exit_tree() -> void:
+	close_client()

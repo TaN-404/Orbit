@@ -6,6 +6,7 @@ var sticky_notes_active = false
 
 """QM FLAGS"""
 var am_edit = false
+var ws_edit = false
 
 
 """AppList"""

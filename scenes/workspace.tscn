@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://hledw8q4twt6"]
+
+[ext_resource type="Script" path="res://scripts/workspace.gd" id="1_0u5jn"]
+[ext_resource type="PackedScene" uid="uid://dflc408bk3xlg" path="res://scenes/workspace_app.tscn" id="2_3q0qo"]
+
+[node name="Workspace" type="Control"]
+custom_minimum_size = Vector2(660, 150)
+layout_mode = 3
+anchor_right = 2.062
+anchor_bottom = 0.469
+offset_right = 0.159973
+offset_bottom = -0.0800018
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0u5jn")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 655.0
+offset_bottom = 145.0
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Workspace"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="WorkspaceApp1" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3q0qo")]
+layout_mode = 2
+
+[node name="WorkspaceApp2" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3q0qo")]
+layout_mode = 2
+
+[node name="WorkspaceApp3" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3q0qo")]
+layout_mode = 2
+
+[node name="WorkspaceApp4" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3q0qo")]
+layout_mode = 2
+
+[node name="WorkspaceApp5" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3q0qo")]
+layout_mode = 2
+
+[node name="WorkspaceApp6" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3q0qo")]
+layout_mode = 2
+
+[node name="EditApps" type="Button" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Edit Apps"
+
+[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/EditApps" to="." method="_on_edit_apps_pressed"]

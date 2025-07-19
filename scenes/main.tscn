@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://ko18rygn3ha3"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_38bbg"]
-[ext_resource type="Texture2D" uid="uid://cb7on2oual7dc" path="res://assets/magnet.png" id="1_nlsak"]
 [ext_resource type="PackedScene" uid="uid://bjvtvcq0t0jx4" path="res://scenes/notes.tscn" id="2_7sf68"]
 [ext_resource type="PackedScene" uid="uid://culqyx1lvbpaj" path="res://scenes/settings.tscn" id="3_dvawn"]
 [ext_resource type="PackedScene" uid="uid://c73sdfceperq4" path="res://scenes/app_menu.tscn" id="4_wln7i"]
+[ext_resource type="Texture2D" uid="uid://3jtkaaoheeq1" path="res://assets/border.png" id="5_srbdk"]
 [ext_resource type="Texture2D" uid="uid://cvjq8ddr7kupp" path="res://assets/icons/40x40/move-Stroke-Rounded.png" id="6_jir7i"]
 [ext_resource type="Texture2D" uid="uid://bej1f4fvl76d1" path="res://assets/icons/40x40/mic-off-01-Stroke-Rounded (1).png" id="7_iobwv"]
 [ext_resource type="Texture2D" uid="uid://bokccl72jlvsb" path="res://assets/icons/40x40/menu-01-Stroke-Rounded.png" id="8_grw41"]
@@ -20,9 +20,11 @@ sticky_notes = ExtResource("2_7sf68")
 settings = ExtResource("3_dvawn")
 AppMenu = ExtResource("4_wln7i")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(158, 188)
-texture = ExtResource("1_nlsak")
+[node name="Border" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(160, 160)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("5_srbdk")
 
 [node name="MenuController" type="Control" parent="."]
 layout_mode = 3
@@ -31,7 +33,6 @@ anchor_right = 1.0
 offset_right = 320.0
 offset_bottom = 320.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="MenuController"]
@@ -66,20 +67,29 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 icon = ExtResource("8_grw41")
 
-[node name="PanelContainer" type="PanelContainer" parent="MenuController"]
+[node name="MarginContainer2" type="MarginContainer" parent="MenuController"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -50.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
-[node name="Panel" type="Panel" parent="MenuController/PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MenuController/MarginContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MenuController/MarginContainer2/PanelContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="VoiceCommand" type="Label" parent="MenuController/PanelContainer/Panel"]
+[node name="VoiceCommand" type="Label" parent="MenuController/MarginContainer2/PanelContainer/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

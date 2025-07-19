@@ -23,7 +23,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if GameManager.am_edit:
+	if GameManager.ws_edit:
 		self.disabled = true
 		clear.disabled = false
 		clear.visible = true
@@ -34,8 +34,7 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	
 	if self.name in active_buttons:
-		var exe_path = AppManager.button_dictionary[self.name]["exe_path"]
-		var process_id = AppManager.open_app(exe_path)
+		pass
 		
 	else:
 		var AppWindow = preload("res://scenes/app_list_window.tscn")  # Adjust path if needed
@@ -67,8 +66,6 @@ func _on_pressed() -> void:
 		applist_instance.app_list.app_selected.connect(func(name, path, icon):
 			print("Selected:", name, path, icon)
 			
-			AppManager.update_button(self.name,path,icon)
-			AppManager.update_icon(self, icon)
 			active_buttons.append(self.name)
 
 		)
@@ -76,7 +73,8 @@ func _on_pressed() -> void:
 
 
 func _on_clear_pressed() -> void:
-	AppManager.remove_button(self.name)
-	AppManager.remove_icon(self)
-	active_buttons.erase(self.name)
+	#AppManager.remove_button(self.name)
+	#AppManager.remove_icon(self)
+	#active_buttons.erase(self.name)
+	print("clear")
 	#app_button_active = false
