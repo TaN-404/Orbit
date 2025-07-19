@@ -23,6 +23,7 @@ func _ready() -> void:
 	exit.pass_parent(self)
 	move.pass_parent(self)
 	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -35,4 +36,5 @@ func _on_edit_pressed() -> void:
 	GameManager.am_edit = !GameManager.am_edit
 	
 func _exit_tree() -> void:
+	GameManager.am_edit = false
 	_parent.disabled = false

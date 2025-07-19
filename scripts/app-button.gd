@@ -4,22 +4,26 @@ extends Button
 #var app_button_active = false
 
 var active_buttons = []
+var app_name
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	clear.visible = false
+	
 
+	app_name = AppManager.get_app_name_by_slot(self.name)
 	
-	var exe = AppManager.button_dictionary[self.name]["exe_path"]
-	var icon = AppManager.button_dictionary[self.name]["exe_icon"]
-	
-	if !exe.is_empty():
-		active_buttons.append(self.name)
-		if !icon.is_empty():
-			AppManager.update_icon(self, icon)
-	else:
-		#self.icon = preload("res://assets/icons/add-01-Stroke-Rounded.png")
-		pass
+	if app_name != null:
+		var app_exe = AppManager.configured_apps_data[app_name]["exe_path"]
+		var app_icon = AppManager.configured_apps_data[app_name]["icon_path"]
+		
+		if !app_exe.is_empty():
+			active_buttons.append(self.name)
+			if !app_icon.is_empty():
+				AppManager.update_icon(self, app_icon)
+		else:
+			#self.icon = preload("res://assets/icons/add-01-Stroke-Rounded.png")
+			pass
 
 
 func _process(delta: float) -> void:
@@ -35,7 +39,7 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	
 	if self.name in active_buttons:
-		var exe_path = AppManager.button_dictionary[self.name]["exe_path"]
+		var exe_path = AppManager.configured_apps_data[app_name]["exe_path"]
 		var process_id = AppManager.open_app(exe_path)
 		
 	else:
@@ -65,11 +69,11 @@ func _on_pressed() -> void:
 			
 		applist_instance.set_window_position()
 		
-		applist_instance.app_list.app_selected.connect(func(name, path, icon):
-			print("Selected:", name, path, icon)
+		applist_instance.app_list.app_selected.connect(func(a_name, path, icon):
 			
-			AppManager.update_button(self.name,path,icon)
+			AppManager.update_slot(a_name, self.name)
 			AppManager.update_icon(self, icon)
+			app_name = a_name
 			active_buttons.append(self.name)
 
 		)
@@ -77,7 +81,7 @@ func _on_pressed() -> void:
 
 
 func _on_clear_pressed() -> void:
-	AppManager.remove_button(self.name)
-	AppManager.remove_icon(self)
+	AppManager.remove_slot(app_name)
+	AppManager.remove_icon(self,)
 	active_buttons.erase(self.name)
 	#app_button_active = false

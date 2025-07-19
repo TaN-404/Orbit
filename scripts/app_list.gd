@@ -76,6 +76,7 @@ func populate_ui(filter: String = ""):
 		add_button.custom_minimum_size = Vector2(50, 50)
 		add_button.pressed.connect(func():
 			emit_signal("app_selected", app_name, app_info["path"], icon_path)
+			print(app_name)
 			app_list_window.queue_free()
 		)
 		hbox.add_child(add_button)
