@@ -1,5 +1,7 @@
 extends Window
 
+const FIND_APP = "res://bin/find_exe.exe"
+
 @onready var add_app_window : Window = get_window()
 @onready var move: Button = $AddApp/VBoxContainer/HBoxContainer/Move
 @onready var exit: Button = $AddApp/VBoxContainer/HBoxContainer/Exit
@@ -31,5 +33,13 @@ func _exit_tree() -> void:
 
 
 func _on_confirm_pressed() -> void:
-	print(addexe.text)
+	add_new_app(addexe.text)
 	queue_free()
+
+		
+func add_new_app(exe_path : String):
+	print(exe_path)
+	var output
+	var err = OS.execute_with_pipe(FIND_APP, [exe_path])
+	print(err)
+	_parent.app_added()

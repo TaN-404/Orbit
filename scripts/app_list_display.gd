@@ -5,10 +5,6 @@ signal app_selected(app_name: String, app_path: String, icon_path: String)
 @onready var search_box: LineEdit = $PanelContainer/Panel/MarginContainer/VBoxContainer/SearchBar
 @onready var message: Label = $PanelContainer/Panel/MarginContainer/VBoxContainer/Message
 
-
-
-
-
 var app_list = {}
 const BASE_PATH := "res://bin/"
 const JSON_PATH := BASE_PATH + "filtered_apps.json"
@@ -21,7 +17,8 @@ func _ready():
 
 func load_app_list():
 	if not FileAccess.file_exists(JSON_PATH):
-		push_error("❌ filtered_apps.json not found at: " + JSON_PATH)
+		#push_error("❌ filtered_apps.json not found at: " + JSON_PATH)
+		AppManager.get_apps()
 		return
 
 	var file = FileAccess.open(JSON_PATH, FileAccess.READ)
@@ -30,6 +27,13 @@ func load_app_list():
 		app_list = JSON.parse_string(text)
 	else:
 		push_error("❌ Failed to open filtered_apps.json")
+		
+		
+
+func refresh_list():
+	print("refresh")
+	load_app_list()
+	populate_ui()
 
 
 func populate_ui(filter: String = ""):

@@ -10,7 +10,7 @@ extends Window
 @onready var settings_tab: TabContainer = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab
 @onready var app: TabBar = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App
 @onready var exit: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Exit
-@onready var app_list: Control = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/AppList
+@onready var app_list_display: Control = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer/AppListDisplay
 @onready var add_app: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer/AddApp
 
 @onready var _parent
@@ -49,6 +49,7 @@ func _on_add_app_pressed() -> void:
 		add_child(_add_app_scene)
 		_add_app_scene.visible = true
 		_add_app_scene.pass_parent(self)
-		#_add_app_scene.
 		add_app.disabled = true
-		
+
+func app_added():
+	app_list_display.refresh_list()

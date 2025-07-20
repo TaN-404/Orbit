@@ -15,26 +15,47 @@ const BASE_PATH := "res://bin/"
 const JSON_PATH := BASE_PATH + "filtered_apps.json"
 const ICON_DIR := BASE_PATH + "app_icons/"
 
+
 func _ready():
+	if FileAccess.file_exists(JSON_PATH):
+		print("file found")
+		
 	load_app_list()
-	search_box.text_changed.connect(on_search_changed)
 	populate_ui()
+	search_box.text_changed.connect(on_search_changed)
+	
 
 func load_app_list():
 	if not FileAccess.file_exists(JSON_PATH):
-		push_error("❌ filtered_apps.json not found at: " + JSON_PATH)
+		#push_error("❌ filtered_apps.json not found at: " + JSON_PATH)
+		AppManager.get_apps()
 		return
-
+		
 	var file = FileAccess.open(JSON_PATH, FileAccess.READ)
 	if file:
 		var text = file.get_as_text()
 		app_list = JSON.parse_string(text)
 	else:
 		push_error("❌ Failed to open filtered_apps.json")
+	
 		
 
 func pass_state(node_state):
 	state = node_state
+	
+func read_file():
+	if FileAccess.file_exists(JSON_PATH):
+		var file = FileAccess.open(JSON_PATH, FileAccess.READ)
+		if file:
+			var text = file.get_as_text()
+			app_list = JSON.parse_string(text)
+		else:
+			push_error("❌ Failed to open filtered_apps.json")
+	
+func refresh_list():
+	print("refresh")
+	load_app_list()
+	populate_ui()	
 
 
 func populate_ui(filter: String = ""):
@@ -75,19 +96,18 @@ func populate_ui(filter: String = ""):
 		hbox.add_child(label)
 
 		# Add Button
-		if state:
-			var add_button = Button.new()
-			add_button.text = "Add"
-			add_button.icon = preload("res://assets/icons/40x40/add-01-Stroke-Rounded.png")
-			add_button.custom_minimum_size = Vector2(50, 50)
-			add_button.pressed.connect(func():
-				emit_signal("app_selected", app_name, app_info["path"], icon_path)
-				print(app_name)
-				app_list_window.queue_free()
-			)
-			hbox.add_child(add_button)
+		var add_button = Button.new()
+		add_button.text = "Add"
+		add_button.icon = preload("res://assets/icons/40x40/add-01-Stroke-Rounded.png")
+		add_button.custom_minimum_size = Vector2(50, 50)
+		add_button.pressed.connect(func():
+			emit_signal("app_selected", app_name, app_info["path"], icon_path)
+			print(app_name)
+			app_list_window.queue_free()
+		)
+		hbox.add_child(add_button)
 
-			container.add_child(hbox)
+		container.add_child(hbox)
 
 		var sep = HSeparator.new()
 		sep.size_flags_horizontal = Control.SIZE_EXPAND_FILL
