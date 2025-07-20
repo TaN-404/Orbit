@@ -8,6 +8,7 @@
 [node name="AppMenu" type="Window"]
 position = Vector2i(100, 4)
 size = Vector2i(120, 312)
+always_on_top = true
 script = ExtResource("1_nwerr")
 
 [node name="Amenu" type="Control" parent="."]

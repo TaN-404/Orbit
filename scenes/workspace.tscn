@@ -76,6 +76,6 @@ layout_mode = 2
 
 [node name="EditApps" type="Button" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Edit Apps"
+text = "Clear Apps"
 
 [connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/EditApps" to="." method="_on_edit_apps_pressed"]

@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ygj2cgylrun0" path="res://scenes/exit.tscn" id="3_dgcyh"]
 
 [node name="AppListWindow" type="Window"]
+initial_position = 1
 size = Vector2i(680, 385)
+always_on_top = true
 script = ExtResource("1_8hcat")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

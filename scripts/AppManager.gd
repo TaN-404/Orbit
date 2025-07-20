@@ -3,22 +3,28 @@ const BASE_PATH := "res://bin/"
 const GAME_DATA_PATH = "user://config_files"
 const APPS_CONFIG_PATH = "user://config_files/app_menu.cfg"
 const FILTERED_APPS_JSON_PATH = "res://bin/filtered_apps.json"
-
-# --- Constants for App Attribute Keys ---
-const APP_ATTR_EXE_PATH = "exe_path"
-const APP_ATTR_ICON_PATH = "icon_path"
-const APP_ATTR_CATEGORY = "category"
-const APP_ATTR_WORKSPACES = "workspaces"
-const APP_ATTR_QUICK_MENU_SLOT = "quick_menu_slot"
+#
+## --- Constants for App Attribute Keys ---
+#const APP_ATTR_EXE_PATH = "exe_path"
+#const APP_ATTR_ICON_PATH = "icon_path"
+#const APP_ATTR_CATEGORY = "category"
+#const APP_ATTR_WORKSPACES = "workspaces"
+#const APP_ATTR_QUICK_MENU_SLOT = "quick_menu_slot"
 
 var configured_apps_data = {}
+var workspace_data = {}
+
+var test_data = {
+	1:["app1", "app2"],
+	2:["app3"]
+}
 
 func _ready() -> void:
 	check_and_create_directories()
 	load_app_configurations()
 	import_filtered_filtered_apps_from_json()
 	#print(configured_apps_data)
-	#test()
+	#workspace_data = get_apps_by_workspace()
 	
 
 func check_and_create_directories() -> void:
@@ -137,6 +143,108 @@ func import_filtered_filtered_apps_from_json():
 	# After processing all apps from the JSON, save the combined data back to disk.
 	save_app_configurations()
 	
+	
+#func add_app_to_workspace(app_name: String, workspace_id: int) -> void:
+	#if not configured_apps_data.has(app_name):
+		#push_error("App not found in configured_apps_data: " + app_name)
+		#return
+#
+	## Ensure the workspace_id is valid (1, 2, or 3)
+	#if workspace_id < 1 or workspace_id > 3:
+		#push_warning("Invalid workspace_id: " + str(workspace_id))
+		#return
+#
+	#var app_data = configured_apps_data[app_name]
+#
+	## Initialize workspaces list if missing or not a valid array
+	#if not app_data.has("workspaces") or typeof(app_data["workspaces"]) != TYPE_ARRAY:
+		#app_data["workspaces"] = []
+#
+	## Only add if not already present
+	#if workspace_id not in app_data["workspaces"]:
+		#app_data["workspaces"].append(workspace_id)
+		#print("✅ Added workspace", workspace_id, "to app:", app_name)
+		#save_app_configurations()
+	#else:
+		#print("⚠️ App already in workspace", workspace_id, ":", app_name)
+		#
+		#
+		#
+#func remove_app_from_workspace(app_name: String, workspace_id: int) -> void:
+	#if not configured_apps_data.has(app_name):
+		#push_error("App not found in configured_apps_data: " + app_name)
+		#return
+#
+	## Ensure the workspace_id is valid (1, 2, or 3)
+	#if workspace_id < 1 or workspace_id > 3:
+		#push_warning("Invalid workspace_id: " + str(workspace_id))
+		#return
+#
+	#var app_data = configured_apps_data[app_name]
+#
+	## Validate workspaces array
+	#if not app_data.has("workspaces") or typeof(app_data["workspaces"]) != TYPE_ARRAY:
+		#push_warning("No workspaces found for app: " + app_name)
+		#return
+#
+	## Remove if present
+	#if workspace_id in app_data["workspaces"]:
+		#app_data["workspaces"].erase(workspace_id)
+		#print("🗑️ Removed workspace", workspace_id, "from app:", app_name)
+		#save_app_configurations()
+	#else:
+		#print("⚠️ App is not in workspace", workspace_id, ":", app_name)
+#
+		#
+		#
+##func get_apps_by_workspace() -> Dictionary:
+	##var workspace_map := {
+		##1: [],
+		##2: [],
+		##3: []
+	##}
+##
+	##for app_name in configured_apps_data.keys():
+		##var workspaces = configured_apps_data[app_name].get("workspaces", [])
+		##if typeof(workspaces) == TYPE_ARRAY:
+			##for ws_id in workspaces:
+				##if workspace_map.has(ws_id):
+					##workspace_map[ws_id].append(app_name)
+##
+	##return workspace_map
+	#
+	#
+#
+#
+#func add_app_to_workspace_structure(workspace_id: int, workspace_app_name: String, app_name: String):
+	## Ensure the app exists in config and belongs to this workspace
+	#var workspace_map = {}
+	#if not configured_apps_data.has(app_name):
+		#push_warning("⚠️ App not found in config: " + app_name)
+		#return
+#
+	#var workspaces = configured_apps_data[app_name].get("workspaces", [])
+	#if typeof(workspaces) != TYPE_ARRAY or workspace_id not in workspaces:
+		#push_warning("⚠️ App " + app_name + " is not in workspace " + str(workspace_id))
+		#return
+#
+	## Initialize workspace_id section
+	#if not workspace_map.has(workspace_id):
+		#workspace_map[workspace_id] = {}
+#
+	## Initialize the workspace app slot
+	#if not workspace_map[workspace_id].has(workspace_app_name):
+		#workspace_map[workspace_id][workspace_app_name] = []
+#
+	## Add if not already present
+	#if app_name not in workspace_map[workspace_id][workspace_app_name]:
+		#workspace_map[workspace_id][workspace_app_name].append(app_name)
+	#
+	#return workspace_map
+
+
+
+	
 
 func check_slot(slot_name : String):
 	for app_name in configured_apps_data.keys():
@@ -208,11 +316,5 @@ func open_app(exe_path):
 		var process_id = output["pid"]
 		return process_id
 	
-func test(slot_name):
-	#var slot_name = "App1"
-	for app_name in configured_apps_data.keys():
-		if configured_apps_data[app_name].get("quick_menu_slot") == slot_name:
-			return app_name
-			
-		else:
-			print("app_name")
+
+		

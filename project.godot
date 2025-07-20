@@ -21,6 +21,7 @@ SpeechListener="*res://scripts/SpeechListener.gd"
 CommandManager="*res://scripts/CommandManager.gd"
 AppManager="*res://scripts/AppManager.gd"
 GameManager="*res://scripts/GameManager.gd"
+WorkspaceManager="*res://scripts/WorkspaceManager.gd"
 
 [display]
 

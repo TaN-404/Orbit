@@ -82,6 +82,6 @@ func _on_pressed() -> void:
 
 func _on_clear_pressed() -> void:
 	AppManager.remove_slot(app_name)
-	AppManager.remove_icon(self,)
+	AppManager.remove_icon(self)
 	active_buttons.erase(self.name)
 	#app_button_active = false

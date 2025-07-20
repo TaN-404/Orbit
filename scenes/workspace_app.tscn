@@ -22,4 +22,5 @@ grow_horizontal = 0
 icon = ExtResource("3_jwj5p")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]

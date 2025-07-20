@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/voice_settings.gd" id="1_4w7yf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt5g5"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="VoiceSettings" type="Control"]
 layout_mode = 3
@@ -42,6 +43,7 @@ layout_mode = 2
 [node name="TestVoiceCommands" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Voice Command  Test"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -55,13 +57,13 @@ text = "Test Commands
 "
 
 [node name="Panel" type="Panel" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(310, 50)
+custom_minimum_size = Vector2(310, 30)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_jt5g5")
 
 [node name="VoiceCommand" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/Panel"]
-custom_minimum_size = Vector2(310, 0)
+custom_minimum_size = Vector2(310, 20)
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -71,6 +73,7 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "voice command"
 horizontal_alignment = 1
 
