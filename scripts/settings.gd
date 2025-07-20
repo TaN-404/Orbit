@@ -2,10 +2,16 @@ extends Window
 
 @onready var _settings_window : Window =  get_window()
 # Called when the node enters the scene tree for the first time.
+
+@export var add_app_scene : PackedScene
+
+
 @onready var move: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Move
 @onready var settings_tab: TabContainer = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab
 @onready var app: TabBar = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App
 @onready var exit: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Exit
+@onready var app_list: Control = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/AppList
+@onready var add_app: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer/AddApp
 
 @onready var _parent
 var dragging = false
@@ -34,3 +40,15 @@ func open_tab(tab_name: String):
 			
 func _exit_tree() -> void:
 	_parent.disabled = false
+
+
+func _on_add_app_pressed() -> void:
+	print("pressed")
+	if add_app_scene != null:
+		var _add_app_scene = add_app_scene.instantiate()
+		add_child(_add_app_scene)
+		_add_app_scene.visible = true
+		_add_app_scene.pass_parent(self)
+		#_add_app_scene.
+		add_app.disabled = true
+		

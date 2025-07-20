@@ -1,11 +1,13 @@
 extends Control
 
 signal app_selected(app_name: String, app_path: String, icon_path: String)
-@onready var app_list_window: Window = $"../../.."
-
 @onready var container: VBoxContainer = $PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 @onready var search_box: LineEdit = $PanelContainer/Panel/MarginContainer/VBoxContainer/SearchBar
 @onready var message: Label = $PanelContainer/Panel/MarginContainer/VBoxContainer/Message
+@onready var state : bool
+
+@onready var app_list_window: Window = $"../../.."
+
 
 
 var app_list = {}
@@ -30,7 +32,10 @@ func load_app_list():
 	else:
 		push_error("❌ Failed to open filtered_apps.json")
 		
-		
+
+func pass_state(node_state):
+	state = node_state
+
 
 func populate_ui(filter: String = ""):
 	# Clear all existing app rows
@@ -70,18 +75,19 @@ func populate_ui(filter: String = ""):
 		hbox.add_child(label)
 
 		# Add Button
-		var add_button = Button.new()
-		add_button.text = "Add"
-		add_button.icon = preload("res://assets/icons/40x40/add-01-Stroke-Rounded.png")
-		add_button.custom_minimum_size = Vector2(50, 50)
-		add_button.pressed.connect(func():
-			emit_signal("app_selected", app_name, app_info["path"], icon_path)
-			print(app_name)
-			app_list_window.queue_free()
-		)
-		hbox.add_child(add_button)
+		if state:
+			var add_button = Button.new()
+			add_button.text = "Add"
+			add_button.icon = preload("res://assets/icons/40x40/add-01-Stroke-Rounded.png")
+			add_button.custom_minimum_size = Vector2(50, 50)
+			add_button.pressed.connect(func():
+				emit_signal("app_selected", app_name, app_info["path"], icon_path)
+				print(app_name)
+				app_list_window.queue_free()
+			)
+			hbox.add_child(add_button)
 
-		container.add_child(hbox)
+			container.add_child(hbox)
 
 		var sep = HSeparator.new()
 		sep.size_flags_horizontal = Control.SIZE_EXPAND_FILL

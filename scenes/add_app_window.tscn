@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy338dp8pyadm"]
+
+[ext_resource type="Script" path="res://scripts/add_app_window.gd" id="1_eddrs"]
+[ext_resource type="PackedScene" uid="uid://bva1d1awgtrst" path="res://scenes/move.tscn" id="2_3j0cy"]
+[ext_resource type="PackedScene" uid="uid://ygj2cgylrun0" path="res://scenes/exit.tscn" id="3_cnew8"]
+
+[node name="AddAppWindow" type="Window"]
+initial_position = 1
+size = Vector2i(300, 232)
+always_on_top = true
+script = ExtResource("1_eddrs")
+
+[node name="AddApp" type="Control" parent="."]
+custom_minimum_size = Vector2(300, 232)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddApp"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddApp/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Move" parent="AddApp/VBoxContainer/HBoxContainer" instance=ExtResource("2_3j0cy")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Exit" parent="AddApp/VBoxContainer/HBoxContainer" instance=ExtResource("3_cnew8")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="AddApp/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="AddApp/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddApp/VBoxContainer/PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddApp/VBoxContainer/PanelContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="AddApp/VBoxContainer/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Add  App"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="AddApp/VBoxContainer/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Addexe" type="LineEdit" parent="AddApp/VBoxContainer/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Add .exe path"
+
+[node name="MarginContainer" type="MarginContainer" parent="AddApp/VBoxContainer/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Confirm" type="Button" parent="AddApp/VBoxContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Confirm
+"
+
+[connection signal="pressed" from="AddApp/VBoxContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/Confirm" to="." method="_on_confirm_pressed"]

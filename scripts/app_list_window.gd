@@ -19,7 +19,6 @@ func _ready() -> void:
 	#_app_list_window.position = Vector2(1000,1000)
 	exit.pass_parent(self)
 	move.pass_parent(self)
-	
 
 func set_window_position():
 	_app_list_window.position = GameManager.applist_pos

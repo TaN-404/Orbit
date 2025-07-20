@@ -1,16 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://culqyx1lvbpaj"]
+[gd_scene load_steps=8 format=3 uid="uid://culqyx1lvbpaj"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_vcjtg"]
 [ext_resource type="PackedScene" uid="uid://70altd8vbmj5" path="res://scenes/voice_settings.tscn" id="2_3iuto"]
+[ext_resource type="PackedScene" uid="uid://dy338dp8pyadm" path="res://scenes/add_app_window.tscn" id="2_8q7cj"]
 [ext_resource type="PackedScene" uid="uid://ygj2cgylrun0" path="res://scenes/exit.tscn" id="2_803yg"]
 [ext_resource type="PackedScene" uid="uid://bva1d1awgtrst" path="res://scenes/move.tscn" id="2_jyjy2"]
 [ext_resource type="PackedScene" uid="uid://hledw8q4twt6" path="res://scenes/workspace.tscn" id="5_dete2"]
+[ext_resource type="PackedScene" uid="uid://cfbipm00rhpcp" path="res://scenes/app_list_display.tscn" id="5_k2mvr"]
 
 [node name="Settings" type="Window"]
 initial_position = 1
 size = Vector2i(720, 480)
 always_on_top = true
 script = ExtResource("1_vcjtg")
+add_app_scene = ExtResource("2_8q7cj")
 
 [node name="Settings_control" type="Control" parent="."]
 layout_mode = 3
@@ -67,7 +70,7 @@ layout_mode = 2
 [node name="SettingsTab" type="TabContainer" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 3
+current_tab = 2
 
 [node name="General" type="TabBar" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab"]
 visible = false
@@ -83,11 +86,33 @@ metadata/_tab_index = 1
 layout_mode = 1
 
 [node name="App" type="TabBar" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
+[node name="MarginContainer" type="MarginContainer" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer"]
+layout_mode = 2
+
+[node name="AppListDisplay" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer" instance=ExtResource("5_k2mvr")]
+layout_mode = 2
+
+[node name="AddApp" type="Button" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Add App"
+
 [node name="Workspaces" type="TabBar" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
@@ -128,3 +153,4 @@ layout_mode = 2
 layout_mode = 2
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer/AddApp" to="." method="_on_add_app_pressed"]

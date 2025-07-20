@@ -10,6 +10,7 @@ var ws_edit = false
 
 
 """AppList"""
+var app_list_standalone : bool
 var applist_pos : Vector2
 var menu_window : Window
 # Called when the node enters the scene tree for the first time.

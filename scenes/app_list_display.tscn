@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfbipm00rhpcp"]
+
+[ext_resource type="Script" path="res://scripts/app_list_display.gd" id="1_mm5m7"]
+
+[node name="AppListDisplay" type="Control"]
+custom_minimum_size = Vector2(660, 303)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 340.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mm5m7")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+custom_minimum_size = Vector2(660, 303)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel"]
+custom_minimum_size = Vector2(640, 303)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 2.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SearchBar" type="LineEdit" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(640, 32)
+layout_mode = 2
+placeholder_text = "Search Apps"
+
+[node name="Message" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(640, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "No Matches Found"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
