@@ -69,10 +69,11 @@ func _on_pressed() -> void:
 			
 		applist_instance.set_window_position()
 		
-		applist_instance.app_list.app_selected.connect(func(a_name, path, icon):
+		applist_instance.app_list.app_selected.connect(func(a_name, path, app_icon):
 			
+			print(a_name ,path , app_icon)
 			AppManager.update_slot(a_name, self.name)
-			AppManager.update_icon(self, icon)
+			AppManager.update_icon(self, app_icon)
 			app_name = a_name
 			active_buttons.append(self.name)
 
@@ -81,7 +82,8 @@ func _on_pressed() -> void:
 
 
 func _on_clear_pressed() -> void:
-	AppManager.remove_slot(app_name)
-	AppManager.remove_icon(self)
-	active_buttons.erase(self.name)
+	if !app_name.is_empty():
+		AppManager.remove_slot(app_name)
+		AppManager.remove_icon(self)
+		active_buttons.erase(self.name)
 	#app_button_active = false

@@ -37,9 +37,6 @@ func _on_confirm_pressed() -> void:
 	queue_free()
 
 		
-func add_new_app(exe_path : String):
-	print(exe_path)
-	var output
-	var err = OS.execute_with_pipe(FIND_APP, [exe_path])
-	print(err)
+func add_new_app(new_app_path: String):
+	AppManager.add_app(new_app_path)
 	_parent.app_added()

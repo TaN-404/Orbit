@@ -11,13 +11,14 @@ signal app_selected(app_name: String, app_path: String, icon_path: String)
 
 
 var app_list = {}
-const BASE_PATH := "res://bin/"
+const BASE_PATH2 = "res://bin/"
+const BASE_PATH := "user://app_data/"
 const JSON_PATH := BASE_PATH + "filtered_apps.json"
 const ICON_DIR := BASE_PATH + "app_icons/"
 
 
 func _ready():
-	if FileAccess.file_exists(JSON_PATH):
+	if FileAccess.file_exists(AppManager.FILTERED_APPS_JSON_PATH):
 		print("file found")
 		
 	load_app_list()
@@ -26,12 +27,13 @@ func _ready():
 	
 
 func load_app_list():
-	if not FileAccess.file_exists(JSON_PATH):
+	if not FileAccess.file_exists(AppManager.FILTERED_APPS_JSON_PATH):
 		#push_error("❌ filtered_apps.json not found at: " + JSON_PATH)
 		AppManager.get_apps()
+		read_file()
 		return
 		
-	var file = FileAccess.open(JSON_PATH, FileAccess.READ)
+	var file = FileAccess.open(AppManager.FILTERED_APPS_JSON_PATH, FileAccess.READ)
 	if file:
 		var text = file.get_as_text()
 		app_list = JSON.parse_string(text)
@@ -44,8 +46,8 @@ func pass_state(node_state):
 	state = node_state
 	
 func read_file():
-	if FileAccess.file_exists(JSON_PATH):
-		var file = FileAccess.open(JSON_PATH, FileAccess.READ)
+	if FileAccess.file_exists(AppManager.FILTERED_APPS_JSON_PATH):
+		var file = FileAccess.open(AppManager.FILTERED_APPS_JSON_PATH, FileAccess.READ)
 		if file:
 			var text = file.get_as_text()
 			app_list = JSON.parse_string(text)
@@ -78,14 +80,34 @@ func populate_ui(filter: String = ""):
 		hbox.custom_minimum_size = Vector2(0, 50)
 
 		# Icon
-		var icon_path = BASE_PATH + app_info["icon"]
+		var icon_path  = app_info["icon"]
+		print(icon_path)
 		var icon = TextureRect.new()
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.custom_minimum_size = Vector2(50, 50)
-		if FileAccess.file_exists(icon_path):
-			var tex = load(icon_path)
-			if tex:
-				icon.texture = tex
+		if FileAccess.file_exists(icon_path): # You can still use this check if you want, but Image.load() also checks existence.
+			print("File exists, attempting to load image data...")
+			var image = Image.new()
+			var load_error = image.load(icon_path) # Attempt to load the raw image data
+
+			if load_error == OK: # Check if loading the image data was successful
+				var tex = ImageTexture.create_from_image(image) # Create a Texture from the Image data
+				if tex:
+					icon.texture = tex
+					print("Texture added successfully using ImageTexture!")
+			else:
+				var tex = load(icon_path)
+				if tex and tex is Texture2D:
+					var image_new = tex.get_image()
+					if image_new:
+						image_new.resize(40, 40, Image.INTERPOLATE_LANCZOS)
+						var scaled_tex = ImageTexture.create_from_image(image)
+						icon.texture = scaled_tex
+					else:
+						print("❌ Failed to get image from texture:", icon_path)
+				else:
+					print("❌ Failed to load valid texture:", icon_path)
+					
 		hbox.add_child(icon)
 
 		# Label

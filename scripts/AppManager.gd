@@ -3,12 +3,17 @@ extends Node
 """SIGNAlS"""
 signal app_added
 
-const SEARCH_APPS = "res://bin/search.exe"
-const FIND_APP = "res://bin/find_exe.exe"
+"""CLIENTS"""
+const SEARCH_APPS = "res://bin/search_client.exe"
+const ADD_APP = "res://bin/add_app.exe"
+
+
+const BASE_USER_PATH = "user://"
 const BASE_PATH := "res://bin/"
 const GAME_DATA_PATH = "user://config_files"
 const APPS_CONFIG_PATH = "user://config_files/app_menu.cfg"
-const FILTERED_APPS_JSON_PATH = "res://bin/filtered_apps.json"
+const FILTERED_APPS_JSON_PATH = "user://app_data/filtered_apps.json"
+const APP_ICON_PATH = "user://app_data/app_icons/"
 
 var configured_apps_data = {}
 var workspace_data = {}
@@ -31,6 +36,11 @@ func check_and_create_directories() -> void:
 		if not dir.dir_exists("config_files"):
 			dir.make_dir("config_files")
 			print("Created directory: config_files")
+	if dir:
+		# Check and create game_data directory
+		if not dir.dir_exists("app_data"):
+			dir.make_dir("app_data")
+			print("Created directory: app_data")
 			
 func load_app_configurations():
 	var config = ConfigFile.new()
@@ -107,7 +117,7 @@ func import_filtered_filtered_apps_from_json():
 
 			if app_details is Dictionary and app_details.has("path") and app_details.has("icon"):
 				var exe_path = app_details["path"]
-				var icon_path = BASE_PATH + app_details["icon"]
+				var icon_path = app_details["icon"]
 
 				if configured_apps_data.has(app_name):
 					var existing_data = configured_apps_data[app_name]
@@ -149,8 +159,37 @@ func check_slot(slot_name : String):
 			return false
 
 func get_apps():
-	OS.execute_with_pipe(SEARCH_APPS,[])
+	var full_path = ProjectSettings.globalize_path(BASE_USER_PATH)
+	var full_exe_path = ProjectSettings.globalize_path(SEARCH_APPS)
+	var arguments = []
+	arguments.append(full_path)
+	var exit_code = OS.execute(full_exe_path, arguments)
+
+	if exit_code == 0:
+		print("\nPython script executed successfully.")
+		# Now you can proceed to load your filtered_apps.json and icons from user://app_data/ 
+	else:
+		print("\nPython script execution failed with exit code: ", exit_code)
+	import_filtered_filtered_apps_from_json()
+		
 	
+	
+func add_app(app_path : String):
+	var json_path = ProjectSettings.globalize_path(FILTERED_APPS_JSON_PATH)
+	var app_icon_folder_path = ProjectSettings.globalize_path(APP_ICON_PATH)
+	var full_app_path = ProjectSettings.globalize_path(ADD_APP)
+	
+	var arguments = [
+		json_path,
+		app_icon_folder_path,
+		app_path
+	]
+	
+	var exit_code = OS.execute(full_app_path, arguments)
+	if exit_code == 0:
+		print("App added successfully")
+	
+	import_filtered_filtered_apps_from_json()
 
 	
 func update_slot(app_name : String, slot_name : String):
@@ -188,17 +227,26 @@ func get_icon_by_app_name(app_name : String):
 		
 func update_icon(button: Button, icon: String):
 	if FileAccess.file_exists(icon):
-		var tex = load(icon)
-		if tex and tex is Texture2D:
-			var image = tex.get_image()
-			if image:
-				image.resize(40, 40, Image.INTERPOLATE_LANCZOS)
-				var scaled_tex = ImageTexture.create_from_image(image)
-				button.icon = scaled_tex
-			else:
-				print("❌ Failed to get image from texture:", icon)
+		var image = Image.new()
+		var load_error = image.load(icon)
+		
+		if load_error == OK:
+			var tex = ImageTexture.create_from_image(image) # Create a Texture from the Image data
+			tex.set_size_override(Vector2i(40,40))
+			if tex:
+				button.icon = tex
 		else:
-			print("❌ Failed to load valid texture:", icon)
+			var tex = load(icon)
+			if tex and tex is Texture2D:
+				var image_new = tex.get_image()
+				if image_new:
+					image_new.resize(40, 40, Image.INTERPOLATE_LANCZOS)
+					var scaled_tex = ImageTexture.create_from_image(image)
+					button.icon = scaled_tex
+				else:
+					print("❌ Failed to get image from texture:", icon)
+			else:
+				print("❌ Failed to load valid texture:", icon)
 	else:
 		print("⚠️ Icon file not found:", icon)
 		button.icon = preload("res://assets/icons/40x40/alert-square-Stroke-Rounded.png")
@@ -214,10 +262,3 @@ func open_app(exe_path):
 		var output = OS.execute_with_pipe(exe_path,args)   ### ths function is new to godot 4.3 and 4.4 and is not available in lower versions ###
 		var process_id = output["pid"]
 		return process_id
-		
-		
-
-
-	
-
-		

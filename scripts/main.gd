@@ -76,6 +76,9 @@ func _process(delta: float) -> void:
 				message_number += 1
 	
 	voice_command.text = last_text
+	
+	
+	#if FileAccess.file_exists(AppManager.BASE_PATH + "app_icons/brave.png")
 
 
 func _on_test_pressed() -> void:
