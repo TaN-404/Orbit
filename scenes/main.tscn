@@ -219,6 +219,12 @@ layout_mode = 2
 icon = ExtResource("13_4exck")
 icon_alignment = 1
 
+[node name="Button" type="Button" parent="."]
+offset_left = 54.0
+offset_top = 36.0
+offset_right = 88.0
+offset_bottom = 64.0
+
 [connection signal="button_down" from="MenuController/MarginContainer/HBoxContainer/MoveWindowButton" to="." method="_on_move_window_button_button_down"]
 [connection signal="button_up" from="MenuController/MarginContainer/HBoxContainer/MoveWindowButton" to="." method="_on_move_window_button_button_up"]
 [connection signal="toggled" from="MenuController/MarginContainer/HBoxContainer/VoiceModeButton" to="." method="_on_voice_mode_button_toggled"]
@@ -228,3 +234,4 @@ icon_alignment = 1
 [connection signal="pressed" from="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

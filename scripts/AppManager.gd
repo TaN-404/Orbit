@@ -261,4 +261,29 @@ func open_app(exe_path):
 		var args = []
 		var output = OS.execute_with_pipe(exe_path,args)   ### ths function is new to godot 4.3 and 4.4 and is not available in lower versions ###
 		var process_id = output["pid"]
-		return process_id
+		return 
+		
+		
+func get_all_pids_by_exe_name(exe_name: String) -> Array:
+	var output := []
+	var cmd := "tasklist /FI \"IMAGENAME eq %s\" /FO CSV /NH" % exe_name
+	var exit_code := OS.execute("cmd", ["/C", cmd], output, true)
+
+	var pids := []
+
+	for line in output:
+		if line.strip_edges() == "":
+			continue
+		var parts = line.split(",")
+		if parts.size() >= 2:
+			var pid_str = parts[1].strip_edges().replace("\"", "")
+			var pid = pid_str.to_int()
+			if pid > 0:
+				pids.append(pid)
+	return pids
+
+
+func kill_process(pid):
+	if OS.has_feature("windows") and pid != -1:
+		OS.kill(pid) 
+		

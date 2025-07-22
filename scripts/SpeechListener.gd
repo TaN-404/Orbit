@@ -40,12 +40,12 @@ func _process(delta: float) -> void:
 	
 	#print(test_voice_mode)
 	
-	if !OS.has_feature("standalone") and voice_mode and !client_active:
+	if voice_mode and !client_active:
 		exe_path = ProjectSettings.globalize_path("res://bin/speech_client.exe")
 		start_client(exe_path)
 		client_active = true
 		
-	if !OS.has_feature("standalone") and test_voice_mode and !client_active:
+	if test_voice_mode and !client_active:
 		exe_path = ProjectSettings.globalize_path("res://bin/speech_client.exe")
 		start_client(exe_path)
 		client_active = true
@@ -89,27 +89,10 @@ func kill_process(pid):
 		
 		
 func cleanup_process(exe_name):
-	var result = get_all_pids_by_exe_name(exe_name)
+	var result = AppManager.get_all_pids_by_exe_name(exe_name)
 	if result:
 		for i in range(len(result)):
 			kill_process(result[i])
 	
 		
 """ALTERNATIVE WAY OF GETTING PIDs"""
-func get_all_pids_by_exe_name(exe_name: String) -> Array:
-	var output := []
-	var cmd := "tasklist /FI \"IMAGENAME eq %s\" /FO CSV /NH" % exe_name
-	var exit_code := OS.execute("cmd", ["/C", cmd], output, true)
-
-	var pids := []
-
-	for line in output:
-		if line.strip_edges() == "":
-			continue
-		var parts = line.split(",")
-		if parts.size() >= 2:
-			var pid_str = parts[1].strip_edges().replace("\"", "")
-			var pid = pid_str.to_int()
-			if pid > 0:
-				pids.append(pid)
-	return pids

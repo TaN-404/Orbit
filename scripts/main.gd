@@ -71,7 +71,6 @@ func _process(delta: float) -> void:
 		if SpeechListener.listener_ready: 
 			message = SpeechListener.get_latest_speech()
 			if message["Number"] > message_number:
-				print(message["Message"])
 				last_text = message["Message"]
 				message_number += 1
 	
@@ -197,3 +196,7 @@ func _on_voice_mode_button_toggled(toggled_on: bool) -> void:
 
 func _exit_tree() -> void:
 	close_client()
+
+
+func _on_button_pressed() -> void:
+	print(AppManager.configured_apps_data["notepad"])

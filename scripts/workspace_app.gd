@@ -28,11 +28,6 @@ func _ready() -> void:
 			AppManager.update_icon(self, _app_icon)
 	else:
 		pass
-		#push_warning("App data not found for: workspace_id = %s, slot = %s" % [_workspace_id, self.name]))
-
-
-	#print(self.name , _workspace_id)
-	
 	
 
 
@@ -45,9 +40,6 @@ func _process(delta: float) -> void:
 		self.disabled = false
 		clear.visible = false
 		
-	#for i in AppManager.test_data[id]:
-		#print(i)
-	#print(AppManager.test_data[id][1])
 
 func _on_pressed() -> void:
 	if unique_id in active_buttons:
@@ -59,26 +51,26 @@ func _on_pressed() -> void:
 		get_tree().root.add_child(applist_instance)
 		applist_instance.visible = true
 		
-		#var screen_size = DisplayServer.screen_get_size()
-		#var app_list_height = applist_instance.size.y if applist_instance.size.y > 0 else 600
-#
-		#var space_on_top = GameManager.menu_window.position.y
-		#var space_on_bottom = screen_size.y - (GameManager.menu_window.position.y + GameManager.menu_window.size.y)
-		#
-#
-#
-		#if space_on_bottom >= applist_instance.size.y or space_on_bottom >= space_on_top:
-			#GameManager.applist_pos = Vector2(
-				#GameManager.menu_window.position.x,
-				#GameManager.menu_window.position.y + GameManager.menu_window.size.y
-			#)
-		#else:
-			#GameManager.applist_pos = Vector2(
-				#GameManager.menu_window.position.x,
-				#GameManager.menu_window.position.y - applist_instance.size.y
-			#)
-			#
-		#applist_instance.set_window_position()
+		var screen_size = DisplayServer.screen_get_size()
+		var app_list_height = applist_instance.size.y if applist_instance.size.y > 0 else 600
+
+		var space_on_top = GameManager.settings_window.position.y
+		var space_on_bottom = screen_size.y - (GameManager.settings_window.position.y + GameManager.settings_window.size.y)
+		
+
+
+		if space_on_bottom >= applist_instance.size.y or space_on_bottom >= space_on_top:
+			GameManager.applist_pos = Vector2(
+				GameManager.settings_window.position.x,
+				GameManager.settings_window.position.y + GameManager.settings_window.size.y
+			)
+		else:
+			GameManager.applist_pos = Vector2(
+				GameManager.settings_window.position.x,
+				GameManager.settings_window.position.y - applist_instance.size.y
+			)
+			
+		applist_instance.set_window_position()
 		
 		applist_instance.app_list.app_selected.connect(func(app_name, app_path, app_icon):
 			print("Selected:", app_name, app_path, app_icon)
