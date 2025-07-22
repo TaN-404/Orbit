@@ -7,7 +7,13 @@ signal app_added
 const SEARCH_APPS = "res://bin/search_client.exe"
 const ADD_APP = "res://bin/add_app.exe"
 
+"""PID_LISTS"""
+var workspace_pids = {}
+var normal_pids = {}
 
+
+
+"""CONSTANTS"""
 const BASE_USER_PATH = "user://"
 const BASE_PATH := "res://bin/"
 const GAME_DATA_PATH = "user://config_files"
@@ -261,7 +267,18 @@ func open_app(exe_path):
 		var args = []
 		var output = OS.execute_with_pipe(exe_path,args)   ### ths function is new to godot 4.3 and 4.4 and is not available in lower versions ###
 		var process_id = output["pid"]
-		return 
+		return process_id
+
+
+func open_multiple_app(exe_paths : PackedStringArray):
+	if OS.has_feature("windows"):
+		var args = []
+		for apps in exe_paths:
+			#print(apps)
+			var output = OS.execute_with_pipe(apps,args)   ### ths function is new to godot 4.3 and 4.4 and is not available in lower versions ###
+			var process_id = output["pid"]
+			return 
+		
 		
 		
 func get_all_pids_by_exe_name(exe_name: String) -> Array:

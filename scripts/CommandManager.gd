@@ -73,9 +73,6 @@ func process_speech_input(input_text: String):
 				for i in range(1, match.get_group_count() + 1):
 					arguments.append(match.get_string(i))
 				
-				print("Command recognized: {command_name}")
-				print("Arguments: {arguments}")
-
 				# Emit a signal that other parts of your app can connect to
 				emit_signal("command_recognized", command_name, arguments)
 
@@ -97,23 +94,60 @@ func process_speech_input(input_text: String):
 
 func _on_open_app_command(app_name: String):
 	# This will use your existing app list logic
-	print("Action: Attempting to open app: {app_name}")
-	if AppManager.configured_apps_data.has(app_name):
-		var exe = AppManager.configured_apps_data[app_name]["exe_path"]
-		AppManager.open_app(exe)
+	if app_name.begins_with("workspace"):
+		#var app_array = [] 
+		app_name = GameManager.convert_spelled_number_to_digit(app_name)
+	if WorkspaceManager.config_data.has(app_name):
+		for apps in WorkspaceManager.config_data[app_name]:
+			var paths = WorkspaceManager.config_data[app_name][apps]["app_path"]
+			var app = WorkspaceManager.config_data[app_name][apps]["app_name"] # This 'app' variable is the issue
+
+			if AppManager.workspace_pids.has(app_name):
+				print("Does AppManager.workspace_pids['{app_name}'] have '{app}'? {AppManager.workspace_pids[app_name].has(app)}")
+			
+			if not AppManager.workspace_pids.has(app_name):
+				AppManager.workspace_pids[app_name] = {}
+			if not AppManager.workspace_pids[app_name].has(app):
+				AppManager.workspace_pids[app_name][app] = {}
+			
+			var pid = AppManager.open_app(paths)
+			
+			# This is the line that's failing:
+			AppManager.workspace_pids[app_name][app]["pid"] = pid # <-- Error here
+		#AppManager.open_multiple_app(app_array)
+		
 	else:
-		print(app_name, "not found")
+		print("Action: Attempting to open app: {app_name}")
+		if AppManager.configured_apps_data.has(app_name):
+			var exe = AppManager.configured_apps_data[app_name]["exe_path"]
+			if not AppManager.normal_pids.has(app_name):
+				AppManager.normal_pids[app_name] = {}
+				
+			var pid = AppManager.open_app(exe)
+			AppManager.normal_pids[app_name]["pid"] = pid
+		else:
+			print(app_name, "not found")
 	#print(app_name)
 	#get_node("/root/YourMainSceneNode").launch_app_by_name(app_name)
 
 
 func _on_close_app_command(app_name: String):
-	print("Action: Attempting to close app: {app_name}")
-	var exe_name = app_name + ".exe"
-	var result = AppManager.get_all_pids_by_exe_name(exe_name)
-	if result:
-		for i in range(len(result)):
-			AppManager.kill_process(result[i])
+	if app_name.begins_with("workspace"):
+		app_name = GameManager.convert_spelled_number_to_digit(app_name)
+		if AppManager.workspace_pids.has(app_name):
+			for app in AppManager.workspace_pids[app_name]:
+				var exe_name = app + ".exe"
+				var pid = AppManager.get_all_pids_by_exe_name(exe_name)
+				for id in pid:
+					AppManager.kill_process(id)
+
+	else:
+		if AppManager.normal_pids.has(app_name):
+			var exe_name = app_name + ".exe"
+			var pid = AppManager.get_all_pids_by_exe_name(exe_name)
+			print(app_name, pid)
+			for id in pid:
+				AppManager.kill_process(id)
 
 
 func _on_search_web_command(query: String):
@@ -126,7 +160,8 @@ func _on_search_web_command(query: String):
 
 func _on_set_volume_command(value_str: String):
 	print("Action: Setting volume to: {value_str}")
-	print(value_str)
+	#print(value_str)
+	value_str = GameManager.convert_spelled_number_to_digit(value_str)
 	var volume_exe = ProjectSettings.globalize_path(VOLUME_EXE)
 	var arguments = [
 		value_str

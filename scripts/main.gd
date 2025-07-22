@@ -199,4 +199,12 @@ func _exit_tree() -> void:
 
 
 func _on_button_pressed() -> void:
-	print(AppManager.configured_apps_data["notepad"])
+	var dict = {}
+	var app_name  = "notes"
+	var pid = 102
+	if not dict.has(app_name):
+		dict[app_name] = {}
+		dict[app_name]["pid"] = pid
+	else:
+		dict[app_name]["pid"] = pid
+	print(dict)
