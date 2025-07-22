@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ygj2cgylrun0"]
 
 [ext_resource type="Script" path="res://scripts/exit.gd" id="1_5vxea"]
-[ext_resource type="Texture2D" uid="uid://bh0b3vh2hs0f1" path="res://assets/icons/24x24/cancel-01-Stroke-Rounded.png" id="1_sordo"]
+[ext_resource type="Texture2D" uid="uid://bgvnbjv8hbcx5" path="res://assets/icons/24x24/cancel-01-Stroke-Rounded.png" id="1_sordo"]
 
 [node name="Exit" type="Button"]
 custom_minimum_size = Vector2(32, 32)

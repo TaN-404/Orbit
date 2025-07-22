@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://smnx6w5vf1tt"
-path="res://.godot/imported/logout-03-Stroke-Rounded.png-c7ed59c2ff0bb1e53781f7a3f06e9b9c.ctex"
+uid="uid://bcjdqukm6oktm"
+path="res://.godot/imported/tick-04-Stroke-Rounded (1).png-22bc1ae02575cf024a9487cf21bfd722.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/24x24/logout-03-Stroke-Rounded.png"
-dest_files=["res://.godot/imported/logout-03-Stroke-Rounded.png-c7ed59c2ff0bb1e53781f7a3f06e9b9c.ctex"]
+source_file="res://assets/icons/24x24/tick-04-Stroke-Rounded (1).png"
+dest_files=["res://.godot/imported/tick-04-Stroke-Rounded (1).png-22bc1ae02575cf024a9487cf21bfd722.ctex"]
 
 [params]
 

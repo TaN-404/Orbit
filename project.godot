@@ -30,6 +30,11 @@ window/size/viewport_height=320
 window/subwindows/embed_subwindows=false
 window/per_pixel_transparency/allowed=true
 
+[gui]
+
+theme/custom="res://assets/themes/midnight.tres"
+theme/custom_font="res://assets/fonts/InterVariable.ttf"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

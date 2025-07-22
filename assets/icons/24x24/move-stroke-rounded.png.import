@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwfwcn6e2b67p"
-path="res://.godot/imported/mic-off-01-Stroke-Rounded.png-00221ffd627aa3bf08d7c13d76152060.ctex"
+uid="uid://d18a2q1s26qcn"
+path="res://.godot/imported/move-stroke-rounded.png-fb54f3dfd6c14c2f9d4b68932053e5a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/40x40/mic-off-01-Stroke-Rounded.png"
-dest_files=["res://.godot/imported/mic-off-01-Stroke-Rounded.png-00221ffd627aa3bf08d7c13d76152060.ctex"]
+source_file="res://assets/icons/24x24/move-stroke-rounded.png"
+dest_files=["res://.godot/imported/move-stroke-rounded.png-fb54f3dfd6c14c2f9d4b68932053e5a7.ctex"]
 
 [params]
 

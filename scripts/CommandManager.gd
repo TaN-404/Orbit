@@ -23,7 +23,7 @@ var commands = {
 		"action_method": "_on_close_app_command"
 	},
 	"search_web": {
-		"patterns": ["search for (.+)", "find (.+) on the web"],
+		"patterns": ["search for (.+)", "find (.+) on the web", "look for (.+)"],
 		"action_method": "_on_search_web_command"
 	},
 	"set_volume": {
@@ -38,6 +38,10 @@ var commands = {
 	"goodbye": {
 		"patterns": ["goodbye", "see you later"],
 		"action_method": "_on_goodbye_command"
+	},
+	"system prank":{
+		"patterns":["delete system", "delete system 32", "delete system thirty two"],
+		"action_method": "_on_system_prank"
 	}
 }
 
@@ -179,6 +183,9 @@ func _on_show_time_command():
 	# You could also trigger a TTS (Text-to-Speech) to speak this aloud.
 	# Example TTS (conceptual, requires external library or API):
 	# TextToSpeechManager.speak(f"The current time is {current_time}")
+	
+func _on_system_prank():
+	print("________________prank________________")
 
 
 func _on_goodbye_command():

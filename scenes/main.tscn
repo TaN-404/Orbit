@@ -1,18 +1,27 @@
-[gd_scene load_steps=14 format=3 uid="uid://ko18rygn3ha3"]
+[gd_scene load_steps=16 format=3 uid="uid://ko18rygn3ha3"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_38bbg"]
 [ext_resource type="PackedScene" uid="uid://bjvtvcq0t0jx4" path="res://scenes/notes.tscn" id="2_7sf68"]
 [ext_resource type="PackedScene" uid="uid://culqyx1lvbpaj" path="res://scenes/settings.tscn" id="3_dvawn"]
 [ext_resource type="PackedScene" uid="uid://c73sdfceperq4" path="res://scenes/app_menu.tscn" id="4_wln7i"]
 [ext_resource type="Texture2D" uid="uid://3jtkaaoheeq1" path="res://assets/border.png" id="5_srbdk"]
-[ext_resource type="Texture2D" uid="uid://cvjq8ddr7kupp" path="res://assets/icons/40x40/move-Stroke-Rounded.png" id="6_jir7i"]
+[ext_resource type="Texture2D" uid="uid://d0yg4l2y2gh8m" path="res://assets/icons/40x40/move-Stroke-Rounded (1).png" id="6_cmmrt"]
 [ext_resource type="Texture2D" uid="uid://bej1f4fvl76d1" path="res://assets/icons/40x40/mic-off-01-Stroke-Rounded (1).png" id="7_iobwv"]
-[ext_resource type="Texture2D" uid="uid://bokccl72jlvsb" path="res://assets/icons/40x40/menu-01-Stroke-Rounded.png" id="8_grw41"]
-[ext_resource type="Texture2D" uid="uid://cnxa1jd7xpwi7" path="res://assets/icons/24x24/grid-view-Stroke-Rounded.png" id="9_upcyi"]
-[ext_resource type="Texture2D" uid="uid://bud2os3ay73rp" path="res://assets/icons/24x24/settings-02-Stroke-Rounded.png" id="10_mhqij"]
-[ext_resource type="Texture2D" uid="uid://bn6v63udj6ai6" path="res://assets/icons/24x24/logout-01-Stroke-Rounded.png" id="11_bkepa"]
-[ext_resource type="Texture2D" uid="uid://gmpe6s3g6bcw" path="res://assets/icons/24x24/tick-04-Stroke-Rounded.png" id="12_7ofnq"]
-[ext_resource type="Texture2D" uid="uid://lvp3jnpbquby" path="res://assets/icons/24x24/cancel-02-Stroke-Rounded.png" id="13_4exck"]
+[ext_resource type="Texture2D" uid="uid://do6wbrwyc87pl" path="res://assets/icons/40x40/menu-01-Stroke-Rounded.png" id="8_grw41"]
+[ext_resource type="Theme" uid="uid://b7extl4woux8y" path="res://assets/themes/midnight.tres" id="9_xi86w"]
+[ext_resource type="Texture2D" uid="uid://j0qy7hqbhoni" path="res://assets/icons/24x24/grid-view-stroke-rounded (1).png" id="10_q2trm"]
+[ext_resource type="Texture2D" uid="uid://ceaxub2nwvl1n" path="res://assets/icons/24x24/settings-02-Stroke-Rounded (1).png" id="11_gbnfn"]
+[ext_resource type="Texture2D" uid="uid://yunw5x3qt4pl" path="res://assets/icons/24x24/logout-01-stroke-rounded (1).png" id="12_an1jr"]
+[ext_resource type="Texture2D" uid="uid://bcjdqukm6oktm" path="res://assets/icons/24x24/tick-04-Stroke-Rounded (1).png" id="13_wgdey"]
+[ext_resource type="Texture2D" uid="uid://b6lidfbqmak74" path="res://assets/icons/24x24/cancel-02-stroke-rounded (1).png" id="14_insth"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6scvu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.647059, 0.552941, 0.537255, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_38bbg")
@@ -21,6 +30,7 @@ settings = ExtResource("3_dvawn")
 AppMenu = ExtResource("4_wln7i")
 
 [node name="Border" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(160, 160)
 scale = Vector2(0.95, 0.95)
@@ -34,6 +44,15 @@ offset_right = 320.0
 offset_bottom = 320.0
 grow_horizontal = 2
 size_flags_horizontal = 0
+
+[node name="MainPanel" type="Panel" parent="MenuController"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6scvu")
 
 [node name="MarginContainer" type="MarginContainer" parent="MenuController"]
 layout_mode = 1
@@ -54,7 +73,7 @@ size_flags_vertical = 0
 [node name="MoveWindowButton" type="Button" parent="MenuController/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-icon = ExtResource("6_jir7i")
+icon = ExtResource("6_cmmrt")
 
 [node name="VoiceModeButton" type="Button" parent="MenuController/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -127,6 +146,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("9_xi86w")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/PanelContainer/Panel/MarginContainer"]
 layout_mode = 2
@@ -142,19 +162,19 @@ text = "[center]Menu[/center]"
 [node name="QuickMenu" type="Button" parent="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-icon = ExtResource("9_upcyi")
+icon = ExtResource("10_q2trm")
 icon_alignment = 1
 
 [node name="Settings" type="Button" parent="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-icon = ExtResource("10_mhqij")
+icon = ExtResource("11_gbnfn")
 icon_alignment = 1
 
 [node name="Exit" type="Button" parent="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-icon = ExtResource("11_bkepa")
+icon = ExtResource("12_an1jr")
 icon_alignment = 1
 
 [node name="ConfirmMenu" type="Control" parent="."]
@@ -210,16 +230,17 @@ theme_override_constants/separation = 35
 [node name="Yes" type="Button" parent="ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(65, 30)
 layout_mode = 2
-icon = ExtResource("12_7ofnq")
+icon = ExtResource("13_wgdey")
 icon_alignment = 1
 
 [node name="No" type="Button" parent="ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(65, 30)
 layout_mode = 2
-icon = ExtResource("13_4exck")
+icon = ExtResource("14_insth")
 icon_alignment = 1
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 54.0
 offset_top = 36.0
 offset_right = 88.0

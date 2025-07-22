@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 			var packet = peer.get_packet()
 			var msg = packet.get_string_from_utf8()
 			listener_ready = true
-			#print("Received from %s:%s → %s" % [peer.get_packet_ip(), peer.get_packet_port(), msg])
+			print("Received from %s:%s → %s" % [peer.get_packet_ip(), peer.get_packet_port(), msg])
 			last_text = msg
 			message_number += 1
 			#print(message_number)

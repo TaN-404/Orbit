@@ -1,0 +1,129 @@
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://pg3obmumarlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kle47"]
+bg_color = Color(0.298039, 0.329412, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75nnv"]
+bg_color = Color(0.435294, 0.407843, 0.478431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vnx3"]
+bg_color = Color(0.298039, 0.329412, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wutkv"]
+bg_color = Color(0.298039, 0.329412, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6lf5"]
+bg_color = Color(0.0941176, 0.0980392, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sknsr"]
+bg_color = Color(0.219608, 0.25098, 0.364706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43h4l"]
+bg_color = Color(0.0941176, 0.0980392, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tjbu3"]
+bg_color = Color(0.0941176, 0.0980392, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qcq5"]
+bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_texmq"]
+bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oq0k"]
+bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcbxo"]
+bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6gsv"]
+bg_color = Color(0.219608, 0.25098, 0.364706, 1)
+
+[sub_resource type="ImageTexture" id="ImageTexture_hmc0p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpf1k"]
+bg_color = Color(0.709804, 0.619608, 0.564706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytnn7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88uow"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.75, 0.75, 0.75, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1qc1"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa4ke"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxFlat_kle47")
+Button/styles/pressed = SubResource("StyleBoxFlat_75nnv")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_4vnx3")
+CheckButton/styles/normal_mirrored = SubResource("StyleBoxFlat_wutkv")
+Label/styles/normal = SubResource("StyleBoxFlat_y6lf5")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_sknsr")
+Panel/styles/panel = SubResource("StyleBoxFlat_43h4l")
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_tjbu3")
+TabBar/styles/button_highlight = SubResource("StyleBoxFlat_7qcq5")
+TabBar/styles/button_pressed = SubResource("StyleBoxFlat_texmq")
+TabBar/styles/tab_hovered = null
+TabBar/styles/tab_selected = SubResource("StyleBoxFlat_8oq0k")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_lcbxo")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_j6gsv")
+VScrollBar/icons/decrement = SubResource("ImageTexture_hmc0p")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_hmc0p")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_hmc0p")
+VScrollBar/icons/increment = SubResource("ImageTexture_hmc0p")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_hmc0p")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_hmc0p")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_bpf1k")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ytnn7")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_88uow")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_t1qc1")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_wa4ke")

@@ -16,6 +16,7 @@ var window_dragging := false
 @onready var menu: Control = $Menu
 @onready var confirm_menu: Control = $ConfirmMenu
 @onready var panel_container: PanelContainer = $MenuController/MarginContainer2/PanelContainer
+@onready var main_panel: Panel = $MenuController/MainPanel
 
 """SPRITES"""
 @onready var border: Sprite2D = $Border
@@ -57,7 +58,7 @@ func _ready() -> void:
 	#menu_name.text_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	#confirm_message.text_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	menu_name.PRESET_CENTER
-	border.visible = false
+	main_panel.visible = false
 	
 
 
@@ -98,12 +99,12 @@ func _on_menu_button_pressed() -> void:
 func _on_move_window_button_button_down() -> void:
 	window_dragging = true
 	drag_offset = _MainWindow.position - (DisplayServer.mouse_get_position())
-	border.show()
+	main_panel.show()
 
 
 func _on_move_window_button_button_up() -> void:
 	window_dragging = false
-	border.hide()
+	main_panel.hide()
 	
 """MENU BUTTONS"""
 
