@@ -70,10 +70,9 @@ layout_mode = 2
 [node name="SettingsTab" type="TabContainer" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 2
+current_tab = 0
 
 [node name="General" type="TabBar" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -86,6 +85,7 @@ metadata/_tab_index = 1
 layout_mode = 1
 
 [node name="App" type="TabBar" parent="Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

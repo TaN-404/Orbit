@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=38 format=3 uid="uid://b7extl4woux8y"]
+[gd_resource type="Theme" load_steps=43 format=3 uid="uid://b7extl4woux8y"]
 
 [ext_resource type="FontFile" uid="uid://bwckhuaky4rby" path="res://assets/fonts/InterVariable.ttf" id="1_jf4x3"]
 
@@ -143,13 +143,31 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_xrplk"]
 image = SubResource("Image_wiiaw")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qcq5"]
-bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ja7jl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_texmq"]
-bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yh08r"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq3ds"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx177"]
 content_margin_left = 10.0
 content_margin_top = 4.0
 content_margin_right = 10.0
@@ -160,7 +178,7 @@ border_width_right = 1
 border_color = Color(0.175, 0.175, 0.175, 1)
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uikya"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhuev"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -181,7 +199,7 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drafp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqy0l"]
 content_margin_left = 10.0
 content_margin_top = 4.0
 content_margin_right = 10.0
@@ -192,10 +210,17 @@ border_width_right = 1
 border_color = Color(0.175, 0.175, 0.175, 1)
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oq0k"]
-bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8omtv"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_top = 2
+border_color = Color(1, 1, 1, 0.75)
+corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7p55"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joyaq"]
 content_margin_left = 10.0
 content_margin_top = 4.0
 content_margin_right = 10.0
@@ -208,6 +233,37 @@ corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcbxo"]
 bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bd4n0"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4jqd"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.298039, 0.329412, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afgh6"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.160784, 0.176471, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1lg3"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0941176, 0.0980392, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbuts"]
+bg_color = Color(0.0941176, 0.0980392, 0.137255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6gsv"]
 bg_color = Color(0.219608, 0.25098, 0.364706, 1)
@@ -325,14 +381,22 @@ TabBar/icons/decrement_highlight = SubResource("ImageTexture_r5t6x")
 TabBar/icons/drop_mark = SubResource("ImageTexture_wim7v")
 TabBar/icons/increment = SubResource("ImageTexture_uukno")
 TabBar/icons/increment_highlight = SubResource("ImageTexture_xrplk")
-TabBar/styles/button_highlight = SubResource("StyleBoxFlat_7qcq5")
-TabBar/styles/button_pressed = SubResource("StyleBoxFlat_texmq")
-TabBar/styles/tab_disabled = SubResource("StyleBoxFlat_fq3ds")
-TabBar/styles/tab_focus = SubResource("StyleBoxFlat_uikya")
-TabBar/styles/tab_hovered = SubResource("StyleBoxFlat_drafp")
-TabBar/styles/tab_selected = SubResource("StyleBoxFlat_8oq0k")
-TabBar/styles/tab_unselected = SubResource("StyleBoxFlat_o7p55")
+TabBar/styles/button_highlight = SubResource("StyleBoxFlat_ja7jl")
+TabBar/styles/button_pressed = SubResource("StyleBoxFlat_yh08r")
+TabBar/styles/tab_disabled = SubResource("StyleBoxFlat_cx177")
+TabBar/styles/tab_focus = SubResource("StyleBoxFlat_nhuev")
+TabBar/styles/tab_hovered = SubResource("StyleBoxFlat_vqy0l")
+TabBar/styles/tab_selected = SubResource("StyleBoxFlat_8omtv")
+TabBar/styles/tab_unselected = SubResource("StyleBoxFlat_joyaq")
+TabContainer/colors/font_disabled_color = Color(0.435294, 0.407843, 0.478431, 1)
+TabContainer/colors/font_hovered_color = Color(0.647059, 0.552941, 0.537255, 1)
+TabContainer/colors/font_selected_color = Color(0.709804, 0.619608, 0.564706, 1)
 TabContainer/styles/panel = SubResource("StyleBoxFlat_lcbxo")
+TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_bd4n0")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_r4jqd")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_afgh6")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_m1lg3")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_fbuts")
 TextEdit/colors/font_color = Color(0.709804, 0.619608, 0.564706, 1)
 TextEdit/styles/normal = SubResource("StyleBoxFlat_j6gsv")
 VScrollBar/icons/decrement = SubResource("ImageTexture_hmc0p")

@@ -64,3 +64,6 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="VSlider" type="VSlider" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2

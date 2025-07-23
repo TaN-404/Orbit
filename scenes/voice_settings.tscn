@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://70altd8vbmj5"]
+[gd_scene load_steps=2 format=3 uid="uid://70altd8vbmj5"]
 
 [ext_resource type="Script" path="res://scripts/voice_settings.gd" id="1_4w7yf"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt5g5"]
-bg_color = Color(1, 1, 1, 1)
 
 [node name="VoiceSettings" type="Control"]
 layout_mode = 3
@@ -60,7 +57,6 @@ text = "Test Commands
 custom_minimum_size = Vector2(310, 30)
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_styles/panel = SubResource("StyleBoxFlat_jt5g5")
 
 [node name="VoiceCommand" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/Panel"]
 custom_minimum_size = Vector2(310, 20)
@@ -73,7 +69,6 @@ offset_top = -11.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "voice command"
 horizontal_alignment = 1
 
