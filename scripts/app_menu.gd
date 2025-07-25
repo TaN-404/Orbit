@@ -13,9 +13,11 @@ var drag_offset := Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_menu_window.always_on_top = true
 	_menu_window.borderless = true
 	_menu_window.transparent = true
 	_menu_window.transparent_bg = true
+
 	GameManager.menu_window = _menu_window
 	
 	_menu_window.size = Vector2(120, 312)

@@ -20,6 +20,7 @@ var window_dragging := false
 
 """SPRITES"""
 @onready var border: Sprite2D = $Border
+@onready var main_animation: AnimatedSprite2D = $MenuController/MainAnimation
 
 
 """LABELS"""
@@ -38,12 +39,13 @@ var window_dragging := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_MainWindow.always_on_top = true
 	_MainWindow.borderless = true
 	_MainWindow.transparent = true
 	_MainWindow.transparent_bg = true
 	_MainWindow.unresizable = true
 	#_MainWindow.mouse_passthrough = true
-	_MainWindow.always_on_top = true
+
 	# NOTES APP
 	
 	menu.visible = false
@@ -59,6 +61,8 @@ func _ready() -> void:
 	#confirm_message.text_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	menu_name.PRESET_CENTER
 	main_panel.visible = false
+	
+	main_animation.play("Default")
 	
 
 

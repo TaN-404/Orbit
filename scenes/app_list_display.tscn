@@ -3,35 +3,33 @@
 [ext_resource type="Script" path="res://scripts/app_list_display.gd" id="1_mm5m7"]
 
 [node name="AppListDisplay" type="Control"]
-custom_minimum_size = Vector2(660, 303)
+custom_minimum_size = Vector2(660, 293)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 340.0
-offset_bottom = -17.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mm5m7")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 293)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 660.0
+offset_bottom = 293.0
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
-custom_minimum_size = Vector2(660, 303)
+custom_minimum_size = Vector2(660, 293)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel"]
-custom_minimum_size = Vector2(640, 303)
+custom_minimum_size = Vector2(640, 293)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -8.0
-offset_right = 2.0
-offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 5
@@ -64,6 +62,3 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="VSlider" type="VSlider" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2

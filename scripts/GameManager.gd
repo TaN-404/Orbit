@@ -8,6 +8,9 @@ var sticky_notes_active = false
 var am_edit = false
 var ws_edit = false
 
+"""SETTING FLAGS"""
+var on_top = false
+var startup = false
 
 """AppList"""
 var app_list_standalone : bool
@@ -16,16 +19,81 @@ var applist_pos : Vector2
 """Windows"""
 var menu_window : Window
 var settings_window : Window
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
+
+const FIRST_RUN = "user://config_files/first_run.cfg"
+const SETTINGS = "user://config_files/settings.cfg"
+
+ 
+var config = ConfigFile.new()
+
+func _ready() -> void:
+	load_settings()
+	# This _ready() function runs very early, before your main scene's _ready().
+	
+	#var error = config.load(FIRST_RUN)
+#
+	#if error != OK:
+		## File doesn't exist or couldn't be loaded, meaning it's the first run
+		#print("First time running the app!")
+		#run_first_time_setup()
+		#
+		## Save the flag so it's not considered a first run next time
+		#config.set_value("app_state", "has_run_before", true)
+		#config.save(FIRST_RUN)
+	#else:
+	## File exists and loaded successfully, check the flag
+		#var has_run_before = config.get_value("app_state", "has_run_before", false)
+		#if not has_run_before:
+			## This case might happen if the file was created but the flag wasn't set (e.g., app crashed)
+			#print("First time running the app (flag not set)!")
+			#run_first_time_setup()
+			#config.set_value("app_state", "has_run_before", true)
+			#config.save(FIRST_RUN)
+		#else:
+			#print("App has been run before.")
+			## Normal startup logic if not the first time
+			#load_user_preferences()
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func load_settings():
+	var error = config.load(SETTINGS)
+	if error != OK:
+		# File doesn't exist or couldn't be loaded, create default settings
+		print("Settings file not found or error loading, creating default settings.")
+		save_settings() # Save defaults immediately
+		return
+
+	on_top = config.get_value("App", "always_on_top", false)
+	startup = config.get_value("App", "startup", false)
+
+
+
+func save_settings():
+	# Save the checkbutton state
+	# Save other settings
+	config.set_value("App", "always_on_top", on_top)
+	config.set_value("App", "startup", startup)
+
+	config.save(SETTINGS)
+	print("Settings saved.")
+
 func _process(delta: float) -> void:
 	pass
 
 
+func run_first_time_setup():
+	pass
+
+func load_user_preferences():
+	pass
+
+func always_on_top(window : Window, booelan : bool):
+	window.always_on_top = booelan
+	
+	
 func convert_spelled_number_to_digit(text: String) -> String:
 	"""
 	Converts common spelled-out numbers (zero to ninety-nine, and some hundreds/thousands)
@@ -65,3 +133,7 @@ func convert_spelled_number_to_digit(text: String) -> String:
 			converted_words.append(word)
 			
 	return " ".join(converted_words)
+
+
+func _exit_tree() -> void:
+	save_settings()
