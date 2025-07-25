@@ -20,6 +20,16 @@ var applist_pos : Vector2
 var menu_window : Window
 var settings_window : Window
 
+"""Animation Flags"""
+enum AnimationType {
+	BlackHole,
+	GasGiant,
+	Star,
+	DryPlanet
+}
+
+var current_animation : AnimationType
+
 
 const FIRST_RUN = "user://config_files/first_run.cfg"
 const SETTINGS = "user://config_files/settings.cfg"
@@ -68,12 +78,14 @@ func load_settings():
 
 	on_top = config.get_value("App", "always_on_top", false)
 	startup = config.get_value("App", "startup", false)
+	current_animation = config.get_value("AnimationType", "Index", 0)
 
 
 
 func save_settings():
 	# Save the checkbutton state
 	# Save other settings
+	config.set_value("AnimationType", "Index", current_animation)
 	config.set_value("App", "always_on_top", on_top)
 	config.set_value("App", "startup", startup)
 

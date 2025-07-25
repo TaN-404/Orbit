@@ -36,6 +36,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="TestVoiceCommands" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -54,22 +55,27 @@ text = "Test Commands
 "
 
 [node name="Panel" type="Panel" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(310, 30)
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="VoiceCommand" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/Panel"]
-custom_minimum_size = Vector2(310, 20)
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/Panel"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VoiceCommand" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(310, 30)
+layout_mode = 2
 text = "voice command"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="toggled" from="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

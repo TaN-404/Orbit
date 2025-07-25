@@ -5,6 +5,7 @@ var notes_instance : Window = null
 var message_number = 0
 var message
 var last_text = ""
+var mouse_in_viewport: bool = false
 
 var drag_offset := Vector2.ZERO
 var window_dragging := false
@@ -13,14 +14,18 @@ var window_dragging := false
 @export var settings : PackedScene
 @export var AppMenu : PackedScene
 
+
+@onready var menu_controller: Control = $MenuController
 @onready var menu: Control = $Menu
 @onready var confirm_menu: Control = $ConfirmMenu
 @onready var panel_container: PanelContainer = $MenuController/MarginContainer2/PanelContainer
 @onready var main_panel: Panel = $MenuController/MainPanel
+@onready var animation_menu: Control = $AnimationMenu
 
 """SPRITES"""
 @onready var border: Sprite2D = $Border
-@onready var main_animation: AnimatedSprite2D = $MenuController/MainAnimation
+@onready var main_animation: AnimatedSprite2D = $MainAnimation
+
 
 
 """LABELS"""
@@ -47,10 +52,11 @@ func _ready() -> void:
 	#_MainWindow.mouse_passthrough = true
 
 	# NOTES APP
-	
+	menu_controller.visible = false
 	menu.visible = false
 	confirm_menu.visible  = false
 	panel_container.visible = false
+	animation_menu.visible = false
 	
 	print(_MainWindow.get_size_with_decorations())
 	_MainWindow.size = Vector2(320, 320)
@@ -64,6 +70,9 @@ func _ready() -> void:
 	
 	main_animation.play("Default")
 	
+	var main_viewport = get_viewport()
+	main_viewport.mouse_entered.connect(_on_viewport_mouse_entered)
+	main_viewport.mouse_exited.connect(_on_viewport_mouse_exited)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -82,20 +91,15 @@ func _process(delta: float) -> void:
 	voice_command.text = last_text
 	
 	
-	#if FileAccess.file_exists(AppManager.BASE_PATH + "app_icons/brave.png")
+func _on_viewport_mouse_entered() -> void:
+	menu_controller.visible = true
+	#print("Mouse entered viewport. Menu visible.")
 
-
-func _on_test_pressed() -> void:
-		if notes_instance == null:
-			var NotesScene = preload("res://scenes/settings.tscn")  # Adjust path if needed
-			notes_instance = NotesScene.instantiate()
-			add_child(notes_instance)
-			notes_instance.visible = true
-		#SpeechListener.voice_mode = true
-		#var path = "C:/Program Files/Microsoft VS Code/code.exe"
-		#var commad = "code.exe"
-		#var exit_code = OS.execute_with_pipe(path, [])
-
+func _on_viewport_mouse_exited() -> void:
+	menu_controller.visible = false
+	#print("Mouse exited viewport. Menu hidden.")
+	
+	
 
 func _on_menu_button_pressed() -> void:
 	menu.visible = !menu.visible
@@ -203,13 +207,8 @@ func _exit_tree() -> void:
 	close_client()
 
 
-func _on_button_pressed() -> void:
-	var dict = {}
-	var app_name  = "notes"
-	var pid = 102
-	if not dict.has(app_name):
-		dict[app_name] = {}
-		dict[app_name]["pid"] = pid
-	else:
-		dict[app_name]["pid"] = pid
-	print(dict)
+"""ANIMATION"""
+
+
+func _on_animation_pressed() -> void:
+	animation_menu.show()

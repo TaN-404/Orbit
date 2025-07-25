@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bjvtvcq0t0jx4" path="res://scenes/notes.tscn" id="2_7sf68"]
 [ext_resource type="PackedScene" uid="uid://culqyx1lvbpaj" path="res://scenes/settings.tscn" id="3_dvawn"]
 [ext_resource type="PackedScene" uid="uid://c73sdfceperq4" path="res://scenes/app_menu.tscn" id="4_wln7i"]
-[ext_resource type="Texture2D" uid="uid://3jtkaaoheeq1" path="res://assets/border.png" id="5_srbdk"]
 [ext_resource type="Texture2D" uid="uid://d0yg4l2y2gh8m" path="res://assets/icons/40x40/move-Stroke-Rounded (1).png" id="6_cmmrt"]
 [ext_resource type="Texture2D" uid="uid://mg5nx0ovifsc" path="res://assets/animations/black_hole_140.png" id="6_pck7x"]
 [ext_resource type="Texture2D" uid="uid://brclowku3mt7j" path="res://assets/animations/dry-planet-160.png" id="7_bspmd"]
@@ -19,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bcjdqukm6oktm" path="res://assets/icons/24x24/tick-04-Stroke-Rounded (1).png" id="13_wgdey"]
 [ext_resource type="Texture2D" uid="uid://b6lidfbqmak74" path="res://assets/icons/24x24/cancel-02-stroke-rounded (1).png" id="14_insth"]
 [ext_resource type="Texture2D" uid="uid://cf624ucrk5ocb" path="res://assets/icons/24x24/play-list-Stroke-Rounded (1).png" id="15_jg1sk"]
+[ext_resource type="Script" path="res://scripts/animation_menu.gd" id="20_dwdtf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8u5o"]
 atlas = ExtResource("6_pck7x")
@@ -1457,12 +1457,11 @@ sticky_notes = ExtResource("2_7sf68")
 settings = ExtResource("3_dvawn")
 AppMenu = ExtResource("4_wln7i")
 
-[node name="Border" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(160, 160)
-scale = Vector2(0.95, 0.95)
-texture = ExtResource("5_srbdk")
+[node name="MainAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(161, 154)
+sprite_frames = SubResource("SpriteFrames_1cdav")
+animation = &"GasGiant"
+frame_progress = 0.442137
 
 [node name="MenuController" type="Control" parent="."]
 layout_mode = 3
@@ -1472,12 +1471,6 @@ offset_right = 320.0
 offset_bottom = 320.0
 grow_horizontal = 2
 size_flags_horizontal = 0
-
-[node name="MainAnimation" type="AnimatedSprite2D" parent="MenuController"]
-position = Vector2(161, 154)
-sprite_frames = SubResource("SpriteFrames_1cdav")
-animation = &"DryPlanet"
-frame_progress = 0.942295
 
 [node name="MainPanel" type="Panel" parent="MenuController"]
 layout_mode = 1
@@ -1684,20 +1677,79 @@ layout_mode = 2
 icon = ExtResource("14_insth")
 icon_alignment = 1
 
-[node name="Button" type="Button" parent="."]
-visible = false
-offset_left = 54.0
-offset_top = 36.0
-offset_right = 88.0
-offset_bottom = 64.0
+[node name="AnimationMenu" type="Control" parent="."]
+layout_mode = 3
+offset_left = 170.0
+offset_top = 65.0
+offset_right = 320.0
+offset_bottom = 315.0
+script = ExtResource("20_dwdtf")
+
+[node name="PanelContainer" type="PanelContainer" parent="AnimationMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="AnimationMenu/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AnimationMenu/PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimationMenu/PanelContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MenuTitle" type="Label" parent="AnimationMenu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select Animation"
+
+[node name="BlackHole" type="CheckBox" parent="AnimationMenu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Black Hole"
+
+[node name="GasGiant" type="CheckBox" parent="AnimationMenu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gas Giant
+"
+
+[node name="Star" type="CheckBox" parent="AnimationMenu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Star"
+
+[node name="DryPlanet" type="CheckBox" parent="AnimationMenu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Dry Planet"
+
+[node name="Back" type="Button" parent="AnimationMenu/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Back"
 
 [connection signal="button_down" from="MenuController/MarginContainer/HBoxContainer/MoveWindowButton" to="." method="_on_move_window_button_button_down"]
 [connection signal="button_up" from="MenuController/MarginContainer/HBoxContainer/MoveWindowButton" to="." method="_on_move_window_button_button_up"]
 [connection signal="toggled" from="MenuController/MarginContainer/HBoxContainer/VoiceModeButton" to="." method="_on_voice_mode_button_toggled"]
 [connection signal="pressed" from="MenuController/MarginContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/QuickMenu" to="." method="_on_quick_menu_pressed"]
+[connection signal="pressed" from="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/Animation" to="." method="_on_animation_pressed"]
 [connection signal="pressed" from="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/PanelContainer/Panel/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="ConfirmMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="AnimationMenu/PanelContainer/Panel/MarginContainer/VBoxContainer/Back" to="AnimationMenu" method="_on_back_pressed"]
