@@ -4,6 +4,9 @@ var app_menu_active = false
 var settings_active = false
 var sticky_notes_active = false
 
+"""SIGNALS"""
+signal on_top_changed
+
 """QM FLAGS"""
 var am_edit = false
 var ws_edit = false
@@ -41,32 +44,31 @@ func _ready() -> void:
 	load_settings()
 	# This _ready() function runs very early, before your main scene's _ready().
 	
-	#var error = config.load(FIRST_RUN)
-#
-	#if error != OK:
-		## File doesn't exist or couldn't be loaded, meaning it's the first run
-		#print("First time running the app!")
-		#run_first_time_setup()
-		#
-		## Save the flag so it's not considered a first run next time
-		#config.set_value("app_state", "has_run_before", true)
-		#config.save(FIRST_RUN)
-	#else:
-	## File exists and loaded successfully, check the flag
-		#var has_run_before = config.get_value("app_state", "has_run_before", false)
-		#if not has_run_before:
-			## This case might happen if the file was created but the flag wasn't set (e.g., app crashed)
-			#print("First time running the app (flag not set)!")
-			#run_first_time_setup()
-			#config.set_value("app_state", "has_run_before", true)
-			#config.save(FIRST_RUN)
-		#else:
-			#print("App has been run before.")
-			## Normal startup logic if not the first time
-			#load_user_preferences()
-	pass
+	var error = config.load(FIRST_RUN)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	if error != OK:
+		# File doesn't exist or couldn't be loaded, meaning it's the first run
+		print("First time running the app!")
+		run_first_time_setup()
+		
+		# Save the flag so it's not considered a first run next time
+		config.set_value("app_state", "has_run_before", true)
+		config.save(FIRST_RUN)
+	else:
+	# File exists and loaded successfully, check the flag
+		var has_run_before = config.get_value("app_state", "has_run_before", false)
+		if not has_run_before:
+			# This case might happen if the file was created but the flag wasn't set (e.g., app crashed)
+			print("First time running the app (flag not set)!")
+			run_first_time_setup()
+			config.set_value("app_state", "has_run_before", true)
+			config.save(FIRST_RUN)
+		else:
+			print("App has been run before.")
+			# Normal startup logic if not the first time
+			#load_user_preferences()
+
+#
 
 func load_settings():
 	var error = config.load(SETTINGS)
@@ -99,11 +101,14 @@ func _process(delta: float) -> void:
 func run_first_time_setup():
 	pass
 
-func load_user_preferences():
-	pass
+func _on_top_changed():
+	on_top_changed.emit()
+	print("ontop_changed")
 
-func always_on_top(window : Window, booelan : bool):
-	window.always_on_top = booelan
+
+func always_on_top(window : Window):
+	window.always_on_top = on_top
+
 	
 	
 func convert_spelled_number_to_digit(text: String) -> String:

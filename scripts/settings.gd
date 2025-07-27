@@ -18,12 +18,15 @@ var dragging = false
 var drag_offset := Vector2.ZERO
 
 func _ready() -> void:
+	
 	_settings_window.borderless = true
 	_settings_window.size = Vector2(720, 480)
 	GameManager.settings_window = _settings_window
 	
 	exit.pass_parent(self)
 	move.pass_parent(self)
+	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

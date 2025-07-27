@@ -13,7 +13,8 @@ var drag_offset := Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_menu_window.always_on_top = true
+	if GameManager.on_top:
+		GameManager.always_on_top(_menu_window)
 	_menu_window.borderless = true
 	_menu_window.transparent = true
 	_menu_window.transparent_bg = true
@@ -25,11 +26,18 @@ func _ready() -> void:
 	exit.pass_parent(self)
 	move.pass_parent(self)
 	
+	#GameManager.on_top_changed.connect(Callable(self, "_on_gamemanager_on_top_updated"))
+	GameManager.on_top_changed.connect(_on_top_recieved)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	GameManager.on_top_changed.connect(_on_top_recieved)
+	
+	
+func _on_top_recieved():
+	GameManager.always_on_top(_menu_window)
+	#print(self.name)
 
 func pass_parent(parent):
 	_parent = parent

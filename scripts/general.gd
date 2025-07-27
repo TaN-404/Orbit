@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 func _on_always_on_top_toggled(toggled_on: bool) -> void:
 	GameManager.on_top = toggled_on
 	GameManager.save_settings()
+	GameManager._on_top_changed()
+
 
 
 func _on_run_on_startup_toggled(toggled_on: bool) -> void:

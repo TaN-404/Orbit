@@ -8,7 +8,6 @@
 initial_position = 1
 size = Vector2i(300, 242)
 unresizable = true
-always_on_top = true
 script = ExtResource("1_eddrs")
 
 [node name="AddApp" type="Control" parent="."]

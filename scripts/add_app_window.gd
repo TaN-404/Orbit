@@ -12,6 +12,8 @@ const FIND_APP = "res://bin/find_exe.exe"
 var dragging = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if GameManager.on_top:
+		GameManager.always_on_top(add_app_window)
 	add_app_window.borderless = true
 	add_app_window.transparent = true
 	add_app_window.transparent_bg = true
@@ -20,8 +22,13 @@ func _ready() -> void:
 	exit.pass_parent(self)
 	move.pass_parent(self)
 
+	GameManager.on_top_changed.connect(_on_top_recieved)
+	
+	
+func _on_top_recieved():
+	GameManager.always_on_top(add_app_window)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	pass
 

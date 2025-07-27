@@ -21,9 +21,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 SpeechListener="*res://scripts/SpeechListener.gd"
+GameManager="*res://scripts/GameManager.gd"
 CommandManager="*res://scripts/CommandManager.gd"
 AppManager="*res://scripts/AppManager.gd"
-GameManager="*res://scripts/GameManager.gd"
 WorkspaceManager="*res://scripts/WorkspaceManager.gd"
 
 [display]

@@ -9,6 +9,8 @@ var dragging := false
 var drag_offset := Vector2.ZERO
 
 func _ready() -> void:
+	if GameManager.on_top:
+		GameManager.always_on_top(self)
 	self.borderless = true
 	self.transparent_bg = true
 	self.transparent = true

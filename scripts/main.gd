@@ -44,7 +44,8 @@ var window_dragging := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_MainWindow.always_on_top = true
+	if GameManager.on_top:
+		GameManager.always_on_top(_MainWindow)
 	_MainWindow.borderless = true
 	_MainWindow.transparent = true
 	_MainWindow.transparent_bg = true
@@ -73,9 +74,14 @@ func _ready() -> void:
 	var main_viewport = get_viewport()
 	main_viewport.mouse_entered.connect(_on_viewport_mouse_entered)
 	main_viewport.mouse_exited.connect(_on_viewport_mouse_exited)
+	
+	GameManager.on_top_changed.connect(_on_top_recieved)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _on_top_recieved():
+	GameManager.always_on_top(_MainWindow)
+	#print(self.name)
+	
+	
 func _process(delta: float) -> void:
 	
 	if window_dragging:

@@ -10,6 +10,9 @@ var dragging = false
 var drag_offset := Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if GameManager.on_top:
+		GameManager.always_on_top(_app_list_window)
+		
 	_app_list_window.borderless = true
 	_app_list_window.transparent = true
 	_app_list_window.transparent_bg = true
@@ -19,6 +22,12 @@ func _ready() -> void:
 	#_app_list_window.position = Vector2(1000,1000)
 	exit.pass_parent(self)
 	move.pass_parent(self)
+	
+	
+	GameManager.on_top_changed.connect(_on_top_recieved)
+
+func _on_top_recieved():
+	GameManager.always_on_top(_app_list_window)
 
 func set_window_position():
 	_app_list_window.position = GameManager.applist_pos

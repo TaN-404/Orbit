@@ -8,6 +8,7 @@
 [node name="Notes" type="Window"]
 initial_position = 1
 size = Vector2i(400, 400)
+always_on_top = true
 script = ExtResource("1_pht7r")
 
 [node name="Notes-app" type="Control" parent="."]

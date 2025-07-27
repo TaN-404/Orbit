@@ -12,7 +12,6 @@
 [node name="Settings" type="Window"]
 initial_position = 1
 size = Vector2i(720, 480)
-always_on_top = true
 script = ExtResource("1_vcjtg")
 add_app_scene = ExtResource("2_8q7cj")
 

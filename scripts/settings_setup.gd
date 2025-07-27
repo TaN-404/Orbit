@@ -33,6 +33,7 @@ func _on_next_pressed() -> void:
 
 func _on_always_on_top_toggled(toggled_on: bool) -> void:
 	GameManager.on_top = toggled_on
+	GameManager._on_top_changed()
 	GameManager.save_settings()
 
 
