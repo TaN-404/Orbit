@@ -15,7 +15,7 @@ func _ready() -> void:
 	add_app_window.borderless = true
 	add_app_window.transparent = true
 	add_app_window.transparent_bg = true
-	add_app_window.size = Vector2(300, 232)
+	add_app_window.size = Vector2(300, 242)
 	
 	exit.pass_parent(self)
 	move.pass_parent(self)

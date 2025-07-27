@@ -1,6 +1,7 @@
 extends Control
 
-@onready var voice_command: Label = $PanelContainer/Panel/MarginContainer/VBoxContainer/Panel/VoiceCommand
+
+@onready var voice_command: Label = $PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/Panel/MarginContainer/VoiceCommand
 
 var message_number = 0
 var message

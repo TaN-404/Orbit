@@ -101,5 +101,7 @@ size_flags_horizontal = 8
 text = "Next
 "
 
+[connection signal="toggled" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/RunOnStartup" to="." method="_on_run_on_startup_toggled"]
+[connection signal="toggled" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/AlwaysOnTop" to="." method="_on_always_on_top_toggled"]
 [connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]

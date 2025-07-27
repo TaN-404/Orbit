@@ -11,7 +11,7 @@ extends Window
 @onready var app: TabBar = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App
 @onready var exit: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Exit
 @onready var app_list_display: Control = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer/AppListDisplay
-@onready var add_app: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer/AddApp
+@onready var add_app: Button = $Settings_control/PanelContainer/Panel/MarginContainer/VBoxContainer/SettingsTab/App/MarginContainer/VBoxContainer/MarginContainer/AddApp
 
 @onready var _parent
 var dragging = false

@@ -42,7 +42,7 @@ layout_mode = 2
 [node name="Title" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Welcome to Orbit
+text = "Welcome to Orbit (Alpha)
 "
 horizontal_alignment = 1
 
@@ -50,9 +50,24 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Body" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 150)
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 150)
 layout_mode = 2
+
+[node name="Body" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+text = "Thank you for Downloading Orbit
+
+Orbit is a desktop assistant equipped with productivity features to make certain tasks easier. 
+
+The app is still in development and hence only available for windows. The plan is to slowly add more features over the upcoming updates and then release the Mac and Linux builds. 
+
+This is a personal project I wanted to make ever since I started learning Godot Engine.
+All feedback is appreciated
+Hope you enjoy the app"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
