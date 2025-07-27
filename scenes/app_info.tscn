@@ -136,10 +136,10 @@ layout_mode = 2
 text = "Previous
 "
 
-[node name="Done" type="Button" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Next" type="Button" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-text = "Done"
+text = "Next"
 
 [connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Done" to="." method="_on_done_pressed"]
+[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]

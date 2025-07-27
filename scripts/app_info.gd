@@ -1,5 +1,5 @@
 extends Control
-
+@onready var voice_command_info: Control = $"../VoiceCommandInfo"
 @onready var first_run: Window = $"../../../../.."
 
 var previous
@@ -20,5 +20,7 @@ func _on_previous_pressed() -> void:
 	self.hide()
 
 
-func _on_done_pressed() -> void:
-	first_run.queue_free()
+func _on_next_pressed() -> void:
+	self.hide()
+	voice_command_info.show()
+	voice_command_info._previous_screen(self)

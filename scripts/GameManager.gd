@@ -1,5 +1,6 @@
 extends Node
 
+var main
 var app_menu_active = false
 var settings_active = false
 var sticky_notes_active = false
@@ -22,6 +23,7 @@ var applist_pos : Vector2
 """Windows"""
 var menu_window : Window
 var settings_window : Window
+@onready var first_run_window : PackedScene = preload("res://scenes/first_run.tscn")
 
 """Animation Flags"""
 enum AnimationType {
@@ -41,6 +43,7 @@ const SETTINGS = "user://config_files/settings.cfg"
 var config = ConfigFile.new()
 
 func _ready() -> void:
+	main = get_tree().root.get_node("Main")
 	load_settings()
 	# This _ready() function runs very early, before your main scene's _ready().
 	
@@ -99,7 +102,10 @@ func _process(delta: float) -> void:
 
 
 func run_first_time_setup():
-	pass
+	if first_run_window != null:
+		var first_run_instance = first_run_window.instantiate()
+		main.add_child(first_run_instance)
+		
 
 func _on_top_changed():
 	on_top_changed.emit()

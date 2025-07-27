@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b664c1tn8jq1w"]
+[gd_scene load_steps=8 format=3 uid="uid://b664c1tn8jq1w"]
 
 [ext_resource type="Script" path="res://scripts/first_run.gd" id="1_6siv5"]
 [ext_resource type="PackedScene" uid="uid://cn6w05nwwirok" path="res://scenes/intro.tscn" id="1_koeno"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bva1d1awgtrst" path="res://scenes/move.tscn" id="2_n26bh"]
 [ext_resource type="PackedScene" uid="uid://ygj2cgylrun0" path="res://scenes/exit.tscn" id="3_as16g"]
 [ext_resource type="PackedScene" uid="uid://crb2t07y2rdfx" path="res://scenes/app_info.tscn" id="4_7wvlt"]
+[ext_resource type="PackedScene" uid="uid://b4p18e8npc71g" path="res://scenes/voice_command_info.tscn" id="7_p8wfg"]
 
 [node name="FirstRun" type="Window"]
 transparent_bg = true
@@ -63,4 +64,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="AppInfo" parent="VBoxContainer/PanelContainer/Panel/MarginContainer" instance=ExtResource("4_7wvlt")]
+layout_mode = 2
+
+[node name="VoiceCommandInfo" parent="VBoxContainer/PanelContainer/Panel/MarginContainer" instance=ExtResource("7_p8wfg")]
 layout_mode = 2
