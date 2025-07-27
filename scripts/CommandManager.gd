@@ -27,14 +27,14 @@ var commands = {
 	# --- New: Wake Word Command ---
 	"wake_word_activate": {
 		"patterns": [
-			"nexus",
-			"hey nexus",
-			"good morning nexus",
-			"hello nexus",
-			"hi nexus",
-			"nexus",
-			"good evening nexus",
-			"good afternoon nexus"
+			"orbit",
+			"hey orbit",
+			"good morning orbit",
+			"hello orbit",
+			"hi orbit",
+			"orbit",
+			"good evening orbit",
+			"good afternoon orbit"
 		],
 		"action_method": "_on_wake_word_activated",
 		"is_wake_word": true # Mark this command as a wake word

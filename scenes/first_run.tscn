@@ -1,26 +1,49 @@
-[gd_scene format=3 uid="uid://b664c1tn8jq1w"]
+[gd_scene load_steps=7 format=3 uid="uid://b664c1tn8jq1w"]
 
-[node name="FirstRun" type="Control"]
-layout_mode = 3
+[ext_resource type="Script" path="res://scripts/first_run.gd" id="1_6siv5"]
+[ext_resource type="PackedScene" uid="uid://cn6w05nwwirok" path="res://scenes/intro.tscn" id="1_koeno"]
+[ext_resource type="PackedScene" uid="uid://bxee3mspdgct7" path="res://scenes/settings_setup.tscn" id="2_dsitk"]
+[ext_resource type="PackedScene" uid="uid://bva1d1awgtrst" path="res://scenes/move.tscn" id="2_n26bh"]
+[ext_resource type="PackedScene" uid="uid://ygj2cgylrun0" path="res://scenes/exit.tscn" id="3_as16g"]
+[ext_resource type="PackedScene" uid="uid://crb2t07y2rdfx" path="res://scenes/app_info.tscn" id="4_7wvlt"]
+
+[node name="FirstRun" type="Window"]
+transparent_bg = true
+initial_position = 1
+size = Vector2i(640, 385)
+borderless = true
+always_on_top = true
+transparent = true
+script = ExtResource("1_6siv5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 320.0
+offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
 
-[node name="Panel" type="Panel" parent="PanelContainer"]
+[node name="Move" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_n26bh")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Exit" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_as16g")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(640, 342)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(0, 342)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,3 +54,12 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+
+[node name="Intro" parent="VBoxContainer/PanelContainer/Panel/MarginContainer" instance=ExtResource("1_koeno")]
+layout_mode = 2
+
+[node name="SettingsSetup" parent="VBoxContainer/PanelContainer/Panel/MarginContainer" instance=ExtResource("2_dsitk")]
+layout_mode = 2
+
+[node name="AppInfo" parent="VBoxContainer/PanelContainer/Panel/MarginContainer" instance=ExtResource("4_7wvlt")]
+layout_mode = 2

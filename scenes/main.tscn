@@ -1461,7 +1461,7 @@ AppMenu = ExtResource("4_wln7i")
 position = Vector2(161, 154)
 sprite_frames = SubResource("SpriteFrames_1cdav")
 animation = &"GasGiant"
-frame_progress = 0.442137
+frame_progress = 0.755907
 
 [node name="MenuController" type="Control" parent="."]
 layout_mode = 3
@@ -1679,6 +1679,7 @@ icon_alignment = 1
 
 [node name="AnimationMenu" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 0
 offset_left = 170.0
 offset_top = 65.0
 offset_right = 320.0

@@ -1,0 +1,145 @@
+[gd_scene load_steps=8 format=3 uid="uid://crb2t07y2rdfx"]
+
+[ext_resource type="Script" path="res://scripts/app_info.gd" id="1_l2sjq"]
+[ext_resource type="Theme" uid="uid://b7extl4woux8y" path="res://assets/themes/midnight.tres" id="2_c1ry3"]
+[ext_resource type="Texture2D" uid="uid://bej1f4fvl76d1" path="res://assets/icons/40x40/mic-off-01-Stroke-Rounded (1).png" id="3_ye67r"]
+[ext_resource type="Texture2D" uid="uid://do6wbrwyc87pl" path="res://assets/icons/40x40/menu-01-Stroke-Rounded.png" id="4_qgrve"]
+[ext_resource type="Texture2D" uid="uid://j0qy7hqbhoni" path="res://assets/icons/24x24/grid-view-stroke-rounded (1).png" id="5_fefgi"]
+[ext_resource type="Texture2D" uid="uid://cf624ucrk5ocb" path="res://assets/icons/24x24/play-list-Stroke-Rounded (1).png" id="6_1w0r7"]
+[ext_resource type="Texture2D" uid="uid://ceaxub2nwvl1n" path="res://assets/icons/24x24/settings-02-Stroke-Rounded (1).png" id="7_gp71d"]
+
+[node name="AppInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 300.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l2sjq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_c1ry3")
+theme_override_font_sizes/font_size = 26
+text = "App Info"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 125
+theme_override_constants/margin_right = 125
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 34
+columns = 2
+
+[node name="Mic" type="TextureRect" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_ye67r")
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+text = "- Trun ON/OFF speech Recognition"
+
+[node name="menu" type="TextureRect" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_qgrve")
+
+[node name="Label2" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+text = "- Menu to access other Features"
+
+[node name="Apps" type="TextureRect" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_fefgi")
+expand_mode = 5
+
+[node name="Label3" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+text = "- A quick menu to assign apps "
+
+[node name="Animations" type="TextureRect" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+texture = ExtResource("6_1w0r7")
+expand_mode = 5
+
+[node name="Label4" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+text = "- Set main animations"
+
+[node name="Settings" type="TextureRect" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+texture = ExtResource("7_gp71d")
+expand_mode = 5
+
+[node name="Label5" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer2/GridContainer"]
+layout_mode = 2
+text = "- Settings Menu"
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 20
+
+[node name="Previous" type="Button" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+text = "Previous
+"
+
+[node name="Done" type="Button" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+text = "Done"
+
+[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Done" to="." method="_on_done_pressed"]

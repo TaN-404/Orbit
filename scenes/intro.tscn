@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cn6w05nwwirok"]
+[gd_scene load_steps=2 format=3 uid="uid://cn6w05nwwirok"]
 
-[ext_resource type="FontFile" uid="uid://b2je4uvhxrov1" path="res://assets/fonts/Minecraft.ttf" id="1_nk57b"]
+[ext_resource type="Script" path="res://scripts/intro_setup.gd" id="1_kwlb4"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_d4wiw"]
-font = ExtResource("1_nk57b")
-font_size = 26
-
-[node name="Screen1" type="Control"]
+[node name="Intro" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +11,7 @@ offset_right = 300.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kwlb4")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -44,9 +41,9 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Welcome to Nexus
+theme_override_font_sizes/font_size = 26
+text = "Welcome to Orbit
 "
-label_settings = SubResource("LabelSettings_d4wiw")
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/Panel/MarginContainer/VBoxContainer"]
@@ -78,3 +75,5 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "Next
 "
+
+[connection signal="pressed" from="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]
