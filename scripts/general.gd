@@ -22,4 +22,9 @@ func _on_always_on_top_toggled(toggled_on: bool) -> void:
 
 func _on_run_on_startup_toggled(toggled_on: bool) -> void:
 	GameManager.startup = toggled_on
+	if toggled_on:
+		AppManager.add_to_startup()
+	
+	else:
+		AppManager.remove_from_startup()
 	GameManager.save_settings()

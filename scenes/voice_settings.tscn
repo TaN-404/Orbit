@@ -175,7 +175,7 @@ expand_mode = 2
 [node name="Label5" type="Label" parent="PanelContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "- Goodbye"
+text = "- Goodbye to quit the app"
 vertical_alignment = 1
 
 [connection signal="toggled" from="PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

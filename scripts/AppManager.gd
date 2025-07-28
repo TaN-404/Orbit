@@ -6,6 +6,7 @@ signal app_added
 """CLIENTS"""
 const SEARCH_APPS = "res://bin/search_client.exe"
 const ADD_APP = "res://bin/add_app.exe"
+const STARTUP_TOOL = "res://bin/startup_tool.exe"
 
 """PID_LISTS"""
 var workspace_pids = {}
@@ -298,6 +299,35 @@ func get_all_pids_by_exe_name(exe_name: String) -> Array:
 			if pid > 0:
 				pids.append(pid)
 	return pids
+	
+	
+	
+func add_to_startup():
+	var app_name = "Orbit"
+	var exe_path = OS.get_executable_path().replace("/", "\\")
+	#var exe = OS.get_executable_path()
+	var exe_tool = ProjectSettings.globalize_path(STARTUP_TOOL)
+	var args = ["add", app_name, exe_path]
+	var exit_code = OS.execute(exe_tool, args)
+	if exit_code == 0:
+		print("Add to startup result:")
+
+func remove_from_startup():
+	var app_name = "Orbit"
+	var exe_tool = ProjectSettings.globalize_path(STARTUP_TOOL)
+	var args = ["remove", app_name]
+	var exit_code = OS.execute(exe_tool, args)
+	if exit_code == 0:
+		print("Remove from startup result:")
+		
+		
+func is_in_startup() -> bool:
+	var app_name = "Orbit"
+	var exe_tool = ProjectSettings.globalize_path(STARTUP_TOOL)
+	var output := []
+	OS.execute(exe_tool, ["check", app_name])
+	var result = output[0].strip_edges() if output.size() > 0 else ""
+	return result == "YES"
 
 
 func kill_process(pid):
